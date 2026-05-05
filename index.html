@@ -135,15 +135,22 @@
 <div class="form-group"><label data-i18n="form.email">Email</label><input id="f-email" type="email" placeholder="email@company.com"></div>
 </div>
 <div class="form-group"><label data-i18n="form.company">Tên công ty</label><input id="f-company" type="text" placeholder="Công ty TNHH..."></div>
-<div class="form-group"><label data-i18n="form.product">Sản phẩm quan tâm</label>
-<select id="f-product">
-<option value="" data-i18n="form.product.ph">-- Chọn dòng sản phẩm --</option>
-<option data-i18n="form.product.p1">ACS — Tem nhãn & Dán nhãn</option>
-<option data-i18n="form.product.p2">SUV — Ống dẫn & Phụ kiện</option>
-<option data-i18n="form.product.p3">KDH — Đầu vào cáp & Giá đỡ</option>
-<option data-i18n="form.product.p4">EFK — Máng xích nhựa</option>
-<option data-i18n="form.product.p5">AUR — Phụ kiện Robot & Tự động hóa</option>
-</select>
+<div class="form-group"><label data-i18n="form.product">Sản phẩm quan tâm (chọn nhiều)</label>
+<div class="checkbox-grid">
+<label class="check-item"><input type="checkbox" name="product" value="ACS"> <span data-i18n="form.product.p1">ACS — Tem nhãn & Dán nhãn</span></label>
+<label class="check-item"><input type="checkbox" name="product" value="SUV"> <span data-i18n="form.product.p2">SUV — Ống dẫn & Phụ kiện</span></label>
+<label class="check-item"><input type="checkbox" name="product" value="KDH"> <span data-i18n="form.product.p3">KDH — Đầu vào cáp & Giá đỡ</span></label>
+<label class="check-item"><input type="checkbox" name="product" value="EFK"> <span data-i18n="form.product.p4">EFK — Máng xích nhựa</span></label>
+<label class="check-item"><input type="checkbox" name="product" value="AUR"> <span data-i18n="form.product.p5">AUR — Phụ kiện Robot & Tự động hóa</span></label>
+<label class="check-item"><input type="checkbox" name="product" value="Other"> <span data-i18n="form.product.other">Khác</span></label>
+</div>
+</div>
+<div class="form-group">
+<label data-i18n="form.file">Tải lên danh sách hoặc bản vẽ (Excel, PDF)</label>
+<div class="file-upload-wrapper">
+<input id="f-file" type="file" accept=".xlsx,.xls,.pdf,.jpg,.png">
+<div class="file-hint" data-i18n="form.file.hint">Chấp nhận .xlsx, .xls, .pdf, .jpg (Tối đa 10MB)</div>
+</div>
 </div>
 <div class="form-group"><label data-i18n="form.message">Nội dung yêu cầu</label><textarea id="f-message" data-i18n-attr="placeholder" data-i18n="form.message.ph" placeholder="Mô tả nhu cầu, số lượng, ứng dụng..."></textarea></div>
 <div class="form-msg"></div>

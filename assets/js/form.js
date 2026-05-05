@@ -30,13 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.setAttribute('data-i18n', 'form.sending');
     btn.textContent = t('form.sending');
 
+    // Collect selected products
+    const selectedProducts = Array.from(form.querySelectorAll('input[name="product"]:checked'))
+      .map(el => el.value)
+      .join(', ');
+
+    const fileInput = form.querySelector('#f-file');
+    let fileBase64 = '';
+    let fileName = '';
+
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      if (file.size > 10 * 1024 * 1024) {
+        showMsg(msgEl, 'error', currentLang === 'vi' ? '❌ File quá lớn (Max 10MB)' : '❌ File too large (Max 10MB)');
+        btn.disabled = false;
+        btn.textContent = t('form.submit');
+        return;
+      }
+      fileName = file.name;
+      fileBase64 = await toBase64(file);
+    }
+
     const payload = {
       name,
       phone,
       email: form.querySelector('#f-email').value.trim(),
       company: form.querySelector('#f-company').value.trim(),
-      product: form.querySelector('#f-product').value,
+      product: selectedProducts || '(không chọn)',
       message: form.querySelector('#f-message').value.trim(),
+      fileData: fileBase64,
+      fileName: fileName,
       language: currentLang,
       source: window.location.href,
       timestamp: new Date().toISOString()
@@ -71,3 +94,10 @@ function showMsg(el, type, msg) {
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   setTimeout(() => { el.style.display = 'none'; el.className = 'form-msg'; }, 8000);
 }
+
+const toBase64 = file => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result.split(',')[1]);
+  reader.onerror = error => reject(error);
+});
