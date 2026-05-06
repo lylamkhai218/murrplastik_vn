@@ -4,11 +4,27 @@
  */
 
 // ⚠️ THAY URL NÀY SAU KHI DEPLOY GOOGLE APPS SCRIPT
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAwd5RF_3MGpUXQjZdA7lWjnITLgiWV3G8yCwqNY5DmOSZes6QfbBpEZ-20lyQwwMu/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxz21AeAE3MYOh06Dsor3IUjYUWNwEQSCAOVojFyRMtrTuGuOxZftK9yuiJOR3FelVb/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('quoteForm');
   if (!form) return;
+
+  // File upload feedback
+  const fileInput = form.querySelector('#f-file');
+  const fileHint = form.querySelector('.file-hint');
+  if (fileInput && fileHint) {
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        fileHint.textContent = (currentLang === 'vi' ? '✅ Đã chọn: ' : '✅ Selected: ') + fileName;
+        fileHint.classList.add('file-success');
+      } else {
+        fileHint.textContent = t('form.file.hint');
+        fileHint.classList.remove('file-success');
+      }
+    });
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -32,7 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Collect selected products
     const selectedProducts = Array.from(form.querySelectorAll('input[name="product"]:checked'))
-      .map(el => el.value)
+      .map(el => {
+        const textSpan = el.parentElement.querySelector('span[data-i18n]');
+        return textSpan ? textSpan.textContent.trim() : el.value;
+      })
       .join(', ');
 
     const fileInput = form.querySelector('#f-file');
@@ -49,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       fileName = file.name;
       fileBase64 = await toBase64(file);
+      console.log('File detected:', fileName, 'Size:', file.size, 'Base64 length:', fileBase64.length);
     }
 
     const payload = {
@@ -65,15 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
       timestamp: new Date().toISOString()
     };
 
+    console.log('Sending Payload:', payload);
+
     try {
       const res = await fetch(SCRIPT_URL, {
         method: 'POST',
         body: JSON.stringify(payload)
       });
       const data = await res.json();
+      console.log('GAS Response:', data);
       if (data.status === 'success') {
         showMsg(msgEl, 'success', t('form.success'));
         form.reset();
+        const fileHint = form.querySelector('.file-hint');
+        if (fileHint) {
+          fileHint.textContent = t('form.file.hint');
+          fileHint.classList.remove('file-success');
+        }
       } else {
         throw new Error(data.message);
       }
@@ -89,10 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showMsg(el, type, msg) {
+  el.style.display = 'block';
   el.className = 'form-msg ' + type;
   el.textContent = msg;
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  setTimeout(() => { el.style.display = 'none'; el.className = 'form-msg'; }, 8000);
+  setTimeout(() => {
+    el.style.display = 'none';
+    el.className = 'form-msg';
+  }, 8000);
 }
 
 const toBase64 = file => new Promise((resolve, reject) => {
