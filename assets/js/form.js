@@ -10,6 +10,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('quoteForm');
   if (!form) return;
 
+  const nameInput = form.querySelector('#f-name');
+  const phoneInput = form.querySelector('#f-phone');
+  const emailInput = form.querySelector('#f-email');
+  const msgEl = form.querySelector('.form-msg');
+
+  // Real-time validation
+  const validators = {
+    name: (val) => val.trim().length > 0 ? '' : (currentLang === 'vi' ? 'Họ tên không được để trống' : 'Name is required'),
+    phone: (val) => {
+      const clean = val.replace(/\s/g, '');
+      if (!clean) return (currentLang === 'vi' ? 'Số điện thoại không được để trống' : 'Phone is required');
+      const phoneRegex = /^(0|84)(3|5|7|8|9)([0-9]{8})$/;
+      return phoneRegex.test(clean) ? '' : (currentLang === 'vi' ? 'Số điện thoại không hợp lệ (10 số)' : 'Invalid phone number');
+    },
+    email: (val) => {
+      if (!val.trim()) return '';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(val.trim()) ? '' : (currentLang === 'vi' ? 'Email không hợp lệ' : 'Invalid email');
+    }
+  };
+
+  const showFieldError = (input, error) => {
+    let errorEl = input.parentElement.querySelector('.field-error');
+    if (!errorEl) {
+      errorEl = document.createElement('div');
+      errorEl.className = 'field-error';
+      input.parentElement.appendChild(errorEl);
+    }
+    errorEl.textContent = error;
+    input.classList.toggle('invalid', !!error);
+  };
+
+  [nameInput, phoneInput, emailInput].forEach(input => {
+    const field = input.id.replace('f-', '');
+    const validate = () => showFieldError(input, validators[field](input.value));
+    
+    input.addEventListener('input', validate);
+    input.addEventListener('blur', validate);
+  });
+
   // File upload feedback
   const fileInput = form.querySelector('#f-file');
   const fileHint = form.querySelector('.file-hint');
@@ -29,15 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('.btn-submit');
-    const msgEl = form.querySelector('.form-msg');
 
-    // Validate required fields
-    const name = form.querySelector('#f-name').value.trim();
-    const phone = form.querySelector('#f-phone').value.trim();
-    if (!name || !phone) {
-      showMsg(msgEl, 'error', currentLang === 'vi'
-        ? '⚠️ Vui lòng điền Họ tên và Số điện thoại.'
-        : '⚠️ Please fill in Name and Phone Number.');
+    // Final validation
+    const nameErr = validators.name(nameInput.value);
+    const phoneErr = validators.phone(phoneInput.value);
+    const emailErr = validators.email(emailInput.value);
+
+    showFieldError(nameInput, nameErr);
+    showFieldError(phoneInput, phoneErr);
+    showFieldError(emailInput, emailErr);
+
+    if (nameErr || phoneErr || emailErr) {
+      const firstErr = [nameErr, phoneErr, emailErr].find(e => e);
+      showMsg(msgEl, 'error', firstErr);
       return;
     }
 
@@ -54,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .join(', ');
 
-    const fileInput = form.querySelector('#f-file');
     let fileBase64 = '';
     let fileName = '';
 
@@ -63,18 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (file.size > 10 * 1024 * 1024) {
         showMsg(msgEl, 'error', currentLang === 'vi' ? '❌ File quá lớn (Max 10MB)' : '❌ File too large (Max 10MB)');
         btn.disabled = false;
+        btn.setAttribute('data-i18n', 'form.submit');
         btn.textContent = t('form.submit');
         return;
       }
       fileName = file.name;
       fileBase64 = await toBase64(file);
-      console.log('File detected:', fileName, 'Size:', file.size, 'Base64 length:', fileBase64.length);
     }
 
     const payload = {
-      name,
-      phone,
-      email: form.querySelector('#f-email').value.trim(),
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      email: emailInput.value.trim(),
       company: form.querySelector('#f-company').value.trim(),
       product: selectedProducts || '(không chọn)',
       message: form.querySelector('#f-message').value.trim(),
@@ -85,19 +128,17 @@ document.addEventListener('DOMContentLoaded', () => {
       timestamp: new Date().toISOString()
     };
 
-    console.log('Sending Payload:', payload);
-
     try {
       const res = await fetch(SCRIPT_URL, {
         method: 'POST',
         body: JSON.stringify(payload)
       });
       const data = await res.json();
-      console.log('GAS Response:', data);
       if (data.status === 'success') {
-        showMsg(msgEl, 'success', t('form.success'));
+        showSuccessPopup();
         form.reset();
-        const fileHint = form.querySelector('.file-hint');
+        [nameInput, phoneInput, emailInput].forEach(i => i.classList.remove('invalid'));
+        form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
         if (fileHint) {
           fileHint.textContent = t('form.file.hint');
           fileHint.classList.remove('file-success');
@@ -115,6 +156,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function showSuccessPopup() {
+  const popup = document.getElementById('successPopup');
+  if (popup) {
+    popup.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSuccessPopup() {
+  const popup = document.getElementById('successPopup');
+  if (popup) {
+    popup.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
 
 function showMsg(el, type, msg) {
   el.style.display = 'block';

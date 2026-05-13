@@ -117,7 +117,11 @@ const TRANSLATIONS = {
     'footer.col1': 'Sản phẩm',
     'footer.col2': 'Thông tin',
     'footer.copy': '© 2025 T&T Vina Industrial Co., Ltd · murrplastikvn.com',
-    'footer.made': 'Đại lý chính thức Murrplastik tại Việt Nam'
+    'footer.made': 'Đại lý chính thức Murrplastik tại Việt Nam',
+    /* Popup */
+    'popup.title': 'Gửi thành công!',
+    'popup.text': 'Cảm ơn bạn đã tin tưởng. Đội ngũ T&T Vina sẽ liên hệ với bạn trong giây lát.',
+    'popup.close': 'Đóng'
   },
   en: {
     /* Nav */
@@ -233,7 +237,11 @@ const TRANSLATIONS = {
     'footer.col1': 'Products',
     'footer.col2': 'Information',
     'footer.copy': '© 2025 T&T Vina Industrial Co., Ltd · murrplastikvn.com',
-    'footer.made': 'Official Murrplastik Dealer in Vietnam'
+    'footer.made': 'Official Murrplastik Dealer in Vietnam',
+    /* Popup */
+    'popup.title': 'Sent Successfully!',
+    'popup.text': 'Thank you for your trust. T&T Vina team will contact you shortly.',
+    'popup.close': 'Close'
   }
 };
 

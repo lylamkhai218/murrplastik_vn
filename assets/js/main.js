@@ -56,6 +56,55 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('visible'));
   }
 
+  /* ── ScrollSpy: Highlight active nav link ── */
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(navLinks).map(link => {
+    const selector = link.getAttribute('href');
+    if (selector.startsWith('#') && selector.length > 1) {
+      return document.querySelector(selector);
+    }
+    return null;
+  }).filter(Boolean);
+
+  const scrollSpy = () => {
+    let current = '';
+    const offset = navbar.offsetHeight + 100;
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - offset) {
+        current = '#' + section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === current);
+    });
+  };
+  window.addEventListener('scroll', scrollSpy, { passive: true });
+  scrollSpy(); // Initial check
+
+  /* ── Handle hash on load (from sub-pages) ── */
+  if (window.location.hash) {
+    const targetId = window.location.hash;
+    const performScroll = () => {
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = navbar.offsetHeight + 30;
+        window.scrollTo({
+          top: target.offsetTop - offset,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Attempt 1: DOMContentLoaded
+    performScroll();
+
+    // Attempt 2: window.load (all resources ready)
+    window.addEventListener('load', () => {
+      setTimeout(performScroll, 100);
+      setTimeout(performScroll, 500); // Attempt 3: Just in case of delayed rendering
+    });
+  }
+
   /* ── Stats counter animation ── */
   const counters = document.querySelectorAll('.stat-num[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {
@@ -76,5 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.5 });
     counters.forEach(el => cObs.observe(el));
+  }
+
+  /* ── Hide Preloader ── */
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('fade-out');
+        setTimeout(() => preloader.remove(), 600);
+      }, 500);
+    });
   }
 });
