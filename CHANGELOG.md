@@ -4,6 +4,12 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 
 ## [1.2.0] - 2026-05-13
 
+**Service**: murrplastik-vn-web  
+**Purpose**: fix(ui/ux): nâng cấp trải nghiệm người dùng, tối ưu form chuyển đổi và kỹ thuật SEO chuyên sâu.  
+**Release at**: 13/05/2026  
+**MR**: [https://github.com/lylamkhai218/murrplastik_vn/commit/c370557](https://github.com/lylamkhai218/murrplastik_vn/commit/c370557)  
+**By who**: KhaiLL
+
 ### Nâng cấp UI/UX & Điều hướng
 - **ScrollSpy**: Tự động làm nổi bật mục Menu tương ứng khi người dùng cuộn đến phần nội dung đó.
 - **Preloader**: Thêm màn hình chờ (loading screen) với logo và thanh trạng thái mượt mà khi truy cập web.
@@ -23,5 +29,3 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 - **Next-gen Images (WebP)**: Cập nhật thẻ `<picture>` cho toàn bộ ảnh sản phẩm chính, ưu tiên định dạng WebP và kích hoạt `lazy loading` để tăng tốc độ tải trang.
 - **Responsive**: Tăng kích thước font `.why-num` và tối ưu khoảng cách hiển thị trên thiết bị di động.
 
----
-*By Antigravity AI Assistant & KhaiLL*
