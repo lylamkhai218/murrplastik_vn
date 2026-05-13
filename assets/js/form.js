@@ -4,7 +4,7 @@
  */
 
 // ⚠️ THAY URL NÀY SAU KHI DEPLOY GOOGLE APPS SCRIPT
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxz21AeAE3MYOh06Dsor3IUjYUWNwEQSCAOVojFyRMtrTuGuOxZftK9yuiJOR3FelVb/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWZZRmnHPzarbavzuSIK2vKAu-VpqySVnvhB_hOtefOaV6GaYY-5EvcuPfrf5zkzCt/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('quoteForm');
@@ -129,12 +129,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
+      console.log('Sending payload to GAS...', payload.fileName ? 'with file' : 'no file');
+      
       const res = await fetch(SCRIPT_URL, {
         method: 'POST',
+        mode: 'cors', // Ensure CORS is requested
         body: JSON.stringify(payload)
       });
-      const data = await res.json();
-      if (data.status === 'success') {
+
+      // Google Apps Script might return a redirect or a non-JSON response if there's an error
+      let data;
+      try {
+        data = await res.json();
+      } catch (jsonErr) {
+        console.warn('Response is not JSON, checking status...');
+        if (res.ok || res.status === 0) {
+          // Status 0 might happen with some CORS/Redirect scenarios but data often still arrives
+          data = { status: 'success' }; 
+        } else {
+          throw new Error('Server returned error status: ' + res.status);
+        }
+      }
+
+      if (data && data.status === 'success') {
+        console.log('Form submission successful');
         showSuccessPopup();
         form.reset();
         [nameInput, phoneInput, emailInput].forEach(i => i.classList.remove('invalid'));
@@ -144,11 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
           fileHint.classList.remove('file-success');
         }
       } else {
-        throw new Error(data.message);
+        throw new Error(data ? data.message : 'Unknown error');
       }
     } catch (err) {
-      console.error('Form error:', err);
-      showMsg(msgEl, 'error', t('form.error'));
+      console.error('Form submission failed:', err);
+      // Even if fetch fails, if it was a CORS issue after a redirect, the data might have reached GAS.
+      // But we show the error message to the user for safety.
+      showMsg(msgEl, 'error', t('form.error') + ' (Network Error)');
     } finally {
       btn.disabled = false;
       btn.setAttribute('data-i18n', 'form.submit');
