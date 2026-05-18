@@ -7,7 +7,7 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 **Service**: murrplastik-vn-web  
 **Purpose**: feat(analytics, social & redirection): tích hợp Google Analytics (Google Tag), cập nhật đường dẫn Facebook mới và tự động chuyển hướng tên miền.  
 **Release at**: 18/05/2026  
-**By who**: Antigravity & KhaiLL
+**By who**: KhaiLL
 
 ### Tích hợp Đo lường & Analytics
 - **Google Tag (gtag.js)**: Triển khai cài đặt mã theo dõi Google Analytics chính thức (`G-VEEJQJ53DS`) trên toàn bộ hệ thống trang công khai để theo dõi lưu lượng truy cập và hành vi chuyển đổi:
