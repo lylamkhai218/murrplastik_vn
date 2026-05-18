@@ -24,6 +24,10 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
   - Tự động chuyển hướng toàn bộ lượt truy cập không an toàn từ HTTP sang HTTPS (Bảo mật SSL).
   - Tự động chuyển hướng từ tên miền phụ có `www` (`www.murrplastikvn.com`) về tên miền gốc không có `www` (`murrplastikvn.com`) bằng phương thức chuyển hướng vĩnh viễn 301 Redirect chuẩn SEO.
 
+### Tối ưu hóa Hình ảnh & Khắc phục Lỗi 404
+- **Định dạng WebP thế hệ mới**: Tạo và bổ sung đầy đủ các file ảnh đuôi `.webp` còn thiếu cho danh mục sản phẩm (chuyển đổi chất lượng cao từ các file `.jpg` gốc) bao gồm: `label.webp`, `murrplastik_Conduits_and_fittings.webp`, `murrplastik_Cable_entry_systems_and_holders.webp`, `murrplastik_Energy_chains.webp`, `murrplastik_Automation_and_Robotics.webp`.
+- **Sửa lỗi hiển thị (broken images)**: Khắc phục triệt để lỗi 404 hình ảnh trên các trình duyệt hỗ trợ WebP, giúp tối ưu hóa dung lượng trang web và cải thiện đáng kể tốc độ tải trang.
+
 ## [1.2.0] - 2026-05-13
 
 **Service**: murrplastik-vn-web  
