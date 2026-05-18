@@ -2,6 +2,28 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.3.0] - 2026-05-18
+
+**Service**: murrplastik-vn-web  
+**Purpose**: feat(analytics, social & redirection): tích hợp Google Analytics (Google Tag), cập nhật đường dẫn Facebook mới và tự động chuyển hướng tên miền.  
+**Release at**: 18/05/2026  
+**By who**: Antigravity & KhaiLL
+
+### Tích hợp Đo lường & Analytics
+- **Google Tag (gtag.js)**: Triển khai cài đặt mã theo dõi Google Analytics chính thức (`G-VEEJQJ53DS`) trên toàn bộ hệ thống trang công khai để theo dõi lưu lượng truy cập và hành vi chuyển đổi:
+  - Trang chủ ([index.html](file:///d:/T&TVina/murrplastik_code/index.html))
+  - 5 trang chi tiết sản phẩm thuộc thư mục [products/](file:///d:/T&TVina/murrplastik_code/products/): [acs.html](file:///d:/T&TVina/murrplastik_code/products/acs.html), [aur.html](file:///d:/T&TVina/murrplastik_code/products/aur.html), [efk.html](file:///d:/T&TVina/murrplastik_code/products/efk.html), [kdh.html](file:///d:/T&TVina/murrplastik_code/products/kdh.html), [suv.html](file:///d:/T&TVina/murrplastik_code/products/suv.html).
+
+### Cập nhật Liên kết Mạng xã hội & Thương hiệu
+- **Facebook & Messenger Vanity URLs**: Cập nhật đồng loạt các đường dẫn liên kết Facebook cũ chứa ID số (`https://www.facebook.com/profile.php?id=100080348380792`) và liên kết Messenger (`https://m.me/100080348380792`) sang đường dẫn định danh thương hiệu mới (`https://www.facebook.com/murrplastikvietnam` và `https://m.me/murrplastikvietnam`) tại tất cả vị trí:
+  - Schema Structured Data (LocalBusiness Schema `sameAs`) trên trang chủ.
+  - Các mục thông tin liên hệ và footer trên trang chủ cùng 5 trang chi tiết sản phẩm.
+
+### Cấu hình Chuyển hướng Tên miền & Bảo mật (Server-side)
+- **Tự động Redirect (.htaccess)**: Tạo file cấu hình máy chủ [.htaccess](file:///d:/T&TVina/murrplastik_code/.htaccess) ở thư mục gốc để máy chủ Apache/LiteSpeed của Hostinger tự động xử lý chuyển hướng ở mức tối ưu nhất:
+  - Tự động chuyển hướng toàn bộ lượt truy cập không an toàn từ HTTP sang HTTPS (Bảo mật SSL).
+  - Tự động chuyển hướng từ tên miền phụ có `www` (`www.murrplastikvn.com`) về tên miền gốc không có `www` (`murrplastikvn.com`) bằng phương thức chuyển hướng vĩnh viễn 301 Redirect chuẩn SEO.
+
 ## [1.2.0] - 2026-05-13
 
 **Service**: murrplastik-vn-web  

@@ -4,7 +4,7 @@ description: Công cụ Marketing B2B cho Murrplastik Việt Nam - Chuyên biệ
 metadata:
   emoji: "🔧"
   version: "1.0.0"
-  author: "Khai & Claude"
+  author: "Khai"
   industry: "B2B Phân phối Công nghiệp"
   company: "T&T Industrial Co., Ltd (Đại lý Murrplastik)"
   tags: ["B2B", "công-nghiệp", "quản-lý-cáp", "SME", "sales-funnel", "lead-generation"]
@@ -17,7 +17,7 @@ metadata:
 **Công ty:** T&T Industrial Co., Ltd  
 **Sản phẩm:** Giải pháp Quản lý Cáp Murrplastik  
 **Thị trường mục tiêu:** Doanh nghiệp Vừa & Nhỏ (SME)  
-**Địa bàn:** Việt Nam (Hà Nội)  
+**Địa bàn:** Việt Nam (Hà Nội, Các tỉnh thành từ miền Bắc đến miền Trung)  
 **Đội ngũ:** 1 marketer + 1 nhân viên bán hàng
 
 ---
@@ -36,35 +36,35 @@ metadata:
 
 ## 5 Dòng Sản Phẩm (Chiến lược 5P)
 
-### 1. **Xích Cáp (Cable Carriers)**
+### 1. **Máng xích nhựa (EFK - Energy Chains)**
 - **Phân khúc:** Nhà máy sản xuất, dây chuyền tự động
 - **Điểm đau:** Quản lý cáp, tối ưu không gian
 - **Chu kỳ bán hàng:** 2-4 tuần (thay thế) đến 3-6 tháng (lắp đặt mới)
 - **Thông điệp chính:** "Bảo vệ cáp tiên tiến + hiệu quả không gian"
 - **Ngành mục tiêu:** Ô tô, cơ khí, chế biến thực phẩm, năng lượng
 
-### 2. **Ống Dẫn & Phụ Kiện (Conduits & Accessories)**
+### 2. **Ống Dẫn & Phụ Kiện (SUV - Conduits & Fittings)**
 - **Phân khúc:** Đội bảo trì, kỹ sư nhà máy
 - **Điểm đau:** Thay thế nhanh, tiêu chuẩn hóa
 - **Chu kỳ bán hàng:** 1-2 tuần (khẩn cấp) đến 1-3 tháng (có kế hoạch)
 - **Thông điệp chính:** "Thay thế nhanh, tiêu chuẩn công nghiệp"
 - **Ngành mục tiêu:** Tất cả (tần suất cao, đơn hàng lặp lại)
 
-### 3. **Hệ Thống Đầu Vào Cáp & Dẫn Cáp (Cable Entry Systems & Routing)**
+### 3. **Hệ Thống Đầu Vào Cáp & Dẫn Cáp (KDH - Cable Entry Systems & Routing)**
 - **Phân khúc:** Kỹ sư thiết kế, quản lý dự án
 - **Điểm đau:** Độ chính xác, tổ chức cáp, tuân thủ
 - **Chu kỳ bán hàng:** 1-3 tháng (dự án vừa phải)
 - **Thông điệp chính:** "Tổ chức chính xác, giảm thời gian ngừng máy"
 - **Ngành mục tiêu:** Cơ khí, đường sắt, tự động hóa
 
-### 4. **Hệ Thống Tem Nhãn & Dán Nhãn (Labeling/Marking Systems)**
+### 4. **Hệ Thống Tem Nhãn & Dán Nhãn (ACS - Labelling Systems/Marking Systems)**
 - **Phân khúc:** Đội bảo trì & vận hành
 - **Điểm đau:** Xác định cáp, hiệu quả bảo trì
 - **Chu kỳ bán hàng:** 1-4 tuần (nâng cấp hệ thống hiện tại)
 - **Thông điệp chính:** "Xác định nhanh, ít lỗi hơn"
 - **Ngành mục tiêu:** Tất cả (bổ sung cho hệ thống hiện tại)
 
-### 5. **Phụ Kiện Robot & Tự Động Hóa (Automation & Robot Accessories)**
+### 5. **Phụ Kiện Robot & Tự Động Hóa Công Nghiệp (AUR - Automation & Robot Accessories)**
 - **Phân khúc:** Nhà tích hợp tự động, kỹ sư dự án
 - **Điểm đau:** Tùy chỉnh, độ tin cậy, tích hợp
 - **Chu kỳ bán hàng:** 6+ tháng (lắp đặt mới, giải pháp tùy chỉnh)
@@ -81,7 +81,7 @@ metadata:
 **Hồ sơ:** Đội bảo trì, nhu cầu khẩn cấp
 **Kênh:** Quảng cáo Facebook (nhắm mục tiêu), email trực tiếp, điện thoại
 **Nội dung:** Thông số sản phẩm, giá cả, tính sẵn có
-**CTA:** "Đặt hàng ngay"
+**CTA:** "Liên hệ ngay"
 **Khối lượng dự kiến:** 30% của đơn hàng hàng tháng
 
 **Hành động Marketing:**
@@ -130,7 +130,7 @@ metadata:
 
 ---
 
-## Ph漏 Hỗ Trợ AARRR cho Murrplastik B2B
+## Hỗ Trợ AARRR cho Murrplastik B2B
 
 ### **CHIẾU (Acquisition)** (Mục tiêu: 200 lead/tháng)
 
@@ -260,7 +260,7 @@ metadata:
 ### **Giai Đoạn Thắng Nhanh (1-2 tuần)**
 
 **Loại Nội dung:** Thông số sản phẩm, giá cả, quyết định nhanh
-**Nền tảng:** Facebook, Email, WhatsApp
+**Nền tảng:** Facebook, Email,
 **Tông:** Khẩn cấp, thực tế, tập trung vào giải pháp
 
 **Ví dụ Nội dung:**

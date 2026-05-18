@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Tự động chuyển hướng từ HTTP sang HTTPS bảo mật
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Tự động chuyển hướng từ WWW sang Non-WWW (Ví dụ: www.murrplastikvn.com -> murrplastikvn.com)
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
