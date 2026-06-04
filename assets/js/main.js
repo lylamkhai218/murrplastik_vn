@@ -137,4 +137,126 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     });
   }
+
+  /* ── Promo Banner Popup Logic ── */
+  const promoPopup = document.getElementById('promoPopup');
+  const promoClose = document.getElementById('promoPopupClose');
+  const promoLink = document.getElementById('promoPopupLink');
+
+  if (promoPopup && promoClose && promoLink) {
+    let popupTriggered = false;
+    let timeDelayTimer = null;
+
+    // Cookie Helper Functions
+    const setCookie = (name, value, days) => {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    };
+
+    const getCookie = (name) => {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    };
+
+    const showPopup = () => {
+      if (popupTriggered) return;
+      if (getCookie('promo_popup_dismissed') === 'true') return;
+
+      popupTriggered = true;
+      
+      // Clean up triggers immediately to prevent multiple activations
+      window.removeEventListener('scroll', handleScrollTrigger);
+      document.removeEventListener('mouseleave', handleExitIntent);
+      clearTimeout(timeDelayTimer);
+
+      promoPopup.classList.add('open');
+    };
+
+    const dismissPopup = () => {
+      promoPopup.classList.remove('open');
+      setCookie('promo_popup_dismissed', 'true', 1); // 1 Day Capping
+    };
+
+    // Trigger 1: Scroll down 25% of the page
+    const handleScrollTrigger = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      const scrollPercent = (window.scrollY / docHeight) * 100;
+      if (scrollPercent >= 25) {
+        showPopup();
+      }
+    };
+
+    // Trigger 2: Time-delay (10 seconds)
+    timeDelayTimer = setTimeout(showPopup, 10000);
+
+    // Trigger 3: Exit Intent (Cursor goes near top of screen, with 1.5s cooldown and mouseenter check)
+    const loadTime = Date.now();
+    const handleExitIntent = (e) => {
+      if (Date.now() - loadTime < 1500) return; // Cooldown of 1.5 seconds on load
+      if (e.clientY < 50) {
+        showPopup();
+      }
+    };
+
+    // Attach Listeners
+    window.addEventListener('scroll', handleScrollTrigger, { passive: true });
+    
+    // Only bind mouseleave after the cursor enters the viewport at least once
+    const activateExitIntent = () => {
+      document.addEventListener('mouseleave', handleExitIntent);
+      document.removeEventListener('mouseenter', activateExitIntent);
+    };
+    document.addEventListener('mouseenter', activateExitIntent);
+
+    // Close Button & Overlay Background Click
+    promoClose.addEventListener('click', dismissPopup);
+    promoPopup.addEventListener('click', (e) => {
+      if (e.target === promoPopup) {
+        dismissPopup();
+      }
+    });
+
+    // Image Link Click Action
+    promoLink.addEventListener('click', () => {
+      promoPopup.classList.remove('open');
+      setCookie('promo_popup_dismissed', 'true', 1);
+    });
+  }
+
+  /* ── Back to Top Button Logic ── */
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    const toggleBackToTop = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      const scrollPercent = (window.scrollY / docHeight) * 100;
+      if (scrollPercent >= 50) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    };
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });
+
+

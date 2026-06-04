@@ -153,6 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data && data.status === 'success') {
         console.log('Form submission successful');
+        
+        // Track Conversion in Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'Form',
+            'event_label': 'Quote Request'
+          });
+        }
+
         showSuccessPopup();
         form.reset();
         [nameInput, phoneInput, emailInput].forEach(i => i.classList.remove('invalid'));

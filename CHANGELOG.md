@@ -2,6 +2,39 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.4.0] - 2026-06-04
+
+**Service**: murrplastik-vn-web  
+**Purpose**: feat(ui/ux, performance): tối ưu hóa dung lượng hình ảnh banner, tích hợp Popup CTA thông minh và bổ sung nút Quay về đầu trang đồng bộ.  
+**Release at**: 04/06/2026  
+**By who**: KhaiLL
+
+### Tối ưu hóa Hình ảnh & Hiệu năng
+- **Chuyển đổi sang WebP**: Chuyển đổi file ảnh banner khuyến mại khổng lồ (`Popup_CTA_Murrplastik.png`, `5.23 MB`) sang định dạng WebP thế hệ mới (`Popup_CTA_Murrplastik.webp`, `337 KB`). Giúp giảm kích thước tải xuống **93.4%** nhưng giữ nguyên độ nét và độ trong suốt của nền, giúp trang tải tức thì trên mọi loại mạng di động.
+- **Caching & Nén GZIP (.htaccess)**: Bổ sung cấu hình tối ưu bộ nhớ đệm trình duyệt (Browser Caching) 1 năm cho ảnh (WebP, SVG, PNG, JPG), CSS, JS và kích hoạt nén GZIP dữ liệu truyền tải qua mạng giúp trang web phản hồi siêu nhanh.
+
+### Tích hợp Popup CTA Khuyến mại thông minh
+- **Giao diện & Chuyển đổi**: Thêm popup quảng cáo (#promoPopup) vào trang chủ. Sử dụng nút Close (X) phong cách pixel-art màu đỏ thương hiệu dựng trực tiếp bằng SVG và thiết lập liên kết mượt mà cuộn thẳng đến phần liên hệ `#contact` khi nhấp vào banner.
+- **Mobile Responsiveness**: Khống chế chiều rộng banner tối đa `320px` và chiều cao tối đa `70vh` trên màn hình nhỏ/điện thoại, đảm bảo giao diện popup cân đối và không làm tràn nút đóng ra ngoài màn hình.
+- **Bộ 3 Trình kích hoạt (Triggers)**:
+  - **Scroll Depth**: Kích hoạt khi cuộn qua 25% chiều dài trang chủ.
+  - **Time Delay**: Kích hoạt sau 10 giây ở lại trang.
+  - **Exit Intent**: Kích hoạt trên máy tính khi di chuyển con trỏ chuột hướng lên thanh địa chỉ của trình duyệt để chuẩn bị rời trang.
+- **Tần suất hiển thị (Frequency Capping)**: Triển khai Cookie lưu trạng thái tắt `promo_popup_dismissed=true` trong vòng 1 ngày để đảm bảo không hiển thị lặp đi lặp lại gây khó chịu cho khách hàng.
+
+### Nút Quay về đầu trang (Back to Top)
+- **Vị trí và căn gióng**: Bổ sung nút quay về đầu trang dạng hình tròn màu đỏ thương hiệu nằm ở góc dưới bên phải, căn ngang thẳng hàng sang trái nút Messenger (`right: 94px` trên desktop và `right: 76px` trên mobile), tạo bố cục gọn gàng, đồng bộ.
+- **Kích hoạt & Trải nghiệm**: Thiết lập kích hoạt hiển thị khi cuộn trang đạt mốc **50%** trở lên. Áp dụng hiệu ứng fade-in + slide-in mềm mại.
+- **Đồng bộ hóa**: Tích hợp đồng loạt trên trang chủ (`index.html`) và cả 5 trang con giới thiệu sản phẩm trong thư mục `products/`.
+
+### Đo lường chuyển đổi (Analytics)
+- **Gửi form thành công**: Tích hợp hàm kích hoạt sự kiện `generate_lead` của Google Analytics khi form báo giá được gửi thành công, giúp việc theo dõi hiệu suất marketing chuẩn xác và trực quan.
+
+### Đa ngôn ngữ (i18n) cho các trang con
+- **Đồng bộ hóa Ngôn ngữ**: Liên kết file `i18n.js` vào cả 5 trang sản phẩm (`acs.html`, `aur.html`, `efk.html`, `kdh.html`, `suv.html`). Giao diện sẽ tự động chuyển sang tiếng Anh hoặc tiếng Việt dựa trên tùy chọn đã lưu ở trang chủ hoặc chuyển đổi trực tiếp trên trang con.
+- **Thanh Menu & Nút chuyển ngôn ngữ**: Thêm cụm nút chọn ngôn ngữ (VI/EN) và nút menu mobile (hamburger) vào navbar của cả 5 trang con để đồng bộ hóa hoàn toàn trải nghiệm người dùng.
+- **Dịch thuật toàn diện nội dung**: Khai báo đầy đủ các thẻ `data-i18n` và dịch thuật toàn bộ các phần: Tiêu đề trang (SEO Title), Mô tả trang (Meta Description), Tiêu đề chính, Các tính năng nổi bật, Mô tả ứng dụng thực tế, Nhãn sản phẩm tiêu biểu và Nút liên hệ của từng trang con.
+
 ## [1.3.0] - 2026-05-18
 
 **Service**: murrplastik-vn-web  

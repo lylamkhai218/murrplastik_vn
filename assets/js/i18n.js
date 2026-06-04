@@ -121,7 +121,101 @@ const TRANSLATIONS = {
     /* Popup */
     'popup.title': 'Gửi thành công!',
     'popup.text': 'Cảm ơn bạn đã tin tưởng. Đội ngũ T&T Vina sẽ liên hệ với bạn trong giây lát.',
-    'popup.close': 'Đóng'
+    'popup.close': 'Đóng',
+    
+    /* Subpage Commons */
+    'prod.back': '← Quay lại danh mục',
+    'prod.features': 'Đặc điểm nổi bật',
+    'prod.applications': 'Ứng dụng thực tế',
+    'prod.gallery': 'Sản phẩm tiêu biểu',
+    
+    /* ACS Page */
+    'acs.title': 'ACS - Tem nhãn & Hệ thống dán nhãn | Murrplastik Việt Nam',
+    'acs.meta.desc': 'Hệ thống tem nhãn ACS của Murrplastik - Giải pháp đánh dấu cáp, thiết bị chuyên nghiệp. Độ bền cao, chống chịu hóa chất và tia UV.',
+    'acs.hero.title': 'ACS — Hệ thống tem nhãn & Dán nhãn',
+    'acs.hero.desc': 'Giải pháp đánh dấu chuyên nghiệp cho cáp, dây điện, tủ bảng điện, terminal block và các linh kiện trong môi trường công nghiệp khắc nghiệt.',
+    'acs.feat.1': 'Độ bền vượt trội trong môi trường nhiệt độ cao, hóa chất, dầu mỡ và tia UV.',
+    'acs.feat.2': 'Công nghệ khắc laser, in nhiệt và in phun chất lượng cao, không phai mờ.',
+    'acs.feat.3': 'Tương thích hoàn toàn với các chuẩn thiết bị đóng cắt của nhiều hãng lớn.',
+    'acs.feat.4': 'Phần mềm thiết kế mp-Universal dễ sử dụng, tối ưu quy trình tạo nhãn hàng loạt.',
+    'acs.app.desc': 'Hệ thống nhãn ACS được ứng dụng rộng rãi trong chế tạo tủ điện, tự động hóa máy móc, công nghiệp năng lượng tái tạo, và công nghiệp ô tô. Đảm bảo mọi đường cáp và thiết bị đều được định danh rõ ràng, hỗ trợ tối đa cho việc bảo trì và xử lý sự cố.',
+    'acs.gallery.1': 'Hệ thống khắc Laser mp-LM 3',
+    'acs.gallery.2': 'Tổng quan hệ thống dán nhãn',
+    'acs.gallery.3': 'Thẻ nhãn dòng KS',
+    'acs.gallery.4': 'Nhãn dán KME',
+    'acs.gallery.5': 'Hệ thống LAM',
+    'acs.gallery.6': 'Thẻ nhãn dòng KSM',
+    'acs.quote.btn': 'Yêu cầu báo giá hệ thống ACS',
+
+    /* AUR Page */
+    'aur.title': 'AUR - Phụ kiện Tự động hóa & Robot | Murrplastik Việt Nam',
+    'aur.meta.desc': 'Phụ kiện robot AUR từ Murrplastik - Kẹp ống, gá đỡ xoay, ống lồng lò xo cho cánh tay robot. Hạn chế đứt cáp ngầm, tăng tuổi thọ hệ thống dây dẫn.',
+    'aur.hero.title': 'AUR — Phụ kiện Tự động hóa & Robot',
+    'aur.hero.desc': 'Thiết kế dạng mô-đun linh hoạt, gá đỡ xoay tự do và ống lồng lò xo giúp tối ưu tuyến cáp, loại bỏ đứt ngầm cho cánh tay robot.',
+    'aur.feat.1': 'Thiết kế dạng mô-đun linh hoạt, dễ dàng gắn trực tiếp lên thân các loại robot phổ biến (KUKA, ABB, Yaskawa, FANUC).',
+    'aur.feat.2': 'Kẹp ống (conduit clamps) và gá đỡ xoay tự do giúp cáp không bị vặn xoắn, kéo giãn quá mức khi robot vận hành.',
+    'aur.feat.3': 'Hệ thống ống lồng lò xo tạo độ căng vừa phải (retraction system), tự động thu dây cáp thừa tránh vướng víu.',
+    'aur.feat.4': 'Độ bền mỏi tuyệt vời, tăng tuổi thọ dây dẫn lên hàng chục lần so với cố định thông thường.',
+    'aur.app.desc': 'Dòng sản phẩm AUR là trái tim trong hệ thống tự động hóa nhà máy, đặc biệt ở các khu vực robot hàn, robot gắp thả (pick & place), robot sơn ô tô. Việc sử dụng phụ kiện chuyên dụng giúp loại bỏ hoàn toàn các lỗi đứt ngầm dây tín hiệu, giảm thời gian chết (downtime) của dây chuyền.',
+    'aur.gallery.1': 'Ứng dụng Robot trong sản xuất ô tô',
+    'aur.gallery.2': 'Hệ thống gá đỡ linh hoạt FHS',
+    'aur.gallery.3': 'Hệ thống R-Tec Box',
+    'aur.gallery.4': 'Phụ kiện dòng R-FKD',
+    'aur.gallery.5': 'Giá đỡ dòng SHS',
+    'aur.gallery.6': 'Cấu hình Dresspack cho Robot',
+    'aur.quote.btn': 'Yêu cầu báo giá hệ thống AUR',
+
+    /* EFK Page */
+    'efk.title': 'EFK - Máng xích nhựa (Energy Chains) | Murrplastik Việt Nam',
+    'efk.meta.desc': 'Máng xích nhựa EFK Murrplastik - Bảo vệ dây dẫn trong chuyển động tịnh tiến, tốc độ cao. Chống bụi bẩn, giảm ma sát tối đa.',
+    'efk.hero.title': 'EFK — Máng xích nhựa (Energy Chains)',
+    'efk.hero.desc': 'Bảo vệ dây cáp và ống dẫn trong chuyển động liên tục cho robot, máy CNC, máy cắt laser, cầu trục công nghiệp.',
+    'efk.feat.1': 'Hoạt động cực êm ái (low-noise) và ít ma sát, giảm thiểu bụi sinh ra trong quá trình vận hành.',
+    'efk.feat.2': 'Vật liệu nhựa siêu bền chịu được ma sát liên tục với tốc độ gia tốc lớn.',
+    'efk.feat.3': 'Thiết kế thông minh cho phép dễ dàng mở mắt xích để thay thế, bảo trì hoặc bổ sung cáp.',
+    'efk.feat.4': 'Có các dòng máng xích kín chuyên biệt ngăn ngừa mạt kim loại và bụi bẩn công nghiệp rơi vào dây dẫn.',
+    'efk.app.desc': 'Energy Chains của Murrplastik không thể thiếu trên các trục trượt của máy CNC, máy cắt laser, cánh tay robot 7 trục, cầu trục công nghiệp, và trong hệ thống lưu trữ logistics tự động. Chúng đảm bảo đường điện, đường khí nén luôn được bảo vệ ngay cả khi di chuyển qua lại hàng triệu chu kỳ.',
+    'efk.gallery.1': 'Tổng quan máng xích nhựa',
+    'efk.gallery.2': 'Dòng HEAVYLINE (Tải trọng nặng)',
+    'efk.gallery.3': 'Dòng MODULLINE (Lắp ghép linh hoạt)',
+    'efk.gallery.4': 'Hệ thống Energy Chain đồng bộ',
+    'efk.quote.btn': 'Yêu cầu báo giá hệ thống EFK',
+
+    /* KDH Page */
+    'kdh.title': 'KDH - Hệ thống đầu vào cáp & Giá đỡ | Murrplastik Việt Nam',
+    'kdh.meta.desc': 'Tấm luồn cáp KDH Murrplastik - Tiết kiệm không gian, thi công nhanh chóng, chuẩn IP65/IP68. Giải pháp tối ưu cho tủ điện máy CNC.',
+    'kdh.hero.title': 'KDH — Hệ thống đầu vào cáp & Giá đỡ',
+    'kdh.hero.desc': 'Giải pháp tấm luồn cáp thông minh thay thế cổ siết cáp truyền thống, đảm bảo cấp bảo vệ IP65/IP68 và giảm tải trọng kéo.',
+    'kdh.feat.1': 'Cho phép luồn cùng lúc nhiều dây cáp (đã bấm sẵn hoặc chưa bấm đầu code) qua một không gian cực nhỏ.',
+    'kdh.feat.2': 'Thiết kế dạng block hoặc tấm luồn linh hoạt, tháo lắp dễ dàng khi có nhu cầu bảo trì, thêm/bớt dây.',
+    'kdh.feat.3': 'Khả năng chống thấm nước và bụi bẩn đạt tới IP65 / IP68 tùy biến thể.',
+    'kdh.feat.4': 'Khung và kẹp cáp chịu lực kẹp lớn giúp giảm tải trọng kéo (strain relief) tối ưu.',
+    'kdh.app.desc': 'Giải pháp Cable Entry Systems (KDH) là lựa chọn hàng đầu cho các nhà thiết kế tủ bảng điện, máy CNC, và trạm điều khiển tự động. Thay thế hoàn toàn các loại đầu siết cáp truyền thống cồng kềnh, giúp tủ điện trở nên gọn gàng và nâng cao tuổi thọ của thiết bị bên trong.',
+    'kdh.gallery.1': 'Tổng quan tấm luồn & đầu vào cáp',
+    'kdh.gallery.2': 'Tấm luồn cáp KDPZ',
+    'kdh.gallery.3': 'Hệ thống KDLE+',
+    'kdh.gallery.4': 'Tấm luồn cáp KDPN',
+    'kdh.gallery.5': 'Tấm luồn KDPP-EX (Chống cháy nổ)',
+    'kdh.gallery.6': 'Giải pháp chống nhiễu EMC',
+    'kdh.quote.btn': 'Yêu cầu báo giá hệ thống KDH',
+
+    /* SUV Page */
+    'suv.title': 'SUV - Ống dẫn & Phụ kiện bảo vệ cáp | Murrplastik Việt Nam',
+    'suv.meta.desc': 'Ống dẫn gân nhựa SUV Murrplastik - Bảo vệ dây cáp tuyệt đối chống va đập, tia UV, hóa chất. Đạt tiêu chuẩn IP68/IP69K.',
+    'suv.hero.title': 'SUV — Ống dẫn & Phụ kiện',
+    'suv.hero.desc': 'Ống luồn gân nhựa polyamide cao cấp và khớp nối nhanh đạt chuẩn IP68/IP69K, kháng hóa chất và tia UV.',
+    'suv.feat.1': 'Bảo vệ hoàn hảo khỏi các tác động cơ học: va đập, cọ xát, đứt gãy.',
+    'suv.feat.2': 'Vật liệu nhựa polyamide cao cấp chống cháy, chống tia cực tím và kháng hóa chất.',
+    'suv.feat.3': 'Thiết kế gân linh hoạt (corrugated) cho độ đàn hồi cao, dễ uốn cong trong không gian hẹp.',
+    'suv.feat.4': 'Các khớp nối (fittings) lắp đặt cực kỳ nhanh chóng mà không cần dụng cụ đặc biệt, đạt chuẩn IP68, IP69K.',
+    'suv.app.desc': 'Dòng sản phẩm SUV của Murrplastik là xương sống bảo vệ dây cáp cho các hệ thống máy kéo sợi, cầu trục nâng hạ, toa xe lửa, và các máy móc thi công xây dựng ngoài trời. Khả năng chống chịu thời tiết vượt trội giúp tiết kiệm tối đa chi phí bảo trì.',
+    'suv.gallery.1': 'Tổng quan ống dẫn & phụ kiện',
+    'suv.gallery.2': 'Ống dẫn dòng EW-R-PP',
+    'suv.gallery.3': 'Ống dẫn dòng EWL-PAB',
+    'suv.gallery.4': 'Ống luồn chia đôi EWT-PP',
+    'suv.gallery.5': 'Giá đỡ ống dòng UHE',
+    'suv.gallery.6': 'Đầu nối dòng SAT-GF',
+    'suv.quote.btn': 'Yêu cầu báo giá hệ thống SUV'
   },
   en: {
     /* Nav */
@@ -241,7 +335,101 @@ const TRANSLATIONS = {
     /* Popup */
     'popup.title': 'Sent Successfully!',
     'popup.text': 'Thank you for your trust. T&T Vina team will contact you shortly.',
-    'popup.close': 'Close'
+    'popup.close': 'Close',
+
+    /* Subpage Commons */
+    'prod.back': '← Back to categories',
+    'prod.features': 'Key Features',
+    'prod.applications': 'Real-world Applications',
+    'prod.gallery': 'Featured Products',
+    
+    /* ACS Page */
+    'acs.title': 'ACS - Labeling & Marking Systems | Murrplastik Vietnam',
+    'acs.meta.desc': 'Murrplastik\'s ACS labeling system - Professional cable and device marking solution. High durability, chemical and UV resistance.',
+    'acs.hero.title': 'ACS — Labeling & Marking Systems',
+    'acs.hero.desc': 'Professional marking solutions for cables, wires, control cabinets, terminal blocks, and components in harsh industrial environments.',
+    'acs.feat.1': 'Outstanding durability in high temperature, chemical, oil, grease, and UV environments.',
+    'acs.feat.2': 'High-quality, fade-free laser marking, thermal printing, and inkjet printing technologies.',
+    'acs.feat.3': 'Fully compatible with terminal and switchgear standards of major global brands.',
+    'acs.feat.4': 'Easy-to-use mp-Universal design software, optimizing mass label creation workflows.',
+    'acs.app.desc': 'The ACS labeling system is widely applied in control cabinet manufacturing, machine automation, renewable energy, and the automotive industry. It ensures clear identification of all cables and devices, maximizing support for maintenance and troubleshooting.',
+    'acs.gallery.1': 'mp-LM 3 Laser Marking System',
+    'acs.gallery.2': 'Labeling systems overview',
+    'acs.gallery.3': 'KS label plates',
+    'acs.gallery.4': 'KME labels',
+    'acs.gallery.5': 'LAM system',
+    'acs.gallery.6': 'KSM label plates',
+    'acs.quote.btn': 'Request a quote for ACS system',
+
+    /* AUR Page */
+    'aur.title': 'AUR - Robotics & Automation Accessories | Murrplastik Vietnam',
+    'aur.meta.desc': 'Murrplastik\'s AUR robotics accessories - Conduit clamps, swiveling holders, spring-loaded retraction systems. Prevent wire breaks, extend conduit lifetime.',
+    'aur.hero.title': 'AUR — Robotics & Automation Accessories',
+    'aur.hero.desc': 'Flexible modular design, free-swiveling holders, and spring-loaded retraction systems for optimized cable routing on robot arms.',
+    'aur.feat.1': 'Flexible modular design, easily mounted directly onto popular robot brands (KUKA, ABB, Yaskawa, FANUC).',
+    'aur.feat.2': 'Conduit clamps and free-swiveling holders prevent cable twisting and excessive stretching during robot operations.',
+    'aur.feat.3': 'Spring-loaded retraction systems create proper tension, automatically pulling back excess cables to avoid tangling.',
+    'aur.feat.4': 'Excellent fatigue strength, extending cable lifetime up to ten times compared to standard mounting.',
+    'aur.app.desc': 'The AUR line is the heart of factory automation, especially in welding, pick & place, and automotive painting robot cells. Using specialized accessories completely eliminates internal signal wire breaks and reduces assembly line downtime.',
+    'aur.gallery.1': 'Robotics in automotive manufacturing',
+    'aur.gallery.2': 'FHS flexible holder system',
+    'aur.gallery.3': 'R-Tec Box system',
+    'aur.gallery.4': 'R-FKD series accessories',
+    'aur.gallery.5': 'SHS holder series',
+    'aur.gallery.6': 'Dresspack configuration for Robots',
+    'aur.quote.btn': 'Request a quote for AUR system',
+
+    /* EFK Page */
+    'efk.title': 'EFK - Energy Chains (Drag Chains) | Murrplastik Vietnam',
+    'efk.meta.desc': 'Murrplastik EFK Energy Chains - Protect conductors in high-speed, linear motion. Minimize dust, friction, and wear.',
+    'efk.hero.title': 'EFK — Energy Chains (Drag Chains)',
+    'efk.hero.desc': 'Cable and hose protection in continuous motion for robots, CNC machines, laser cutters, and industrial cranes.',
+    'efk.feat.1': 'Low-noise and low-friction operation, minimizing dust generation during service.',
+    'efk.feat.2': 'Extremely durable plastic material resistant to continuous friction and high accelerations.',
+    'efk.feat.3': 'Smart design allowing easy opening of chain links for replacement, maintenance, or cable additions.',
+    'efk.feat.4': 'Special closed drag chains prevent industrial dust and metal shavings from contacting conductors.',
+    'efk.app.desc': 'Murrplastik Energy Chains are essential on slider axes of CNC machines, laser cutters, 7-axis robot arms, industrial overhead cranes, and automated logistics systems. They ensure power and pneumatic lines remain protected through millions of cycles.',
+    'efk.gallery.1': 'Energy chain overview',
+    'efk.gallery.2': 'HEAVYLINE series (Heavy load)',
+    'efk.gallery.3': 'MODULLINE series (Flexible assembly)',
+    'efk.gallery.4': 'Integrated Energy Chain system',
+    'efk.quote.btn': 'Request a quote for EFK system',
+
+    /* KDH Page */
+    'kdh.title': 'KDH - Cable Entry & Holder Systems | Murrplastik Vietnam',
+    'kdh.meta.desc': 'Murrplastik KDH cable entry plates - Save space, fast installation, IP65/IP68 protection. Ideal solution for CNC cabinets.',
+    'kdh.hero.title': 'KDH — Cable Entry & Holder Systems',
+    'kdh.hero.desc': 'Smart cable entry plate solutions replacing traditional cable glands, ensuring IP65/IP68 protection and strain relief.',
+    'kdh.feat.1': 'Allows feeding multiple pre-terminated or standard cables through minimal space.',
+    'kdh.feat.2': 'Flexible block or plate design, easy to assemble/disassemble when adding or maintaining cables.',
+    'kdh.feat.3': 'Water and dust resistance ratings up to IP65 / IP68 depending on variant.',
+    'kdh.feat.4': 'High clamping force frames and cable clamps provide optimal strain relief.',
+    'kdh.app.desc': 'Cable Entry Systems (KDH) are the preferred choice for control cabinet designers, CNC machines, and automated control stations, replacing bulky traditional cable glands for cleaner cabinets and longer component lifespans.',
+    'kdh.gallery.1': 'Cable entry plates & systems overview',
+    'kdh.gallery.2': 'KDPZ cable entry plate',
+    'kdh.gallery.3': 'KDLE+ system',
+    'kdh.gallery.4': 'KDPN cable entry plate',
+    'kdh.gallery.5': 'KDPP-EX entry plate (Explosion proof)',
+    'kdh.gallery.6': 'EMC shielding solutions',
+    'kdh.quote.btn': 'Request a quote for KDH system',
+
+    /* SUV Page */
+    'suv.title': 'SUV - Cable Protection Conduits & Fittings | Murrplastik Vietnam',
+    'suv.meta.desc': 'Murrplastik SUV corrugated polyamide conduits - Ultimate cable protection against impact, UV, chemicals. IP68/IP69K rating.',
+    'suv.hero.title': 'SUV — Conduits & Fittings',
+    'suv.hero.desc': 'Premium polyamide corrugated tubes and quick-connect fittings rating IP68/IP69K, chemical and UV resistant.',
+    'suv.feat.1': 'Perfect protection against mechanical impacts: shocks, abrasion, and tear.',
+    'suv.feat.2': 'High-grade polyamide plastic with flame-retardant, UV-resistant, and chemical-resistant properties.',
+    'suv.feat.3': 'Flexible corrugated design providing high elasticity, easily bent in tight spaces.',
+    'suv.feat.4': 'Fittings install extremely quickly without special tools, achieving IP68, IP69K ratings.',
+    'suv.app.desc': 'Murrplastik SUV products are the backbone of cable protection in textile machines, overhead crane lifters, train carriages, and outdoor construction equipment. Excellent weather resistance guarantees minimal maintenance cost.',
+    'suv.gallery.1': 'Conduits & fittings overview',
+    'suv.gallery.2': 'EW-R-PP conduit series',
+    'suv.gallery.3': 'EWL-PAB conduit series',
+    'suv.gallery.4': 'EWT-PP split conduit',
+    'suv.gallery.5': 'UHE conduit holder',
+    'suv.gallery.6': 'SAT-GF fitting series',
+    'suv.quote.btn': 'Request a quote for SUV system'
   }
 };
 
@@ -252,6 +440,18 @@ function t(key) {
 }
 
 function applyTranslations() {
+  // Translate document title if it has data-i18n
+  const titleEl = document.querySelector('title');
+  if (titleEl && titleEl.getAttribute('data-i18n')) {
+    document.title = t(titleEl.getAttribute('data-i18n'));
+  }
+  
+  // Translate meta description if it has data-i18n
+  const metaDescEl = document.querySelector('meta[name="description"]');
+  if (metaDescEl && metaDescEl.getAttribute('data-i18n')) {
+    metaDescEl.setAttribute('content', t(metaDescEl.getAttribute('data-i18n')));
+  }
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const attr = el.getAttribute('data-i18n-attr');
