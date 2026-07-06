@@ -2,6 +2,30 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.5.0] - 2026-07-06
+
+**Service**: murrplastik-vn-web  
+**Purpose**: feat(subpage, i18n, responsive): Tích hợp toàn diện trang con Thực phẩm & Đồ uống (F&B) và hoàn thiện hệ thống đa ngôn ngữ VI/EN song ngữ.  
+**Release at**: 06/07/2026  
+**By who**: KhaiLL
+
+### Tích hợp Trang con Thực phẩm & Đồ uống (Food & Beverage)
+- **Tích hợp Code & Tài nguyên**: Nhập toàn bộ dữ liệu, hình ảnh, video và cấu trúc từ dự án `foodbeverage_murrplastikvn` vào thư mục `industries/foodbeverage/`.
+- **Đồng bộ hóa Trang chủ (`index.html`)**: Đưa mục "Thực phẩm" (Food & Beverage) lên vị trí đầu tiên trong danh mục Ngành công nghiệp (`#industries`), áp dụng hiệu ứng hover tương tác, chuyển hướng trực tiếp vào trang con F&B.
+- **Đồng bộ Đặc trưng Thương hiệu**: Bổ sung Favicon chuẩn, nút "Quay lại trang chủ" thương hiệu, và đồng bộ thông tin đại lý ủy quyền T&T Vina trên thanh Navigation Header.
+
+### Tối ưu hóa Navigation & Layout Responsive
+- **Cố định Thanh Navigation Bar**: Khắc phục hoàn toàn hiện tượng vỡ/xuống thành 2 dòng trên thanh menu khi chuyển đổi ngôn ngữ bằng cách thiết lập `white-space: nowrap`, `display: inline-block` và `flex-shrink: 0` cho toàn bộ liên kết điều hướng và nút chức năng.
+
+### Hệ thống Đa ngôn ngữ Chuyên sâu (i18n VI/EN)
+- **Mở rộng Từ điển `assets/js/i18n.js`**: Bổ sung bộ từ điển VI/EN đầy đủ cho trang F&B bao gồm:
+  - **Sản phẩm & Giải pháp (`fb.prod.*`)**: 4 tab sản phẩm (Thép không gỉ FDA, Nhựa thực phẩm FDA, Ống & Xích nhựa vệ sinh, Lạt nhựa phát hiện dị vật), mô tả chi tiết, ưu điểm và bảng thông số kỹ thuật (Spec Tables).
+  - **Thư viện Tài liệu (`fb.lib.*`, `fb.doc*`)**: Tiêu đề tài liệu, định dạng PDF, kích thước file và các nút bấm xem trực tuyến/tải về.
+  - **Các dự án mẫu (`fb.cases.*`, `fb.case*`)**: Case studies thực tế (Velec Systems, Züger AG, Facebook Reels video).
+  - **Thông tin Đại lý & Form (`fb.info.*`, `fb.contact.*`)**: Nhãn liên hệ, email, hotline, hướng dẫn quét QR Zalo và thông báo gửi thành công (Toast).
+  - **Chân trang (`fb.foot.*`)**: Mô tả đại lý, danh mục liên kết nhanh và ghi chú bản quyền.
+- **Gắn thẻ HTML (`data-i18n` & `data-i18n-html`)**: Gắn thuộc tính dịch thuật chính xác vào tất cả các thẻ văn bản và thẻ HTML chứa format trong `industries/foodbeverage/index.html`, đảm bảo trải nghiệm chuyển đổi ngôn ngữ mượt mà 100%.
+
 ## [1.4.0] - 2026-06-04
 
 **Service**: murrplastik-vn-web  

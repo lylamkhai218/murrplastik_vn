@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Smooth scroll for anchor links ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
+    if (a.id === 'promoPopupLink') return; // Handled separately by popup logic
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) {
@@ -229,9 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Image Link Click Action
-    promoLink.addEventListener('click', () => {
+    promoLink.addEventListener('click', (e) => {
+      e.preventDefault();
       promoPopup.classList.remove('open');
       setCookie('promo_popup_dismissed', 'true', 1);
+      // Scroll to #contact after popup close animation completes
+      setTimeout(() => {
+        const contactEl = document.getElementById('contact');
+        if (contactEl) {
+          const offset = document.getElementById('navbar').offsetHeight + 8;
+          window.scrollTo({ top: contactEl.offsetTop - offset, behavior: 'smooth' });
+        }
+      }, 350);
     });
   }
 

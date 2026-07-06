@@ -268,13 +268,60 @@ ul{list-style:none}
 /* === INDUSTRIES === */
 #industries{background:var(--white);padding:5rem 3rem}
 .ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:3rem}
-.ind-item{background:var(--light);padding:1.5rem 1rem;text-align:center;transition:all var(--t)}
-/* Remove hover effects to avoid confusion with clickable items */
-/* .ind-item:hover{background:var(--red);transform:translateY(-4px)}
-.ind-item:hover .ind-name{color:#fff}
-.ind-item:hover .ind-icon{color:#fff;opacity:1} */
+.ind-item{background:var(--light);padding:1.5rem 1rem;text-align:center;transition:all var(--t);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+/* Regular items remain static */
 .ind-icon{font-size:28px;margin-bottom:10px;opacity:0.7;transition:all var(--t)}
 .ind-name{font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--dark);transition:color var(--t)}
+
+/* Active clickable item with hover effect */
+.ind-item-active {
+  background: var(--white);
+  border: 1.5px solid rgba(200, 16, 46, 0.25);
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+}
+.ind-item-active .ind-active-tag {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+.ind-item-active .ind-arrow {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--red);
+  font-weight: 700;
+  transition: transform var(--t), color var(--t);
+}
+.ind-item-active:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(200, 16, 46, 0.3);
+}
+.ind-item-active:hover .ind-name,
+.ind-item-active:hover .ind-arrow {
+  color: var(--white);
+}
+.ind-item-active:hover .ind-arrow {
+  transform: translateX(4px);
+}
+.ind-item-active:hover .ind-icon {
+  transform: scale(1.15);
+  opacity: 1;
+}
+.ind-item-active:hover .ind-active-tag {
+  background: var(--white);
+  color: var(--red);
+}
 
 /* === CERTIFICATE === */
 #certificate{background:var(--light);padding:5rem 3rem}
