@@ -2,9 +2,21 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.5.1] - 2026-07-07
+
+**Service**: murrplastik-vn-web  
+**Purpose**: fix(font, encoding): Sửa lỗi hiển thị sai font chữ (mã hóa ký tự) tiếng Việt trên trang con Thực phẩm & Đồ uống (F&B) và cấu hình UTF-8 mặc định cho máy chủ.  
+**Release at**: 07/07/2026  
+**By who**: KhaiLL
+
+### Khắc phục lỗi hiển thị font (Mã hóa ký tự)
+- **Di chuyển thẻ Meta Charset**: Di chuyển thẻ `<meta charset="UTF-8">` và `<meta name="viewport">` lên đầu thẻ `<head>` trong file `industries/foodbeverage/index.html` để đảm bảo trình duyệt nhận diện UTF-8 ngay lập tức (trong 1024 byte đầu tiên), khắc phục lỗi font tiếng Việt hiển thị dạng Mojibake.
+- **Cấu hình Bảng mã mặc định (.htaccess)**: Thêm chỉ thị `AddDefaultCharset UTF-8` và `AddCharset UTF-8` trong file cấu hình `.htaccess` để máy chủ Apache/LiteSpeed luôn phục vụ các file tĩnh (HTML, CSS, JS, JSON) với bộ mã UTF-8 mặc định.
+
 ## [1.5.0] - 2026-07-06
 
 **Service**: murrplastik-vn-web  
+
 **Purpose**: feat(subpage, i18n, responsive): Tích hợp toàn diện trang con Thực phẩm & Đồ uống (F&B) và hoàn thiện hệ thống đa ngôn ngữ VI/EN song ngữ.  
 **Release at**: 06/07/2026  
 **By who**: KhaiLL

@@ -1,6 +1,10 @@
-# Murrplastik Việt Nam (murrplastikvn.com)
+# Murrplastik Việt Nam ([murrplastikvn.com](https://murrplastikvn.com))
 
 Dự án phát triển trang thông tin và giới thiệu sản phẩm chính thức của **Murrplastik** tại Việt Nam, đại lý phân phối ủy quyền bởi **T&T Vina Industrial Co., Ltd**.
+
+Website chính thức: [https://murrplastikvn.com](https://murrplastikvn.com)
+
+![Giao diện trang con Thực phẩm & Đồ uống (F&B) Murrplastik Việt Nam](assets/images/screenshot_fb.png)
 
 Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng xích nhựa, đầu vào cáp và phụ kiện robot hàng đầu từ tập đoàn Murrplastik GmbH (Đức).
 
@@ -86,10 +90,3 @@ Trang web được xây dựng hoàn toàn dưới dạng tĩnh (Static HTML/CSS
 3.  Upload toàn bộ các file ở thư mục gốc và thư mục con (`products/`, `assets/`) lên.
 4.  **Quan trọng**: Hãy đảm bảo upload cả file ẩn cấu hình `.htaccess` để kích hoạt tự động chuyển hướng bảo mật HTTPS, non-WWW và cấu hình nén/cache của máy chủ.
 
----
-
-## 📝 Quy Tắc Nhật Ký Cập Nhật (Changelog)
-
-Các thay đổi của dự án được lưu vết chặt chẽ tại file `CHANGELOG.md` theo định dạng chuẩn:
-*   Mỗi đợt cập nhật cần khai báo tiêu đề phiên bản kèm ngày tháng dạng `## [X.Y.Z] - YYYY-MM-DD`.
-*   Cung cấp thông tin metadata: **Service**, **Purpose**, **Release at**, và đặc biệt người thực hiện phát hành **By who: KhaiLL** (mặc định luôn ghi nhận tác giả là `KhaiLL`).

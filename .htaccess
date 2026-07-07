@@ -33,3 +33,6 @@
   ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
+# 5. Thiết lập mã hóa UTF-8 mặc định cho tất cả các file
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json
