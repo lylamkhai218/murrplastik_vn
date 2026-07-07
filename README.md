@@ -4,7 +4,7 @@ Dự án phát triển trang thông tin và giới thiệu sản phẩm chính t
 
 Website chính thức: [https://murrplastikvn.com](https://murrplastikvn.com)
 
-![Giao diện trang con Thực phẩm & Đồ uống (F&B) Murrplastik Việt Nam](assets/images/screenshot_fb.png)
+![Mockup trang chủ (tiếng Anh) trên Desktop, Tablet và Mobile](assets/images/mockup_homepage.png)
 
 Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng xích nhựa, đầu vào cáp và phụ kiện robot hàng đầu từ tập đoàn Murrplastik GmbH (Đức).
 
@@ -45,12 +45,19 @@ Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng x
 ├── sitemap.xml                 # Sơ đồ trang web hỗ trợ SEO Google
 ├── CHANGELOG.md                # Nhật ký cập nhật phiên bản
 ├── README.md                   # Tài liệu hướng dẫn dự án (File này)
+├── admin/                      # Trang quản trị sản phẩm nội bộ (CRUD)
+│   ├── index.html              # Đăng nhập Admin
+│   └── dashboard.html          # Dashboard quản lý sản phẩm
 ├── products/                   # Thư mục chứa các trang con chi tiết sản phẩm
 │   ├── acs.html                # ACS - Tem nhãn & Hệ thống dán nhãn
 │   ├── aur.html                # AUR - Phụ kiện Robot & Tự động hóa
 │   ├── efk.html                # EFK - Máng xích nhựa (Energy Chains)
 │   ├── kdh.html                # KDH - Hệ thống đầu vào cáp & Giá đỡ
 │   └── suv.html                # SUV - Ống dẫn & Phụ kiện bảo vệ cáp
+├── industries/                 # Thư mục chứa các trang ngành công nghiệp ứng dụng
+│   └── foodbeverage/           # Trang con ngành Thực phẩm & Đồ uống (F&B)
+│       ├── index.html          # Trang giới thiệu F&B (VI/EN)
+│       └── ...                 # Tài liệu, video, hình ảnh sản phẩm F&B
 └── assets/                     # Thư mục tài nguyên tĩnh
     ├── css/
     │   └── main.css            # Stylesheet chính của website
@@ -58,7 +65,7 @@ Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng x
     │   ├── main.js             # Logic điều hướng, popup, menu, scroll
     │   ├── form.js             # Xử lý form, validate và gửi dữ liệu GA4
     │   └── i18n.js             # Bộ từ điển và engine dịch thuật VI/EN
-    └── images/                 # Hình ảnh sản phẩm (được phân loại theo danh mục)
+    └── images/                 # Hình ảnh sản phẩm và mockups
 ```
 
 ---
