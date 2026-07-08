@@ -23,11 +23,14 @@ Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng x
 *   Hỗ trợ dịch thuật toàn diện trên trang chủ và cả 5 trang con chi tiết sản phẩm bao gồm cả thẻ tiêu đề `<title>` và thẻ mô tả `<meta name="description">` chuẩn SEO.
 
 ### 3. Tối Ưu Hóa & Hiệu Năng (Performance)
-*   **Hình ảnh thế hệ mới**: 100% hình ảnh sản phẩm và banner quảng cáo được tối ưu hóa sang định dạng `.webp` dung lượng thấp nhưng vẫn giữ nguyên độ sắc nét (Giảm tới hơn 93% dung lượng tải trang).
+*   **Hình ảnh thế hệ mới & Chống xê dịch CLS**: 100% hình ảnh sản phẩm và banner quảng cáo được tối ưu hóa sang định dạng `.webp`/WebP thế hệ mới. Khai báo rõ ràng thuộc tính `width` và `height` cho tất cả ảnh chính để triệt tiêu xê dịch bố cục (CLS) khi tải trang.
+*   **Triệt tiêu Forced Reflow (Layout Thrashing)**: Tối ưu các sự kiện cuộn chuột (`scroll`) bằng cách cache tọa độ phần tử (`offsetTop`, `scrollHeight`), tránh trình duyệt tính toán lại layout liên tục.
+*   **Tải tài nguyên bất đồng bộ**: Preload Google Fonts bất đồng bộ và thêm thuộc tính `defer` vào các file JavaScript không thiết yếu nhằm tránh chặn hiển thị (render-blocking resources).
 *   **Cấu hình máy chủ (.htaccess)**:
+    *   **Gộp chuyển hướng**: Tối ưu hóa chuỗi chuyển hướng HTTP -> HTTPS và WWW -> Non-WWW về 1 bước duy nhất để giảm TTFB.
     *   Kích hoạt nén **Gzip** giảm dung lượng truyền tải mạng.
     *   Cấu hình **Browser Caching** lưu bộ nhớ đệm trình duyệt 1 năm cho ảnh, CSS và JS.
-    *   **Cache Busting**: Sử dụng mã phiên bản `?v=1.4.0` tại các link liên kết tài nguyên để ép buộc trình duyệt cập nhật giao diện mới nhất.
+    *   **Cache Busting**: Sử dụng mã phiên bản `?v=1.6.0` tại các link liên kết tài nguyên để ép buộc trình duyệt cập nhật giao diện mới nhất.
 
 ### 4. Form Liên Hệ & Theo Dõi Chuyển Đổi
 *   **Real-time Validation**: Kiểm tra định dạng Họ tên, Số điện thoại (VN), Email ngay khi nhập liệu.
@@ -49,13 +52,13 @@ Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng x
 │   ├── index.html              # Đăng nhập Admin
 │   └── dashboard.html          # Dashboard quản lý sản phẩm
 ├── products/                   # Thư mục chứa các trang con chi tiết sản phẩm
-│   ├── acs.html                # ACS - Tem nhãn & Hệ thống dán nhãn
-│   ├── aur.html                # AUR - Phụ kiện Robot & Tự động hóa
-│   ├── efk.html                # EFK - Máng xích nhựa (Energy Chains)
-│   ├── kdh.html                # KDH - Hệ thống đầu vào cáp & Giá đỡ
-│   └── suv.html                # SUV - Ống dẫn & Phụ kiện bảo vệ cáp
+│   ├── tem-nhan-va-he-thong-dan-nhan.html   # ACS - Tem nhãn & Hệ thống dán nhãn
+│   ├── phu-kien-robot-va-tu-dong-hoa.html  # AUR - Phụ kiện Robot & Tự động hóa
+│   ├── mang-xich-nhua-luon-cap.html         # EFK - Máng xích nhựa (Energy Chains)
+│   ├── he-thong-dau-vao-cap-va-gia-do.html  # KDH - Hệ thống đầu vào cáp & Giá đỡ
+│   └── ong-luon-day-cap-va-phu-kien.html    # SUV - Ống dẫn & Phụ kiện bảo vệ cáp
 ├── industries/                 # Thư mục chứa các trang ngành công nghiệp ứng dụng
-│   └── foodbeverage/           # Trang con ngành Thực phẩm & Đồ uống (F&B)
+│   └── thuc-pham-va-do-uong/   # Trang con ngành Thực phẩm & Đồ uống (F&B)
 │       ├── index.html          # Trang giới thiệu F&B (VI/EN)
 │       └── ...                 # Tài liệu, video, hình ảnh sản phẩm F&B
 └── assets/                     # Thư mục tài nguyên tĩnh

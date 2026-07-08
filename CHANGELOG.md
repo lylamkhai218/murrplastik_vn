@@ -2,6 +2,23 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.6.0] - 2026-07-08
+
+**Service**: murrplastik-vn-web  
+**Purpose**: perf(performance, seo): Tối ưu hóa hiệu năng chuyên sâu, triệt tiêu Forced Reflow, tối ưu CLS và cấu hình máy chủ.  
+**Release at**: 08/07/2026  
+**By who**: KhaiLL
+
+### Tối ưu hóa Chuyển hướng & Máy chủ (.htaccess)
+- **Tốc độ phản hồi (TTFB)**: Gộp các quy tắc chuyển hướng HTTPS và www/non-www thành một block xử lý duy nhất để rút ngắn chuỗi chuyển hướng từ 2 hop xuống còn 1 hop.
+
+### Khắc phục Lỗi Bố cục & Hiệu năng JavaScript (assets/js/main.js)
+- **Triệt tiêu Forced Reflow**: Refactor hàm `scrollSpy`, popup quảng cáo và nút "Back to Top". Thay vì đọc trực tiếp các thuộc tính bố cục (`offsetTop`, `scrollHeight`) trong listener sự kiện `scroll`, giá trị được cache trước tại bộ biến toàn cục và chỉ cập nhật lại khi xảy ra sự kiện `resize` hoặc `load`.
+
+### Tối ưu hóa Core Web Vitals & Tránh xê dịch bố cục CLS (index.html & F&B Page)
+- **Kích thước hình ảnh**: Khai báo rõ ràng thuộc tính `width` và `height` cho tất cả ảnh chính (banner popup, danh sách sản phẩm, thư ủy quyền đại lý ở trang chủ; ảnh đại diện dự án, ảnh sản phẩm, logo Zalo ở trang Thực phẩm & Đồ uống).
+- **Trì hoãn Chặn hiển thị**: Preload Google Fonts bất đồng bộ bằng `link rel="preload"` và thêm thuộc tính `defer` vào các script `i18n.js`, `main.js`, `form.js` để tránh render-blocking.
+
 ## [1.5.1] - 2026-07-07
 
 **Service**: murrplastik-vn-web  
@@ -16,7 +33,6 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 ## [1.5.0] - 2026-07-06
 
 **Service**: murrplastik-vn-web  
-
 **Purpose**: feat(subpage, i18n, responsive): Tích hợp toàn diện trang con Thực phẩm & Đồ uống (F&B) và hoàn thiện hệ thống đa ngôn ngữ VI/EN song ngữ.  
 **Release at**: 06/07/2026  
 **By who**: KhaiLL

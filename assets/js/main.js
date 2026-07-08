@@ -67,14 +67,31 @@ document.addEventListener('DOMContentLoaded', () => {
     return null;
   }).filter(Boolean);
 
+  // Cache section top offsets to avoid forced reflows during scroll
+  let sectionPositions = [];
+  const updateSectionPositions = () => {
+    const offset = navbar.offsetHeight + 100;
+    sectionPositions = sections.map(section => {
+      if (!section) return null;
+      return {
+        id: '#' + section.getAttribute('id'),
+        top: section.offsetTop - offset
+      };
+    }).filter(Boolean);
+  };
+
+  updateSectionPositions();
+  window.addEventListener('resize', updateSectionPositions);
+  window.addEventListener('load', updateSectionPositions);
+
   const scrollSpy = () => {
     let current = '';
-    const offset = navbar.offsetHeight + 100;
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - offset) {
-        current = '#' + section.getAttribute('id');
+    const scrollY = window.scrollY;
+    for (let i = 0; i < sectionPositions.length; i++) {
+      if (scrollY >= sectionPositions[i].top) {
+        current = sectionPositions[i].id;
       }
-    });
+    }
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === current);
     });
@@ -189,9 +206,16 @@ document.addEventListener('DOMContentLoaded', () => {
       setCookie('promo_popup_dismissed', 'true', 1); // 1 Day Capping
     };
 
+    // Cache docHeight to avoid forced reflows on scroll
+    let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const updateDocHeight = () => {
+      docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+    window.addEventListener('resize', updateDocHeight);
+    window.addEventListener('load', updateDocHeight);
+
     // Trigger 1: Scroll down 25% of the page
     const handleScrollTrigger = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight <= 0) return;
       const scrollPercent = (window.scrollY / docHeight) * 100;
       if (scrollPercent >= 25) {
@@ -248,8 +272,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Back to Top Button Logic ── */
   const backToTopBtn = document.getElementById('backToTop');
   if (backToTopBtn) {
+    let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const updateDocHeight = () => {
+      docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+    window.addEventListener('resize', updateDocHeight);
+    window.addEventListener('load', updateDocHeight);
+
     const toggleBackToTop = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight <= 0) return;
       const scrollPercent = (window.scrollY / docHeight) * 100;
       if (scrollPercent >= 50) {

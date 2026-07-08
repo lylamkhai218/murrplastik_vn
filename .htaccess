@@ -1,13 +1,38 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1. Tự động chuyển hướng từ HTTP sang HTTPS bảo mật
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # 1. Gộp chuyển hướng HTTP -> HTTPS và WWW -> Non-WWW (Tối ưu chỉ qua 1 lần chuyển hướng)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
 
-  # 2. Tự động chuyển hướng từ WWW sang Non-WWW (Ví dụ: www.murrplastikvn.com -> murrplastikvn.com)
-  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  # 3. Chuyển hướng các URL sản phẩm cũ (mã hãng) sang URL tiếng Việt mới (301 Redirect)
+  RewriteRule ^products/acs(\.html)?$ /products/tem-nhan-va-he-thong-dan-nhan [R=301,L,NC]
+  RewriteRule ^products/suv(\.html)?$ /products/ong-luon-day-cap-va-phu-kien [R=301,L,NC]
+  RewriteRule ^products/kdh(\.html)?$ /products/he-thong-dau-vao-cap-va-gia-do [R=301,L,NC]
+  RewriteRule ^products/efk(\.html)?$ /products/mang-xich-nhua-luon-cap [R=301,L,NC]
+  RewriteRule ^products/aur(\.html)?$ /products/phu-kien-robot-va-tu-dong-hoa [R=301,L,NC]
+
+  # 4. Chuyển hướng URL F&B cũ sang thư mục Việt hóa mới (301 Redirect)
+  RewriteRule ^industries/foodbeverage/?(index\.html)?$ /industries/thuc-pham-va-do-uong/ [R=301,L,NC]
+
+  # 5. Loại bỏ dấu gạch chéo cuối (trailing slash) của URL không phải thư mục
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+  # 6. Tự động chuyển hướng từ index.html sang URL sạch (301 Redirect)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*/)?index\.html\ HTTP/ [NC]
+  RewriteRule ^(.*/)?index\.html$ /%1 [R=301,L]
+
+  # 7. Tự động ẩn đuôi .html bằng cách Redirect 301 từ file.html sang file (301 Redirect) cho các trang khác
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/ [NC]
+  RewriteRule ^(.+)\.html$ /%1 [R=301,L]
+
+  # 8. Định tuyến nội bộ: Cho phép truy cập URL không đuôi nhưng máy chủ vẫn gọi file .html tương ứng
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # 3. Nén GZIP (Giảm dung lượng file khi tải qua mạng)
