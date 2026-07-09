@@ -37,6 +37,13 @@ Trang web giới thiệu các giải pháp quản lý cáp, ống dẫn, máng x
 *   **Google Sheets Integration**: Gửi dữ liệu yêu cầu báo giá trực tiếp về bảng tính Google Sheets thông qua API Google Apps Script.
 *   **Đo lường chuyển đổi**: Tích hợp sự kiện `generate_lead` của Google Analytics 4 (GA4) và sự kiện `PageView` của Facebook Pixel khi gửi form thành công.
 
+### 5. Tối Ưu Hóa Kỹ Thuật SEO (Technical SEO)
+*   **Sitemap & Thẻ Canonical**: Hệ thống `sitemap.xml` và thẻ `<link rel="canonical">` được cấu hình đầy đủ cho toàn bộ trang con, giúp Google Bot lập chỉ mục nhanh chóng và tránh rủi ro trùng lặp nội dung (Duplicate Content).
+*   **Hreflang & Schema Breadcrumb**: Cấu hình định tuyến ngôn ngữ `<link rel="alternate" hreflang="vi/en">` và dữ liệu cấu trúc `BreadcrumbList` dạng JSON-LD để hiển thị kết quả tìm kiếm phân cấp chuyên nghiệp.
+*   **Schema Product**: Toàn bộ trang sản phẩm được đánh dấu dữ liệu cấu trúc `Product` (Schema.org), giúp tối ưu hóa ưu tiên hiển thị trên Google Shopping và Google Hình Ảnh.
+*   **Social Media Preview**: Bổ sung hệ thống thẻ Open Graph và Twitter Cards, đảm bảo link khi chia sẻ qua Zalo, Facebook, LinkedIn luôn hiển thị ảnh đại diện và tiêu đề gọn gàng.
+*   **Theme Color Mobile**: Cấu hình thẻ `<meta name="theme-color" content="#C8102E">` đồng bộ màu thanh địa chỉ trình duyệt trên di động với màu đỏ thương hiệu Murrplastik, mang lại trải nghiệm như Native App.
+
 ---
 
 ## 📂 Cấu Trúc Thư Mục Dự Án
