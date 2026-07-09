@@ -5,13 +5,24 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 ## [1.6.1] - 2026-07-09
 
 **Service**: murrplastik-vn-web  
-**Purpose**: fix(seo, social): Bổ sung thẻ Open Graph (og:image) và Twitter Cards để hiển thị ảnh preview khi chia sẻ link qua Zalo, Facebook.  
+**Purpose**: feat(seo, structure): Tối ưu hóa Technical SEO (Sitemap, Canonical, Hreflang, Schema Breadcrumb, Schema Product), tối ưu hiệu năng LCP (Fetchpriority), Theme Color và Social Media Preview cho toàn bộ website.  
 **Release at**: 09/07/2026  
 **By who**: KhaiLL
+
+### Tối ưu hóa Technical SEO (Kỹ thuật SEO)
+- **Sitemap.xml**: Cập nhật file `sitemap.xml` để khai báo đầy đủ đường dẫn của 5 trang sản phẩm và 1 trang ngành Thực phẩm & Đồ uống (F&B), giúp Google Bot dễ dàng thu thập dữ liệu và lập chỉ mục (index) nhanh chóng.
+- **Thẻ Canonical**: Bổ sung thẻ `<link rel="canonical">` vào tất cả các trang con để chống lỗi "Duplicate Content" (nội dung trùng lặp) khi URL bị gắn thêm các tham số theo dõi (như từ chiến dịch quảng cáo).
+- **Thẻ Đa ngôn ngữ (Hreflang)**: Khai báo đầy đủ thẻ `<link rel="alternate" hreflang="vi/en">` cho toàn bộ các trang con, đồng thời bổ sung cấu hình tiếng Việt còn thiếu ở trang chủ, giúp Google đề xuất đúng ngôn ngữ cho người tìm kiếm.
+- **Schema Breadcrumb (JSON-LD)**: Chèn đoạn mã dữ liệu cấu trúc (Structured Data) BreadcrumbList dạng JSON-LD vào thẻ `<head>` của các trang con. Việc này giúp kết quả trên Google (SERP) hiển thị chuỗi phân cấp gọn gàng (VD: `Murrplastik Việt Nam > Sản phẩm > Tên SP`) thay vì URL thô, làm tăng độ chuyên nghiệp và tỷ lệ nhấp chuột (CTR).
 
 ### Tối ưu hóa Hiển thị trên Mạng xã hội (Social Media Preview)
 - **Thẻ Open Graph & Twitter Cards**: Thêm các thẻ `<meta property="og:image">`, `og:url`, `og:type` và `<meta name="twitter:card">` vào toàn bộ các trang (Trang chủ, 5 trang Sản phẩm, và trang F&B).
 - **Hình ảnh nhận diện**: Thiết lập `logo_murrplastik_vn.png` làm ảnh đại diện mặc định để Zalo, Facebook, LinkedIn có thể tự động tải và hiển thị chính xác khi người dùng chia sẻ liên kết trang web.
+
+### Tối ưu hóa Trải nghiệm và Kỹ thuật Nâng cao
+- **Schema Product (JSON-LD)**: Cấu hình dữ liệu cấu trúc `Product` cho 5 trang sản phẩm (KDH, SUV, ACS, EFK, AUR), bao gồm ảnh đại diện, mô tả chi tiết và thương hiệu Murrplastik. Điều này tối ưu hóa khả năng hiển thị trên Google Shopping và Google Hình Ảnh.
+- **Theme Color (Giao diện Mobile)**: Bổ sung thẻ `<meta name="theme-color" content="#C8102E">` vào toàn bộ website. Tính năng này sẽ tự động đổi màu thanh địa chỉ (URL bar) của trình duyệt di động (Chrome, Safari, Edge) sang màu Đỏ thương hiệu, tạo cảm giác như khách hàng đang dùng một Native App cao cấp.
+- **Tăng tốc LCP (Fetchpriority)**: Áp dụng thuộc tính `fetchpriority="high"` cho bức ảnh lớn nhất (Hero Image) tại trang F&B để ép trình duyệt dồn tài nguyên tải ảnh này đầu tiên. Cải thiện mạnh mẽ điểm số Largest Contentful Paint (LCP) và trải nghiệm tải trang.
 
 ## [1.6.0] - 2026-07-08
 
