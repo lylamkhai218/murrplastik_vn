@@ -2,6 +2,17 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [1.6.1] - 2026-07-09
+
+**Service**: murrplastik-vn-web  
+**Purpose**: fix(seo, social): Bổ sung thẻ Open Graph (og:image) và Twitter Cards để hiển thị ảnh preview khi chia sẻ link qua Zalo, Facebook.  
+**Release at**: 09/07/2026  
+**By who**: KhaiLL
+
+### Tối ưu hóa Hiển thị trên Mạng xã hội (Social Media Preview)
+- **Thẻ Open Graph & Twitter Cards**: Thêm các thẻ `<meta property="og:image">`, `og:url`, `og:type` và `<meta name="twitter:card">` vào toàn bộ các trang (Trang chủ, 5 trang Sản phẩm, và trang F&B).
+- **Hình ảnh nhận diện**: Thiết lập `logo_murrplastik_vn.png` làm ảnh đại diện mặc định để Zalo, Facebook, LinkedIn có thể tự động tải và hiển thị chính xác khi người dùng chia sẻ liên kết trang web.
+
 ## [1.6.0] - 2026-07-08
 
 **Service**: murrplastik-vn-web  
