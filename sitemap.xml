@@ -51,4 +51,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://murrplastikvn.com/industries/san-xuat-o-to/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://murrplastikvn.com/industries/san-xuat-o-to/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://murrplastikvn.com/industries/san-xuat-o-to/?lang=en"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

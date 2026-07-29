@@ -2,6 +2,57 @@
 
 Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
 
+## [2.0.0] - 2026-07-29
+
+**Service**: murrplastik-vn-web  
+**Purpose**: feat(industry, 3d, seo, i18n): Tích hợp trang chuyên ngành Sản xuất Ô tô (VinFast Cát Hải), Trình xem 3D CAD/STP tương tác, chuẩn hóa tên pháp nhân T&T Vina & TTPC, nâng cấp bộ lọc đa ngôn ngữ v2.0.0.  
+**Release at**: 29/07/2026  
+**By who**: KhaiLL
+
+### 1. Thêm trang chuyên ngành Sản xuất Ô tô (`industries/san-xuat-o-to/`)
+- Tích hợp trang con landing page chuyên biệt dành riêng cho ngành công nghiệp Sản xuất Ô tô (Automotive Industry).
+- Giới thiệu giải pháp bảo vệ cáp & Dress Pack trên Robot ABB tại nhà xưởng Thân vỏ VinFast Cát Hải.
+- Cấu hình phân cấp thẻ breadcrumb, thẻ meta OpenGraph, Twitter Cards và dữ liệu cấu trúc Schema.org đầy đủ.
+
+### 2. Tích hợp Trình xem 3D CAD/STP Tương tác (`assets/js/3d-viewer.js` & `assets/3d/`)
+- Xây dựng trình xem mô hình 3D tương tác trực tiếp dựa trên Three.js cho phép phóng to, xoay 360 độ và kiểm tra chi tiết linh kiện phụ kiện Robot Murrplastik (R-Tec Liner 550mm, ống luồn EWX-PAE 70, khớp nối KEG-AK).
+- Tích hợp trình xem 3D vào các trang sản phẩm và trang ngành ô tô.
+
+### 3. Cập nhật Đa ngôn ngữ (i18n) & Phiên bản v2.0.0
+- Nâng cấp phiên bản tài nguyên tĩnh `v2.0.0` trên toàn bộ hệ thống file HTML/JS/CSS để khử triệt để bộ nhớ đệm (Cache Busting).
+- Bổ sung từ điển bản dịch tiếng Việt, tiếng Anh cho các danh mục ngành mới (Automotive, Robot Automation) trong `assets/js/i18n.js`.
+
+---
+
+## [1.7.0] - 2026-07-20
+
+**Service**: murrplastik-vn-web  
+**Purpose**: feat(rebranding, staging, deploy): Tái nhận diện thương hiệu T&T Vina, cấu hình tách biệt môi trường Staging/Production và thiết lập quy trình deploy tự động qua FTPS.  
+**Release at**: 20/07/2026  
+**By who**: KhaiLL
+
+### Thay đổi nhận diện thương hiệu (Rebranding)
+- **Tên doanh nghiệp**: Thay đổi toàn bộ các tham chiếu "Murrplastik Việt Nam" thành "T&T Vina / T&T Vina Industrial Co., Ltd".
+- **Logo**: Thay đổi logo gốc trên Header và Footer của toàn bộ trang web (trang chủ, các trang sản phẩm và trang ngành F&B) sang thiết kế "T&T VINA (Đại lý ủy quyền chính thức Murrplastik)".
+- **Email liên hệ**: Đổi từ `sales@murrplastik-vn.com` thành `sales@ttvina.com.vn`.
+- **Đường dẫn nội bộ**: Chuyển đổi toàn bộ liên kết tên miền nội bộ từ `murrplastikvn.com` sang tên miền mới `ttvina.com.vn`.
+
+### Triển khai môi trường Staging & Production riêng biệt
+- **Môi trường Staging**:
+  - Tự động chèn thẻ meta `<meta name="robots" content="noindex, nofollow" />` vào `<head>` của các file HTML.
+  - Cấu hình file `robots.txt` chứa `User-agent: *\nDisallow: /` để chống Google lập chỉ mục.
+  - Tạo cấu hình file `.htaccess` tự động tích hợp xác thực mật khẩu Basic Authentication (`.htpasswd` dùng chuẩn mã hóa Apache MD5) để khóa truy cập công cộng mà không làm ảnh hưởng đến các quy tắc viết lại URL sạch.
+- **Môi trường Production**:
+  - Không chèn thẻ `noindex`, robots.txt cho phép các bộ máy tìm kiếm quét lập chỉ mục.
+  - Loại bỏ Basic Authentication để người dùng truy cập tự do.
+  - Giữ nguyên các quy tắc định tuyến URL sạch trong `.htaccess`.
+
+### Tự động hóa Deployment (CI/CD qua FTPS)
+- **Kịch bản Build và Đóng gói (`copy_and_replace.py`)**: Viết lại script hỗ trợ đối số dòng lệnh (`staging` hoặc `production`) để tự động đóng gói phiên bản sạch theo từng môi trường.
+- **Đồng bộ FTP Delta (`deploy_staging.py` và `deploy_production.py`)**: Tích hợp các kịch bản Python đồng bộ hóa thông minh chỉ tải lên các tệp tin thay đổi (so sánh kích thước thông qua cache thư mục từ server), tự động kết nối qua giao thức mã hóa an toàn FTPS (FTP over TLS) và có khả năng tự động kết nối lại khi đường truyền mạng gián đoạn.
+- **Bảo mật file cấu hình**: Đưa `.env` lưu thông tin tài khoản FTP và các file script deploy, thư mục build tạm vào `.gitignore` để ngăn rò rỉ thông tin đăng nhập lên kho lưu trữ mã nguồn Git.
+- **Cẩm nang bảo mật (`security_skills_pack.md`)**: Biên soạn tài liệu hướng dẫn và lưu ý bảo mật, tối ưu token cho lập trình viên và trợ lý AI trong các phiên làm việc tiếp theo.
+
 ## [1.6.1] - 2026-07-09
 
 **Service**: murrplastik-vn-web  

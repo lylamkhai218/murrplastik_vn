@@ -1,3 +1,9 @@
+// Auto-strip Basic Auth credentials from URL to prevent browser from blocking fetch/XHR requests
+if (window.location.href.includes('@')) {
+  const cleanUrl = window.location.href.replace(/\/\/[^/]+@/, '//');
+  window.location.replace(cleanUrl);
+}
+
 /**
  * main.js — Navbar, hamburger menu, scroll animations
  * murrplastikvn.com
@@ -295,6 +301,81 @@ document.addEventListener('DOMContentLoaded', () => {
         top: 0,
         behavior: 'smooth'
       });
+    });
+  }
+
+  /* ── Custom Branded Cursor (Style 5: Red SVG Arrow + Ambient Red Glow - GPU Accelerated) ── */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let arrowSvg = document.querySelector('.cursor-arrow-svg');
+    let glowAura = document.querySelector('.cursor-glow-aura');
+
+    if (!arrowSvg) {
+      arrowSvg = document.createElement('div');
+      arrowSvg.className = 'cursor-arrow-svg';
+      arrowSvg.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M3 3L10.07 19.97L13.58 12.58L20.97 9.07L3 3Z" fill="#C8102E" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>`;
+      document.body.appendChild(arrowSvg);
+    }
+    if (!glowAura) {
+      glowAura = document.createElement('div');
+      glowAura.className = 'cursor-glow-aura';
+      document.body.appendChild(glowAura);
+    }
+
+    let mouseX = -100, mouseY = -100;
+    let auraX = -100, auraY = -100;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      arrowSvg.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    }, { passive: true });
+
+    const animateAura = () => {
+      auraX += (mouseX - auraX) * 0.2;
+      auraY += (mouseY - auraY) * 0.2;
+      glowAura.style.transform = `translate3d(${auraX - 60}px, ${auraY - 60}px, 0)`;
+      requestAnimationFrame(animateAura);
+    };
+    animateAura();
+
+    // Hover interactive listeners
+    const interactiveSelectors = 'a, button, input, textarea, select, .gallery-item, .model-tab-btn, .btn-primary, .btn-control, .card, .product-card, .float-btn, .back-to-top';
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest('#threejs-container, .viewer-mock, .model-canvas-container')) {
+        document.body.classList.add('cursor-3d');
+      } else if (e.target.closest(interactiveSelectors)) {
+        document.body.classList.add('cursor-hover');
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest('#threejs-container, .viewer-mock, .model-canvas-container')) {
+        document.body.classList.remove('cursor-3d');
+      }
+      if (e.target.closest(interactiveSelectors)) {
+        document.body.classList.remove('cursor-hover');
+      }
+    });
+
+    // Smooth fade out when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      arrowSvg.style.opacity = '0';
+      glowAura.style.opacity = '0';
+      document.body.classList.remove('cursor-hover', 'cursor-3d', 'cursor-active');
+    });
+
+    document.addEventListener('mouseenter', () => {
+      arrowSvg.style.opacity = '1';
+      glowAura.style.opacity = '1';
+    });
+
+    document.addEventListener('mousedown', () => {
+      document.body.classList.add('cursor-active');
+    });
+    document.addEventListener('mouseup', () => {
+      document.body.classList.remove('cursor-active');
     });
   }
 });

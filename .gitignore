@@ -24,3 +24,14 @@ yarn-error.log*
 assets/images/distribution-letter.jpg
 project-notes.md
 google-apps-script.js
+domain_migration_analysis.md
+.env
+ttvina_staging/
+ttvina_production/
+ttvina_staging.zip
+ttvina_production.zip
+deploy_staging.py
+deploy_production.py
+copy_and_replace.py
+
+
