@@ -536,9 +536,23 @@ footer{background:var(--dark-2);border-top:1px solid rgba(255,255,255,0.06)}
 .footer-links{display:flex;flex-direction:column;gap:8px}
 .footer-links a{color:rgba(255,255,255,0.45);font-size:13px;transition:color var(--t)}
 .footer-links a:hover{color:rgba(255,255,255,0.85)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:1.2rem 3rem 1rem}
+.footer-bottom-row{display:flex;align-items:center;justify-content:space-between}
 .footer-bottom-left{color:rgba(255,255,255,0.35);font-size:12px}
 .footer-bottom-right{color:rgba(255,255,255,0.25);font-size:12px}
+.footer-disclaimer{font-size:11px;color:rgba(255,255,255,0.3);text-align:center;padding:10px 2% 0;line-height:1.6;margin-top:10px}
+
+/* === FAQ SECTION === */
+#faq{padding:4rem 0;background:var(--dark-2)}
+.faq-inner{max-width:800px;margin:0 auto;padding:0 2rem}
+.faq-list{margin-top:2rem}
+.faq-item{border:1px solid rgba(255,255,255,0.08);margin-bottom:8px;background:rgba(255,255,255,0.02);transition:background 0.2s}
+.faq-item[open]{background:rgba(255,255,255,0.04)}
+.faq-item[open] .faq-q::after{transform:rotate(180deg)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.85);cursor:pointer;list-style:none;gap:16px;line-height:1.5}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'';width:10px;height:10px;border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:rotate(45deg);flex-shrink:0;transition:transform 0.25s ease}
+.faq-a{padding:0 20px 16px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
 
 /* === SCROLL ANIMATIONS === */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -804,7 +818,8 @@ footer{background:var(--dark-2);border-top:1px solid rgba(255,255,255,0.06)}
   .form-row{grid-template-columns:1fr}
   .cert-inner,.contact-inner{gap:2.5rem}
   .footer-top{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .footer-bottom{text-align:center}
+  .footer-bottom-row{flex-direction:column;gap:8px}
   #products,#why,#industries,#certificate,#contact{padding:3rem 1.25rem}
   .hero-left{padding:2.5rem 1.25rem}
   .nav-inner{padding:0 1.25rem}

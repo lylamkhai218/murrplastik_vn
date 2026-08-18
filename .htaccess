@@ -62,12 +62,13 @@
   ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
-# 5. Anti-Caching Headers for HTML & Cyber Security Headers
+# 5. Anti-Caching Headers for HTML & Cyber Security Headers (Strict Bypass for CDN / Hostinger Proxy)
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|htm|php)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Cache-Control "private, no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
+    Header set X-LiteSpeed-Cache-Control "no-cache"
   </FilesMatch>
   
   # Security Hardening Headers
