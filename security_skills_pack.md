@@ -7,7 +7,7 @@ Cẩm nang bảo mật, tối ưu hóa token và vận hành hệ thống Deploy
 ## 1. TỔNG QUAN HỆ THỐNG & NHẬN DIỆN THƯƠNG HIỆU
 * **Môi trường Staging (Thử nghiệm)**: [https://slategray-scorpion-577666.hostingersite.com/](https://slategray-scorpion-577666.hostingersite.com/)
 * **Môi trường Production (Chính thức)**: [https://murrplastikvn.com/](https://murrplastikvn.com/) (hoặc tên miền mới sau khi đổi).
-* **Quy chuẩn đổi tên**: Toàn bộ từ khóa độc quyền của hãng *Murrplastik* được đổi sang *T&T Vina Industrial Co., Ltd* và email sang `sales@ttvina.com.vn`.
+* **Quy chuẩn đổi tên**: Toàn bộ từ khóa độc quyền của hãng *Murrplastik* được đổi sang *T&T Vina Industrial Co., Ltd* và email sang `sales@murrplastik-vn.com`.
 
 ---
 

@@ -45,6 +45,10 @@
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
   
+  # HTML & Dynamic pages - NO CACHE to ensure immediate updates across CDN and browsers
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xhtml+xml "access plus 0 seconds"
+  
   # CSS và JS
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
@@ -58,6 +62,21 @@
   ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
-# 5. Thiết lập mã hóa UTF-8 mặc định cho tất cả các file
+# 5. Anti-Caching Headers for HTML & Cyber Security Headers
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm|php)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+  
+  # Security Hardening Headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 6. Thiết lập mã hóa UTF-8 mặc định cho tất cả các file
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .xml .json

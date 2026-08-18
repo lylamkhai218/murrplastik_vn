@@ -1,6 +1,27 @@
 # Changelog
 
-Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam sẽ được lưu trữ tại đây.
+Tất cả các thay đổi quan trọng của dự án sẽ được lưu trữ tại đây.
+
+## [2.1.0] - 2026-08-18
+
+**Service**: murrplastik-vn-web  
+**Purpose**: compliance(legal, branding, seo, i18n): Rà soát và chuẩn hóa pháp lý thương hiệu phân phối ủy quyền theo yêu cầu của Murrplastik Systemtechnik GmbH (Đức).  
+**Release at**: 18/08/2026  
+**By who**: KhaiLL
+
+### 1. Chuẩn hóa Định danh Pháp nhân & Đại lý Ủy quyền
+- Làm rõ quyền sở hữu và vận hành website: thuộc về **Công ty TNHH Công nghiệp T&T Vina** với tư cách là **Đại lý phân phối ủy quyền** (Authorized Distributor).
+- Loại bỏ toàn bộ các cụm từ gây nhầm lẫn là chi nhánh/văn phòng đại diện của Murrplastik Đức.
+- Cập nhật Title, Meta Description, Thẻ Open Graph, Twitter Cards và Schema JSON-LD trên toàn bộ các trang (`index.html`, 5 trang `products/*.html`, trang `industries/thuc-pham-va-do-uong/`, `industries/san-xuat-o-to/`).
+
+### 2. Cập nhật Giao diện, Liên kết & Disclaimer Bản quyền
+- Sửa `footer-brand` thành `T&T VINA INDUSTRIAL CO., LTD`.
+- Cập nhật nhãn kênh Facebook thành `T&T Vina`.
+- Bổ sung tuyên bố miễn trừ trách nhiệm pháp lý và bản quyền thương hiệu (Trademark Disclaimer) tại chân trang toàn website.
+- Chuẩn hóa toàn bộ từ điển song ngữ VI/EN trong `assets/js/i18n.js`.
+- Cập nhật giao diện trang quản trị Admin (`admin/index.html`, `admin/dashboard.html`) sang nhận diện T&T Vina.
+
+---
 
 ## [2.0.0] - 2026-07-29
 
@@ -34,8 +55,8 @@ Tất cả các thay đổi quan trọng của dự án Murrplastik Việt Nam s
 ### Thay đổi nhận diện thương hiệu (Rebranding)
 - **Tên doanh nghiệp**: Thay đổi toàn bộ các tham chiếu "Murrplastik Việt Nam" thành "T&T Vina / T&T Vina Industrial Co., Ltd".
 - **Logo**: Thay đổi logo gốc trên Header và Footer của toàn bộ trang web (trang chủ, các trang sản phẩm và trang ngành F&B) sang thiết kế "T&T VINA (Đại lý ủy quyền chính thức Murrplastik)".
-- **Email liên hệ**: Đổi từ `sales@murrplastik-vn.com` thành `sales@ttvina.com.vn`.
-- **Đường dẫn nội bộ**: Chuyển đổi toàn bộ liên kết tên miền nội bộ từ `murrplastikvn.com` sang tên miền mới `ttvina.com.vn`.
+- **Email liên hệ**: Đổi từ `sales@murrplastik-vn.com` thành `sales@murrplastik-vn.com`.
+- **Đường dẫn nội bộ**: Chuyển đổi toàn bộ liên kết tên miền nội bộ từ `murrplastikvn.com` sang tên miền mới `murrplastikvn.com`.
 
 ### Triển khai môi trường Staging & Production riêng biệt
 - **Môi trường Staging**:

@@ -1,21 +1,21 @@
-/* Design Tokens & Root Variables - Dark Mode Hi-Tech Theme (VinFast & Murrplastik) */
+/* Design Tokens & Root Variables - Light Mode Hi-Tech Theme (VinFast & Murrplastik) */
 :root {
-    --bg-primary: #060608;
-    --bg-secondary: #0d0d12;
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
     --accent-red: #d51e29;
-    --accent-red-hover: #f02834;
-    --accent-red-glow: rgba(213, 30, 41, 0.3);
+    --accent-red-hover: #b9151f;
+    --accent-red-glow: rgba(213, 30, 41, 0.15);
     --accent-blue: #007bc3;
-    --accent-blue-glow: rgba(0, 123, 195, 0.2);
-    --accent-cyan: #06b6d4;
-    --text-primary: #f8f9fa;
-    --text-secondary: #a0aec0;
-    --text-muted: #718096;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --glass-bg: rgba(13, 13, 18, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-border-red: rgba(213, 30, 41, 0.3);
-    --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+    --accent-blue-glow: rgba(0, 123, 195, 0.15);
+    --accent-cyan: #0284c7;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --glass-bg: #ffffff;
+    --glass-border: #e2e8f0;
+    --glass-border-red: rgba(213, 30, 41, 0.4);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     --font-primary: 'Inter', sans-serif;
     --font-heading: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
     --header-height: 80px;
@@ -119,14 +119,16 @@ a {
 }
 
 .btn-outline-white {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .btn-outline-white:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
+    background: #f8fafc;
+    border-color: var(--accent-red);
+    color: var(--accent-red);
     transform: translateY(-2px);
 }
 
@@ -135,16 +137,17 @@ a {
     font-size: 13px;
 }
 
-/* Sticky Main Header (Dark Mode Adaption) */
+/* Sticky Main Header (Light Mode Adaption) */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(6, 6, 8, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     z-index: 1000;
 }
 
@@ -180,7 +183,7 @@ a {
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 800;
-    color: #ffffff !important;
+    color: #1e293b !important;
     letter-spacing: 0.5px;
     text-decoration: none !important;
     display: inline-block;
@@ -188,7 +191,7 @@ a {
 }
 
 .company-name:hover {
-    color: #ffffff !important;
+    color: var(--accent-red) !important;
     text-decoration: none !important;
     opacity: 0.85;
 }
@@ -229,7 +232,7 @@ a {
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #ffffff;
+    color: var(--accent-red);
 }
 
 .nav-link::after {
@@ -257,7 +260,7 @@ a {
 .hero-section {
     position: relative;
     padding: 160px 24px 100px;
-    background: radial-gradient(circle at 50% 20%, rgba(213, 30, 41, 0.12) 0%, rgba(6, 6, 8, 1) 70%);
+    background: radial-gradient(circle at 50% 20%, rgba(213, 30, 41, 0.06) 0%, #f8f9fa 70%);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -271,8 +274,9 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
     padding: 8px 18px;
     border-radius: 50px;
     margin-bottom: 24px;
@@ -294,9 +298,7 @@ a {
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #0f172a;
 }
 
 .hero-subtitle {
@@ -541,7 +543,7 @@ a {
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
-    background: #000000;
+    background: #f1f5f9;
     border: 1px solid var(--border-color);
 }
 
@@ -557,7 +559,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(6, 6, 8, 0.9);
+    background: rgba(248, 249, 250, 0.95);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -839,9 +841,9 @@ a {
     cursor: pointer;
 }
 
-/* Footer (Dark Mode Adaption) */
+/* Footer (Light Mode Adaption) */
 .main-footer {
-    background: #040405;
+    background: #ffffff;
     border-top: 1px solid var(--border-color);
     padding: 40px 24px;
     font-size: 13px;

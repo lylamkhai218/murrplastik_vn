@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="vi"><head>
+<?php
+require_once __DIR__ . '/config.php';
+if (empty($_SESSION['admin_auth']) || $_SESSION['admin_auth'] !== true) {
+    header('Location: index.php');
+    exit;
+}
+?><!DOCTYPE html><html lang="vi"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashboard — MURRPLASTIK VN Admin</title>
+<title>Dashboard — T&T Vina Admin</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="../assets/images/logo_murrplastik_vn.png">
 <style>
@@ -11,8 +17,8 @@ nav{background:var(--dark);height:56px;display:flex;align-items:center;justify-c
 .nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:1px}
 .nav-logo span{color:var(--red)}
 .nav-right{display:flex;align-items:center;gap:1rem}
-.nav-user{color:rgba(255,255,255,0.5);font-size:12px}
-.btn-logout{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.nav-user{color:rgba(255,255,255,0.7);font-size:12px;display:flex;align-items:center;gap:6px}
+.btn-logout{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
 .btn-logout:hover{border-color:var(--red);color:var(--red)}
 .main{padding:2rem;max-width:1200px;margin:0 auto}
 .page-title{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;margin-bottom:4px}
@@ -63,15 +69,15 @@ tr:hover td{background:#fafaf8}
 @media(max-width:768px){.stats-row{grid-template-columns:repeat(3,1fr)}.main{padding:1rem}}
 </style></head><body>
 <nav>
-<div class="nav-logo">MURR<span>PLASTIK</span> · ADMIN</div>
+<div class="nav-logo">T&T <span>VINA</span> · ADMIN</div>
 <div class="nav-right">
-<span class="nav-user">👤 admin</span>
+<span class="nav-user">👤 <?= htmlspecialchars($_SESSION['admin_user'] ?? 'admin') ?></span>
 <button class="btn-logout" onclick="logout()">Đăng xuất</button>
 </div>
 </nav>
 <div class="main">
 <div class="page-title">Quản lý sản phẩm</div>
-<p class="page-sub">Thêm, sửa, xóa sản phẩm hiển thị trên website murrplastikvn.com</p>
+<p class="page-sub">Thêm, sửa, xóa sản phẩm hiển thị trên hệ thống T&T Vina</p>
 <div class="stats-row" id="statsRow"></div>
 <div class="toolbar">
 <div class="toolbar-left">
@@ -187,10 +193,13 @@ const blob=new Blob([JSON.stringify(products,null,2)],{type:'application/json'})
 const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='products.json';a.click();
 }
 
-function logout(){localStorage.removeItem('mp_admin');location.href='index.html';}
-
-// Auth check
-if(localStorage.getItem('mp_admin')!=='1')location.href='index.html';
+async function logout(){
+try {
+  await fetch('auth.php?action=logout', { method: 'POST' });
+} catch (e) {}
+localStorage.removeItem('mp_admin');
+location.href='index.php';
+}
 
 // Init with sample data if empty
 if(!products.length){

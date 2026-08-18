@@ -1,0 +1,11 @@
+# Prevent directory browsing
+Options -Indexes
+
+# Protect sensitive backend files
+<FilesMatch "(config\.php|\.json|\.log|\.env)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Set default index
+DirectoryIndex index.php index.html

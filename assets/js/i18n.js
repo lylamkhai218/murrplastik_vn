@@ -181,7 +181,7 @@ const TRANSLATIONS = {
     'fb.case3.res': '<strong>Xem ngay:</strong> Click vào nút Play ở trên để truy cập và xem chi tiết Reel trên Facebook.',
     /* Dealer Info & Footer */
     'fb.info.title': 'Thông tin đại lý ủy quyền',
-    'fb.info.rep_label': 'Đại diện phân phối tại Việt Nam',
+    'fb.info.rep_label': 'Đại lý phân phối ủy quyền tại Việt Nam',
     'fb.info.rep_val': 'CÔNG TY TNHH CÔNG NGHIỆP T&T VINA',
     'fb.info.hotline_label': 'Hotline tư vấn dự án',
     'fb.info.email_label': 'Email tiếp nhận yêu cầu báo giá',
@@ -189,25 +189,25 @@ const TRANSLATIONS = {
     'fb.info.qr_desc': 'Kết nối nhanh với kỹ thuật viên T&T Vina qua Zalo/Hotline hoặc truy cập website đại lý: <a href="https://murrplastikvn.com" target="_blank" style="color: var(--cyan); text-decoration: underline;">murrplastikvn.com</a>',
     'fb.toast.title': 'Gửi thành công!',
     'fb.toast.desc': 'Cảm ơn bạn. Chúng tôi sẽ liên hệ lại ngay trong giây lát.',
-    'fb.foot.desc': 'Đại lý chính thức được Murrplastik Systemtechnik GmbH (Đức) ủy quyền phân phối hệ thống quản lý cáp, energy chain, conduit và giải pháp tem nhãn tự động hóa tại Việt Nam.',
+    'fb.foot.desc': 'Đại lý phân phối ủy quyền được Murrplastik Systemtechnik GmbH (Đức) chứng nhận tại Việt Nam cho hệ thống quản lý cáp, energy chain, conduit và giải pháp tem nhãn tự động hóa.',
     'fb.foot.col1_h4': 'Liên kết nhanh',
-    'fb.foot.l1': '← Trang chủ Murrplastik VN',
+    'fb.foot.l1': '← Trang chủ T&T Vina - Murrplastik',
     'fb.foot.l2': 'Danh mục sản phẩm chủ lực',
     'fb.foot.l3': 'Tại sao chọn T&T Vina',
     'fb.foot.l4': 'Chứng nhận đại lý chính thức',
     'fb.foot.l5': 'Yêu cầu báo giá',
     'fb.foot.col2_h4': 'Tài liệu & Chứng nhận',
     'fb.foot.l6': 'Tải Brochure F&B (PDF)',
-    'fb.foot.l7': 'Website Phân phối Murrplastik',
+    'fb.foot.l7': 'Website chính thức Murrplastik Đức',
     'fb.foot.copy': '© 2026 T&T Vina Industrial Co., Ltd. Tất cả quyền được bảo lưu. Sản phẩm sản xuất bởi Murrplastik (Đức).',
     /* Hero */
     'hero.chip': 'Đại lý ủy quyền chính thức',
-    'hero.since': 'T&T Vina · Since 1963',
+    'hero.since': 'Murrplastik GmbH · Since 1963',
     'hero.h1a': 'Hệ thống',
     'hero.h1b': 'quản lý',
     'hero.h1c': 'cáp',
     'hero.h1d': 'công nghiệp',
-    'hero.desc': 'Giải pháp chuyên dụng từ Murrplastik — thương hiệu Đức hàng đầu về quản lý cáp, tem nhãn và tự động hóa công nghiệp. Phân phối độc quyền bởi T&T Vina tại Việt Nam.',
+    'hero.desc': 'Giải pháp chuyên dụng từ Murrplastik (Đức) — thương hiệu hàng đầu về quản lý cáp, tem nhãn và tự động hóa công nghiệp. Phân phối chính hãng bởi đại lý T&T Vina tại Việt Nam.',
     'hero.btn1': 'Xem sản phẩm',
     'hero.btn2': 'Liên hệ tư vấn',
     /* Stats */
@@ -303,11 +303,12 @@ const TRANSLATIONS = {
     'form.success': '✅ Đã gửi thành công! Kỹ thuật viên sẽ liên hệ lại ngay.',
     'form.error': '❌ Lỗi gửi form. Vui lòng gọi Hotline: 0973.363.824',
     /* Footer */
-    'footer.tagline': 'Đại lý ủy quyền chính thức · Murrplastik GmbH, Đức',
+    'footer.tagline': 'Đại lý ủy quyền phân phối sản phẩm · Murrplastik Systemtechnik GmbH (Đức)',
     'footer.col1': 'Sản phẩm',
     'footer.col2': 'Thông tin',
     'footer.copy': '© 2025 T&T Vina Industrial Co., Ltd · murrplastikvn.com',
-    'footer.made': 'Đại lý chính thức Murrplastik tại Việt Nam',
+    'footer.made': 'T&T Vina - Đại lý phân phối ủy quyền Murrplastik tại Việt Nam',
+    'footer.disclaimer': 'Website này được sở hữu và vận hành bởi Công ty TNHH Công nghiệp T&T Vina — Đại lý phân phối ủy quyền các sản phẩm của Murrplastik Systemtechnik GmbH (Đức) tại Việt Nam. Murrplastik® là nhãn hiệu đã đăng ký của Murrplastik Systemtechnik GmbH.',
     /* Popup */
     'popup.title': 'Gửi thành công!',
     'popup.text': 'Cảm ơn bạn đã tin tưởng. Đội ngũ T&T Vina sẽ liên hệ với bạn trong giây lát.',
@@ -320,7 +321,7 @@ const TRANSLATIONS = {
     'prod.gallery': 'Sản phẩm tiêu biểu',
     
     /* ACS Page */
-    'acs.title': 'ACS - Tem nhãn & Hệ thống dán nhãn | Murrplastik Việt Nam',
+    'acs.title': 'ACS - Tem nhãn & Hệ thống dán nhãn | T&T Vina - Đại lý Murrplastik',
     'acs.meta.desc': 'Hệ thống tem nhãn ACS của Murrplastik - Giải pháp đánh dấu cáp, thiết bị chuyên nghiệp. Độ bền cao, chống chịu hóa chất và tia UV.',
     'acs.hero.title': 'ACS — Hệ thống tem nhãn & Dán nhãn',
     'acs.hero.desc': 'Giải pháp đánh dấu chuyên nghiệp cho cáp, dây điện, tủ bảng điện, terminal block và các linh kiện trong môi trường công nghiệp khắc nghiệt.',
@@ -338,7 +339,7 @@ const TRANSLATIONS = {
     'acs.quote.btn': 'Yêu cầu báo giá hệ thống ACS',
 
     /* AUR Page */
-    'aur.title': 'AUR - Phụ kiện Tự động hóa & Robot | Murrplastik Việt Nam',
+    'aur.title': 'AUR - Phụ kiện Tự động hóa & Robot | T&T Vina - Đại lý Murrplastik',
     'aur.meta.desc': 'Phụ kiện robot AUR từ Murrplastik - Kẹp ống, gá đỡ xoay, ống lồng lò xo cho cánh tay robot. Hạn chế đứt cáp ngầm, tăng tuổi thọ hệ thống dây dẫn.',
     'aur.hero.title': 'AUR — Phụ kiện Tự động hóa & Robot',
     'aur.hero.desc': 'Thiết kế dạng mô-đun linh hoạt, gá đỡ xoay tự do và ống lồng lò xo giúp tối ưu tuyến cáp, loại bỏ đứt ngầm cho cánh tay robot.',
@@ -356,7 +357,7 @@ const TRANSLATIONS = {
     'aur.quote.btn': 'Yêu cầu báo giá hệ thống AUR',
 
     /* EFK Page */
-    'efk.title': 'EFK - Máng xích nhựa (Energy Chains) | Murrplastik Việt Nam',
+    'efk.title': 'EFK - Máng xích nhựa (Energy Chains) | T&T Vina - Đại lý Murrplastik',
     'efk.meta.desc': 'Máng xích nhựa EFK Murrplastik - Bảo vệ dây dẫn trong chuyển động tịnh tiến, tốc độ cao. Chống bụi bẩn, giảm ma sát tối đa.',
     'efk.hero.title': 'EFK — Máng xích nhựa (Energy Chains)',
     'efk.hero.desc': 'Bảo vệ dây cáp và ống dẫn trong chuyển động liên tục cho robot, máy CNC, máy cắt laser, cầu trục công nghiệp.',
@@ -372,7 +373,7 @@ const TRANSLATIONS = {
     'efk.quote.btn': 'Yêu cầu báo giá hệ thống EFK',
 
     /* KDH Page */
-    'kdh.title': 'KDH - Hệ thống đầu vào cáp & Giá đỡ | Murrplastik Việt Nam',
+    'kdh.title': 'KDH - Hệ thống đầu vào cáp & Giá đỡ | T&T Vina - Đại lý Murrplastik',
     'kdh.meta.desc': 'Tấm luồn cáp KDH Murrplastik - Tiết kiệm không gian, thi công nhanh chóng, chuẩn IP65/IP68. Giải pháp tối ưu cho tủ điện máy CNC.',
     'kdh.hero.title': 'KDH — Hệ thống đầu vào cáp & Giá đỡ',
     'kdh.hero.desc': 'Giải pháp tấm luồn cáp thông minh thay thế cổ siết cáp truyền thống, đảm bảo cấp bảo vệ IP65/IP68 và giảm tải trọng kéo.',
@@ -390,7 +391,7 @@ const TRANSLATIONS = {
     'kdh.quote.btn': 'Yêu cầu báo giá hệ thống KDH',
 
     /* SUV Page */
-    'suv.title': 'SUV - Ống dẫn & Phụ kiện bảo vệ cáp | Murrplastik Việt Nam',
+    'suv.title': 'SUV - Ống dẫn & Phụ kiện bảo vệ cáp | T&T Vina - Đại lý Murrplastik',
     'suv.meta.desc': 'Ống dẫn gân nhựa SUV Murrplastik - Bảo vệ dây cáp tuyệt đối chống va đập, tia UV, hóa chất. Đạt tiêu chuẩn IP68/IP69K.',
     'suv.hero.title': 'SUV — Ống dẫn & Phụ kiện',
     'suv.hero.desc': 'Ống luồn gân nhựa polyamide cao cấp và khớp nối nhanh đạt chuẩn IP68/IP69K, kháng hóa chất và tia UV.',
@@ -667,7 +668,7 @@ const TRANSLATIONS = {
     'fb.case3.res': '<strong>Watch Now:</strong> Click the Play button above to view the detailed Facebook Reel.',
     /* Dealer Info & Footer */
     'fb.info.title': 'Authorized Distributor Information',
-    'fb.info.rep_label': 'Distribution Partner in Vietnam',
+    'fb.info.rep_label': 'Authorized Distributor in Vietnam',
     'fb.info.rep_val': 'T&T VINA INDUSTRIAL CO., LTD',
     'fb.info.hotline_label': 'Project Hotline',
     'fb.info.email_label': 'Quote Request Email',
@@ -675,25 +676,25 @@ const TRANSLATIONS = {
     'fb.info.qr_desc': 'Connect directly with T&T Vina engineers via Zalo/Hotline or visit dealer website: <a href="https://murrplastikvn.com" target="_blank" style="color: var(--cyan); text-decoration: underline;">murrplastikvn.com</a>',
     'fb.toast.title': 'Submitted Successfully!',
     'fb.toast.desc': 'Thank you. We will contact you shortly.',
-    'fb.foot.desc': 'Officially authorized by Murrplastik Systemtechnik GmbH (Germany) to distribute cable management, energy chains, conduits, and labeling systems in Vietnam.',
+    'fb.foot.desc': 'Authorized Distributor certified by Murrplastik Systemtechnik GmbH (Germany) for cable management, energy chains, conduits, and labeling systems in Vietnam.',
     'fb.foot.col1_h4': 'Quick Links',
-    'fb.foot.l1': '← Murrplastik VN Homepage',
+    'fb.foot.l1': '← T&T Vina - Murrplastik Homepage',
     'fb.foot.l2': 'Core Product Line',
     'fb.foot.l3': 'Why Choose T&T Vina',
     'fb.foot.l4': 'Official Dealer Certificate',
     'fb.foot.l5': 'Request a Quote',
     'fb.foot.col2_h4': 'Documents & Certificates',
     'fb.foot.l6': 'Download F&B Brochure (PDF)',
-    'fb.foot.l7': 'Murrplastik Distribution Site',
+    'fb.foot.l7': 'Official Murrplastik Germany Website',
     'fb.foot.copy': '© 2026 T&T Vina Industrial Co., Ltd. All rights reserved. Manufactured by Murrplastik (Germany).',
     /* Hero */
     'hero.chip': 'Official Authorized Dealer',
-    'hero.since': 'T&T Vina · Since 1963',
+    'hero.since': 'Murrplastik GmbH · Since 1963',
     'hero.h1a': 'Industrial',
     'hero.h1b': 'Cable',
     'hero.h1c': 'Management',
     'hero.h1d': 'Systems',
-    'hero.desc': 'Specialized solutions from Murrplastik — Germany\'s leading brand for cable management, labeling systems, and industrial automation. Exclusively distributed by T&T Vina in Vietnam.',
+    'hero.desc': 'Specialized solutions from Murrplastik (Germany) — leading brand for cable management, labeling systems, and industrial automation. Distributed by authorized dealer T&T Vina in Vietnam.',
     'hero.btn1': 'View Products',
     'hero.btn2': 'Contact Us',
     /* Stats */
@@ -789,11 +790,12 @@ const TRANSLATIONS = {
     'form.success': '✅ Sent successfully! We will contact you shortly.',
     'form.error': '❌ Submission failed. Please call: 0973.363.824',
     /* Footer */
-    'footer.tagline': 'Official Authorized Dealer · Murrplastik GmbH, Germany',
+    'footer.tagline': 'Authorized Distributor · Murrplastik Systemtechnik GmbH (Germany)',
     'footer.col1': 'Products',
     'footer.col2': 'Information',
     'footer.copy': '© 2025 T&T Vina Industrial Co., Ltd · murrplastikvn.com',
-    'footer.made': 'Official Murrplastik Dealer in Vietnam',
+    'footer.made': 'T&T Vina - Authorized Murrplastik Dealer in Vietnam',
+    'footer.disclaimer': 'This website is owned and operated by T&T Vina Industrial Co., Ltd — Authorized Distributor of Murrplastik Systemtechnik GmbH (Germany) products in Vietnam. Murrplastik® is a registered trademark of Murrplastik Systemtechnik GmbH.',
     /* Popup */
     'popup.title': 'Sent Successfully!',
     'popup.text': 'Thank you for your trust. T&T Vina team will contact you shortly.',
@@ -806,8 +808,8 @@ const TRANSLATIONS = {
     'prod.gallery': 'Featured Products',
     
     /* ACS Page */
-    'acs.title': 'ACS - Labeling & Marking Systems | Murrplastik Vietnam',
-    'acs.meta.desc': 'Murrplastik\'s ACS labeling system - Professional cable and device marking solution. High durability, chemical and UV resistance.',
+    'acs.title': 'ACS - Labeling & Marking Systems | T&T Vina - Murrplastik Dealer',
+    'acs.meta.desc': 'Murrplastik\'s ACS labeling system - Professional cable and device marking solution. Distributed by T&T Vina.',
     'acs.hero.title': 'ACS — Labeling & Marking Systems',
     'acs.hero.desc': 'Professional marking solutions for cables, wires, control cabinets, terminal blocks, and components in harsh industrial environments.',
     'acs.feat.1': 'Outstanding durability in high temperature, chemical, oil, grease, and UV environments.',
@@ -824,8 +826,8 @@ const TRANSLATIONS = {
     'acs.quote.btn': 'Request a quote for ACS system',
 
     /* AUR Page */
-    'aur.title': 'AUR - Robotics & Automation Accessories | Murrplastik Vietnam',
-    'aur.meta.desc': 'Murrplastik\'s AUR robotics accessories - Conduit clamps, swiveling holders, spring-loaded retraction systems. Prevent wire breaks, extend conduit lifetime.',
+    'aur.title': 'AUR - Robotics & Automation Accessories | T&T Vina - Murrplastik Dealer',
+    'aur.meta.desc': 'Murrplastik\'s AUR robotics accessories - Conduit clamps, swiveling holders, spring-loaded retraction systems. Distributed by T&T Vina.',
     'aur.hero.title': 'AUR — Robotics & Automation Accessories',
     'aur.hero.desc': 'Flexible modular design, free-swiveling holders, and spring-loaded retraction systems for optimized cable routing on robot arms.',
     'aur.feat.1': 'Flexible modular design, easily mounted directly onto popular robot brands (KUKA, ABB, Yaskawa, FANUC).',
@@ -842,8 +844,8 @@ const TRANSLATIONS = {
     'aur.quote.btn': 'Request a quote for AUR system',
 
     /* EFK Page */
-    'efk.title': 'EFK - Energy Chains (Drag Chains) | Murrplastik Vietnam',
-    'efk.meta.desc': 'Murrplastik EFK Energy Chains - Protect conductors in high-speed, linear motion. Minimize dust, friction, and wear.',
+    'efk.title': 'EFK - Energy Chains (Drag Chains) | T&T Vina - Murrplastik Dealer',
+    'efk.meta.desc': 'Murrplastik EFK Energy Chains - Protect conductors in high-speed, linear motion. Distributed by T&T Vina.',
     'efk.hero.title': 'EFK — Energy Chains (Drag Chains)',
     'efk.hero.desc': 'Cable and hose protection in continuous motion for robots, CNC machines, laser cutters, and industrial cranes.',
     'efk.feat.1': 'Low-noise and low-friction operation, minimizing dust generation during service.',
@@ -858,8 +860,8 @@ const TRANSLATIONS = {
     'efk.quote.btn': 'Request a quote for EFK system',
 
     /* KDH Page */
-    'kdh.title': 'KDH - Cable Entry & Holder Systems | Murrplastik Vietnam',
-    'kdh.meta.desc': 'Murrplastik KDH cable entry plates - Save space, fast installation, IP65/IP68 protection. Ideal solution for CNC cabinets.',
+    'kdh.title': 'KDH - Cable Entry & Holder Systems | T&T Vina - Murrplastik Dealer',
+    'kdh.meta.desc': 'Murrplastik KDH cable entry plates - Save space, fast installation, IP65/IP68 protection. Distributed by T&T Vina.',
     'kdh.hero.title': 'KDH — Cable Entry & Holder Systems',
     'kdh.hero.desc': 'Smart cable entry plate solutions replacing traditional cable glands, ensuring IP65/IP68 protection and strain relief.',
     'kdh.feat.1': 'Allows feeding multiple pre-terminated or standard cables through minimal space.',
@@ -876,7 +878,7 @@ const TRANSLATIONS = {
     'kdh.quote.btn': 'Request a quote for KDH system',
 
     /* SUV Page */
-    'suv.title': 'SUV - Cable Protection Conduits & Fittings | Murrplastik Vietnam',
+    'suv.title': 'SUV - Cable Protection Conduits & Fittings | T&T Vina - Murrplastik Dealer',
     'suv.meta.desc': 'Murrplastik SUV corrugated polyamide conduits - Ultimate cable protection against impact, UV, chemicals. IP68/IP69K rating.',
     'suv.hero.title': 'SUV — Conduits & Fittings',
     'suv.hero.desc': 'Premium polyamide corrugated tubes and quick-connect fittings rating IP68/IP69K, chemical and UV resistant.',
