@@ -1784,6 +1784,70 @@ footer{background:var(--dark-2);border-top:1px solid rgba(255,255,255,0.06)}
   display: block !important;
 }
 
+/* --- Event Form Feedback Box --- */
+.ev-feedback-box {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  animation: evFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes evFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ev-feedback-box.success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: #86efac;
+}
+
+.ev-feedback-box.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #fca5a5;
+}
+
+.ev-feedback-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.ev-feedback-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ev-feedback-body {
+  flex: 1;
+}
+
+.ev-feedback-title {
+  font-weight: 700;
+  font-size: 14.5px;
+  margin-bottom: 3px;
+  color: #ffffff;
+}
+
+.ev-feedback-box.success .ev-feedback-title {
+  color: #4ade80;
+}
+
+.ev-feedback-box.error .ev-feedback-title {
+  color: #f87171;
+}
+
 /* --- VIP Guest Section (Mr. Kevin Wong - Murrplastik APAC) --- */
 .vip-guest-section {
   margin-bottom: 5rem;

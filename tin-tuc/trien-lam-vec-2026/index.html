@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&display=swap">
   
-  <link rel="stylesheet" href="../../assets/css/main.css?v=2.3.2">
+  <link rel="stylesheet" href="../../assets/css/main.css?v=2.3.3">
   <link rel="stylesheet" href="../../assets/3d/vec26-booth/css/booth_viewer.css?v=1.0.0">
 
   <!-- Schema.org Event & Article -->
@@ -433,6 +433,7 @@
                 <input id="ev-lasertag" type="text" placeholder="Ví dụ: Tên + Tên Công Ty (VD: Nguyen Van A - ABC Corp)">
               </div>
               <button type="submit" class="btn-submit" data-i18n="news.vec2026.btn_reg">XÁC NHẬN ĐĂNG KÝ THAM QUAN VEC 2026 →</button>
+              <div id="ev-feedback" class="ev-feedback-box" style="display:none;"></div>
             </form>
           </div>
         </div>
@@ -494,6 +495,29 @@
     // Event Form submit handler -> Google Apps Script Backend (Google Sheets + Sales Team)
     const EVENT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWZZRmnHPzarbavzuSIK2vKAu-VpqySVnvhB_hOtefOaV6GaYY-5EvcuPfrf5zkzCt/exec';
     
+    function showFormFeedback(type, title, msg) {
+      const box = document.getElementById('ev-feedback');
+      if (!box) return;
+      
+      let iconSvg = '';
+      if (type === 'success') {
+        iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>';
+      } else {
+        iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+      }
+
+      box.className = 'ev-feedback-box ' + type;
+      box.innerHTML = `
+        <div class="ev-feedback-icon">${iconSvg}</div>
+        <div class="ev-feedback-body">
+          <div class="ev-feedback-title">${title}</div>
+          <div>${msg}</div>
+        </div>
+      `;
+      box.style.display = 'flex';
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     document.getElementById('eventQuoteForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = this;
@@ -503,21 +527,29 @@
       const emailInput = document.getElementById('ev-email');
       const companyInput = document.getElementById('ev-company');
       const lasertagInput = document.getElementById('ev-lasertag');
+      const feedbackBox = document.getElementById('ev-feedback');
+
+      if (feedbackBox) feedbackBox.style.display = 'none';
 
       const name = nameInput.value.trim();
       const phone = phoneInput.value.trim();
       const email = emailInput ? emailInput.value.trim() : '';
       const company = companyInput ? companyInput.value.trim() : '';
       const lasertag = lasertagInput ? lasertagInput.value.trim() : '';
+      const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
 
       if (!name || !phone) {
-        alert(typeof currentLang !== 'undefined' && currentLang === 'en' ? 'Please enter your name and phone number.' : 'Vui lòng điền họ tên và số điện thoại liên hệ.');
+        showFormFeedback(
+          'error',
+          isEn ? 'Required Information' : 'Thông tin bắt buộc',
+          isEn ? 'Please enter your name and phone number.' : 'Vui lòng điền họ tên và số điện thoại liên hệ.'
+        );
         return;
       }
 
       const origBtnText = btn.textContent;
       btn.disabled = true;
-      btn.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Sending registration...' : 'Đang gửi đăng ký tham quan...';
+      btn.textContent = isEn ? 'Sending registration...' : 'Đang gửi đăng ký tham quan...';
 
       const payload = {
         name: name,
@@ -538,15 +570,23 @@
           body: JSON.stringify(payload)
         });
 
-        alert(typeof currentLang !== 'undefined' && currentLang === 'en'
-          ? 'Registration successful! T&T Vina team will contact you shortly with your VIP reception badge and laser souvenir details.'
-          : 'Đăng ký thành công! Đội ngũ T&T Vina đã tiếp nhận thông tin và sẽ gửi vé mời VIP + chuẩn bị quà tặng khắc Laser mp-LM 1M tới bạn.');
+        showFormFeedback(
+          'success',
+          isEn ? 'Registration Successful!' : 'ĐĂNG KÝ THÀNH CÔNG!',
+          isEn
+            ? 'T&T Vina team has received your details and will contact you shortly to send your VIP invitation badge and prepare your laser-engraved souvenir.'
+            : 'Đội ngũ T&T Vina đã tiếp nhận thông tin và sẽ gửi vé mời VIP + chuẩn bị quà tặng khắc Laser mp-LM 1M tới bạn.'
+        );
         form.reset();
       } catch (err) {
         console.warn('Submission notice:', err);
-        alert(typeof currentLang !== 'undefined' && currentLang === 'en'
-          ? 'Registration received! T&T Vina will reach out to you shortly.'
-          : 'Thông tin đã được ghi nhận! T&T Vina sẽ liên hệ xác nhận vé mời sớm nhất.');
+        showFormFeedback(
+          'success',
+          isEn ? 'Registration Received!' : 'ĐÃ TIẾP NHẬN THÔNG TIN!',
+          isEn
+            ? 'Your registration has been recorded. T&T Vina will reach out to you shortly.'
+            : 'Thông tin đã được ghi nhận vào hệ thống! T&T Vina sẽ liên hệ xác nhận vé mời sớm nhất.'
+        );
         form.reset();
       } finally {
         btn.disabled = false;
