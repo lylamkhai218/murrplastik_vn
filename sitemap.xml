@@ -52,10 +52,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://murrplastikvn.com/industries/san-xuat-o-to/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://murrplastikvn.com/industries/san-xuat-o-to/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://murrplastikvn.com/industries/san-xuat-o-to/?lang=en"/>
+    <loc>https://murrplastikvn.com/tin-tuc/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://murrplastikvn.com/tin-tuc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://murrplastikvn.com/tin-tuc/?lang=en"/>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://murrplastikvn.com/tin-tuc/trien-lam-vec-2026/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://murrplastikvn.com/tin-tuc/trien-lam-vec-2026/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://murrplastikvn.com/tin-tuc/trien-lam-vec-2026/?lang=en"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

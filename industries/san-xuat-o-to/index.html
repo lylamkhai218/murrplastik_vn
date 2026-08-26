@@ -54,7 +54,7 @@
     <!-- Custom Light Mode CSS -->
     <link rel="stylesheet" href="style.css?v=2.1.0">
 
-    <!-- Structured Data JSON-LD -->
+    <!-- Structured Data JSON-LD (TechArticle & FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,6 +76,46 @@
       "description": "Báo cáo phân tích hiện trạng và giải pháp thay thế Dress Pack R-Tec Liner của Murrplastik cho Robot lắp ráp nhà máy VinFast Hải Phòng."
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Tại sao hệ thống Dress Pack Robot trên dây chuyền VinFast cần nâng cấp R-Tec Liner của Murrplastik?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trên các robot hàn thân vỏ công suất cao như ABB IRB 7600/6700, các khớp gá nhựa truyền thống chịu ứng lực kéo xoắn liên tục dẫn đến nứt vỡ, rơi cáp và nguy cơ dừng chuyền đột xuất. Giải pháp R-Tec Liner của Murrplastik trang bị cơ chế lò xo co rút tự động bù lực kéo và gá đỡ nắp kim loại SH Metal Cap siêu bền, giúp triệt tiêu hoàn toàn lực xoắn gập và nâng cao tuổi thọ dây dẫn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cụm cổ xoay Trục 6 (Axis 6 Rotary Unit) và khớp cầu KEG-AK-70 mang lại hiệu quả gì cho Robot ABB 7600?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cụm cổ xoay Trục 6 kết hợp khớp cầu KEG-AK-70 sw ball joint của Murrplastik cho phép tuyến ống luồn xoay tự do theo mọi góc nghiêng và quay 360 độ của mỏ hàn/súng hàn robot mà không bị xoắn căng hay va quẹt vào thân phôi, giải quyết dứt điểm điểm nghẽn ứng lực tại khớp uốn cổ tay robot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kết quả chạy thử nghiệm (Test Run) tại nhà máy VinFast Cát Hải ngày 17/08/2026 như thế nào?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ngày 17/08/2026, đội ngũ kỹ thuật T&T Vina đã hoàn thành việc bảo trì và thay thế hoàn thiện cụm cổ xoay Trục 6. Sau đó, Kỹ sư Robot của VinFast đã trực tiếp test full round toàn bộ 6 bậc tự do ở tốc độ tối đa với tải trọng thực tế; hệ thống vận hành trơn tru, ổn định tuyệt đối và được nghiệm thu thành công."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "T&T Vina đóng vai trò gì trong dự án cung cấp phụ kiện Murrplastik cho VinFast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Công ty TNHH Công nghiệp T&T Vina (T&T Vina Industrial Co., Ltd) là Đại lý phân phối ủy quyền chính thức của Murrplastik Systemtechnik GmbH (Đức) tại Việt Nam, chịu trách nhiệm khảo sát hiện trường, tư vấn giải pháp 3D, cung cấp vật tư chính hãng và hỗ trợ lắp đặt, bảo trì kỹ thuật cho các dự án tự động hóa công nghiệp."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -93,9 +133,10 @@
             <nav class="nav-menu">
                 <a href="#overview" class="nav-link"><i class="fa-solid fa-file-contract"></i> Tổng quan</a>
                 <a href="#issues" class="nav-link"><i class="fa-solid fa-triangle-exclamation"></i> Hiện trạng</a>
-                <a href="#solution" class="nav-link"><i class="fa-solid fa-lightbulb"></i> Giải pháp 3D</a>
+                <a href="#solution" class="nav-link"><i class="fa-solid fa-lightbulb"></i> Giải pháp</a>
                 <a href="#materials" class="nav-link"><i class="fa-solid fa-list-check"></i> Vật tư thay thế</a>
                 <a href="#construction" class="nav-link"><i class="fa-solid fa-wrench"></i> Nhật ký thi công</a>
+                <a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> Hỏi đáp</a>
             </nav>
             <div class="header-actions">
                 <a href="../../products/phu-kien-robot-va-tu-dong-hoa.html" class="btn btn-primary btn-small">
@@ -534,6 +575,185 @@
                         <div class="construction-gallery-item">
                             <img src="./Ảnh thi công/Thi công hoàn thành.jpg" alt="Thi công hoàn thành">
                             <div class="construction-gallery-caption"><strong>Hoàn thành thi công lắp đặt</strong><br><span style="color:var(--text-muted); font-size:12px">Hệ thống Dress Pack Murrplastik đã sẵn sàng chạy thử.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 Construction Card (17/08/2026) -->
+            <div class="glass-card construction-log-card" style="margin-top:40px; border-color: rgba(213, 30, 41, 0.4);">
+                <div class="construction-meta-bar">
+                    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                        <span class="event-date-badge"><i class="fa-solid fa-calendar-check"></i> 17 / 08 / 2026</span>
+                        <span class="event-status-tag"><i class="fa-solid fa-circle-check"></i> ĐÃ HOÀN THÀNH BẢO TRÌ & NÂNG CẤP HOÀN THIỆN CỔ XOAY TRỤC 6 (TEST FULL ROUND THÀNH CÔNG)</span>
+                    </div>
+                    <div style="font-size:13px; color:var(--text-muted);">
+                        <i class="fa-solid fa-location-dot text-red"></i> <a href="https://maps.app.goo.gl/YwQVZXTjYyBD3AMg6" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline;" title="Xem vị trí Nhà máy VinFast Hải Phòng trên Google Maps">Xưởng Hàn Thân Vỏ (Body Shop) - Nhà máy VinFast Cát Hải, Hải Phòng</a>
+                    </div>
+                </div>
+
+                <div class="construction-highlights-grid">
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-wrench text-red"></i> Hoàn thiện Giải pháp Cổ xoay Trục 6</h4>
+                        <ul>
+                            <li>Đội ngũ kỹ thuật <strong>Công ty TNHH Công nghiệp T&T Vina (T&T Vina Industrial Co., Ltd)</strong> tiếp tục đến nhà máy VinFast Cát Hải để bảo trì và thay thế hoàn thiện nốt giải pháp cổ xoay Trục 6 (Axis 6 Rotary Unit) theo phương án thiết kế kỹ thuật từ <strong>Murrplastik</strong>.</li>
+                            <li>Lắp đặt hoàn thiện khớp cầu xoay tự do <strong>KEG-AK-70 sw ball joint</strong> và cụm gá chịu lực cho mỏ hàn Robot ABB IRB 7600.</li>
+                            <li>Kiểm tra cân chỉnh toàn tuyến Dress Pack từ Trục 1 đến Trục 6 đảm bảo biên độ co giãn tối ưu của hộp rút <strong>R-Tec Liner 550mm</strong>; đồng thời <strong>đã thay thế tấm bích khác (tấm đế đặt dưới hộp thu hồi cáp R-Tec Liner) để cho các kỹ sư của VinFast có thể tùy ý căn chỉnh biên độ co rút dễ dàng hơn</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-square-check text-blue"></i> Nghiệm thu & Test Full Round</h4>
+                        <ul>
+                            <li><strong>Kỹ sư Robot của VinFast</strong> đã trực tiếp tiến hành chạy test full round chu kỳ hàn thực tế ở cường độ cao.</li>
+                            <li>Toàn bộ 6 trục chuyển động linh hoạt tuyệt đối, không còn hiện tượng giật xoắn, va chạm hay căng đứt ống dẫn cáp.</li>
+                            <li>Hệ thống được kỹ sư VinFast đánh giá đạt độ hoàn thiện cao, đáp ứng đầy đủ tiêu chuẩn vận hành 24/7 khắt khe của dây chuyền lắp ráp ô tô.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Comparison Slider Component -->
+                <div class="comparison-wrapper">
+                    <div style="text-align:center; margin-bottom:16px;">
+                        <h4 style="font-size:16px; color:var(--text-primary);"><i class="fa-solid fa-code-compare text-red"></i> So Sánh Trực Quan: Bản Vẽ Thiết Kế 3D vs Lắp Đặt Thực Tế Trục 6 Robot ABB</h4>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-top:4px;">Kéo thanh trượt ở giữa sang trái hoặc phải để so sánh mô phỏng 3D Murrplastik và hình ảnh thực tế tại VinFast</p>
+                    </div>
+
+                    <div class="comparison-slider-container" id="axis6-comparison-slider">
+                        <div class="comparison-images">
+                            <img src="./Ảnh thi công/17_08/full_axis_6_rotary_unit_real.jpeg" alt="Lắp đặt thực tế Cổ xoay Trục 6 tại VinFast" class="comparison-img comparison-img-original">
+                            <img src="./Ảnh thi công/17_08/full_axis_6_rotary_unit_draw.jpeg" alt="Bản vẽ thiết kế 3D Murrplastik Trục 6" class="comparison-img comparison-img-modified" id="comparison-draw-img">
+                            
+                            <span class="comparison-badge badge-draw"><i class="fa-solid fa-cube"></i> Bản vẽ thiết kế 3D</span>
+                            <span class="comparison-badge badge-real"><i class="fa-solid fa-industry"></i> Sản phẩm thực tế</span>
+
+                            <div class="comparison-divider" id="comparison-divider">
+                                <div class="comparison-handle" id="comparison-handle" title="Kéo để so sánh" aria-label="Kéo để so sánh hình ảnh">
+                                    <i class="fa-solid fa-arrows-left-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="comparison-caption"><i class="fa-solid fa-circle-info text-red"></i> <em>Cụm cổ xoay Trục 6 (Axis 6 Rotary Unit) chuẩn khớp 100% giữa thiết kế bản vẽ kỹ thuật Murrplastik và lắp đặt thực tế trên Robot ABB 7600.</em></p>
+                </div>
+
+                <!-- Gallery Section Phase 2 -->
+                <div class="construction-gallery-section" style="margin-top:30px;">
+                    <h4 style="margin-bottom:16px;"><i class="fa-solid fa-images text-red"></i> Hình ảnh Thi công Hoàn thiện Cụm Cổ Xoay Trục 6 (17/08/2026)</h4>
+                    <div class="construction-gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                        <div class="construction-gallery-item">
+                            <img src="./Ảnh thi công/17_08/Axis 6 rotary unit_1.jpg" alt="Axis 6 rotary unit - Cụm khớp xoay Trục 6 lắp hoàn thiện trên Robot ABB">
+                            <div class="construction-gallery-caption"><strong>Cụm cổ xoay Trục 6 (Axis 6 Rotary Unit)</strong><br><span style="color:var(--text-muted); font-size:12px">Lắp đặt hoàn thiện ôm sát cổ tay robot ABB 7600.</span></div>
+                        </div>
+                        <div class="construction-gallery-item">
+                            <img src="./Ảnh thi công/17_08/Axis 6 rotary unit_2.jpg" alt="Chi tiết liên kết Axis 6 rotary unit chống xoắn gập cáp">
+                            <div class="construction-gallery-caption"><strong>Chi tiết liên kết xoay Trục 6</strong><br><span style="color:var(--text-muted); font-size:12px">Bảo vệ cáp tín hiệu nguồn hàn khi mỏ hàn quay 360°.</span></div>
+                        </div>
+                        <div class="construction-gallery-item">
+                            <img src="./Ảnh thi công/17_08/KEG-AK-70 sw_ball joint.jpg" alt="Khớp cầu xoay KEG-AK-70 sw ball joint">
+                            <div class="construction-gallery-caption"><strong>Khớp cầu xoay KEG-AK-70 Ball Joint</strong><br><span style="color:var(--text-muted); font-size:12px">Khớp cầu xoay đa hướng triệt tiêu lực uốn cong cục bộ.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Video Shorts Test Full Round Embed -->
+                <div class="video-test-section">
+                    <div class="video-embed-card">
+                        <div class="video-embed-header">
+                            <h4><i class="fa-brands fa-youtube text-red" style="font-size:22px;"></i> Video Kỹ Sư Robot VinFast Test Full Round Robot ABB 7600</h4>
+                            <a href="https://youtube.com/shorts/_4qiv_jAXFI?feature=share" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở trên YouTube
+                            </a>
+                        </div>
+                        <div class="video-player-container">
+                            <div class="video-player-frame">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/_4qiv_jAXFI" 
+                                    title="VinFast Robot Engineer Test Full Round ABB 7600 with Murrplastik Dress Pack" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="video-info-panel">
+                                <div class="video-info-item">
+                                    <h5><i class="fa-solid fa-circle-check text-blue"></i> Trực tiếp kiểm thử tại Xưởng Hàn VinFast Cát Hải</h5>
+                                    <p>Video ghi lại buổi test full round thực tế bởi kỹ sư robot VinFast. Robot thực hiện chu kỳ chuyển động quay tối đa các trục 4, 5, 6 mà hệ thống ống dẫn Dress Pack vẫn giữ quỹ đạo ôm sát hoàn hảo.</p>
+                                </div>
+                                <div class="video-info-item">
+                                    <h5><i class="fa-solid fa-gauge-high text-red"></i> Hoạt động ổn định ở tốc độ tải tối đa</h5>
+                                    <p>Hộp rút lò xo R-Tec Liner tự động nhả và thu ống theo đúng hành trình vận hành của robot, hoàn toàn loại bỏ hiện tượng vung lắc hay kẹt ống vào đồ gá hàn.</p>
+                                </div>
+                                <div class="video-info-item">
+                                    <h5><i class="fa-solid fa-handshake text-blue"></i> Khẳng định năng lực kỹ thuật T&T Vina</h5>
+                                    <p>Đội ngũ kỹ thuật T&T Vina Industrial Co., Ltd ứng dụng giải pháp cơ điện chuẩn xác từ Murrplastik Đức cho các dây chuyền robot tại nhà máy VinFast.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ (Hỏi & Đáp) -->
+    <section class="content-section" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">HỎI ĐÁP CHUYÊN GIA</span>
+                <h2 class="section-title">Câu Hỏi Thường Gặp Về Dress Pack Robot</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>1. Tại sao hệ thống Dress Pack Robot trên dây chuyền VinFast cần nâng cấp R-Tec Liner của Murrplastik?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Trên các robot hàn thân vỏ công suất cao như ABB IRB 7600/6700, các khớp gá nhựa truyền thống chịu ứng lực kéo xoắn liên tục dẫn đến nứt vỡ, rơi cáp và nguy cơ dừng chuyền đột xuất.</p>
+                            <p>Giải pháp <strong>R-Tec Liner</strong> của Murrplastik trang bị cơ chế lò xo co rút tự động bù lực kéo (hành trình 550mm) và gá đỡ nắp kim loại <strong>SH Metal Cap</strong> siêu bền, giúp triệt tiêu hoàn toàn lực xoắn gập và nâng cao tuổi thọ dây dẫn lên gấp nhiều lần.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>2. Cụm cổ xoay Trục 6 (Axis 6 Rotary Unit) và Khớp cầu KEG-AK-70 mang lại hiệu quả gì cho Robot ABB 7600?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Cụm cổ xoay Trục 6 kết hợp khớp cầu <strong>KEG-AK-70 sw ball joint</strong> của Murrplastik cho phép tuyến ống luồn xoay tự do theo mọi góc nghiêng và quay 360 độ của súng hàn robot.</p>
+                            <p>Nhờ đó, cáp nguồn hàn và tín hiệu không bao giờ bị vặn xoắn hay va quẹt vào đồ gá, giải quyết dứt điểm điểm nghẽn ứng lực lớn nhất tại cổ tay robot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>3. Kết quả chạy thử nghiệm (Test Run) tại nhà máy VinFast Cát Hải ngày 17/08/2026 như thế nào?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Ngày 17/08/2026, đội ngũ kỹ thuật <strong>T&T Vina Industrial Co., Ltd</strong> đã hoàn tất việc bảo trì và thay thế hoàn thiện cụm cổ xoay Trục 6.</p>
+                            <p>Kỹ sư Robot của VinFast đã trực tiếp tiến hành chạy test full round toàn bộ 6 bậc tự do ở tốc độ tối đa với tải trọng hàn thực tế; hệ thống vận hành trơn tru, ổn định tuyệt đối và được nghiệm thu thành công ngay trong ngày.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>4. Đơn vị nào là đại lý phân phối chính hãng các sản phẩm Murrplastik tại Việt Nam?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p><strong>Công ty TNHH Công nghiệp T&T Vina (T&T Vina Industrial Co., Ltd)</strong> là Đại lý phân phối ủy quyền chính thức các sản phẩm của Murrplastik Systemtechnik GmbH (Đức) tại Việt Nam.</p>
+                            <p>Chúng tôi cung cấp đầy đủ giải pháp từ khảo sát hiện trường, thiết kế mô hình 3D, cung cấp vật tư chính hãng có CO/CQ đến hỗ trợ lắp đặt, bảo trì kỹ thuật cho các nhà máy sản xuất ô tô và tự động hóa.</p>
                         </div>
                     </div>
                 </div>
