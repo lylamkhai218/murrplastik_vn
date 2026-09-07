@@ -184,7 +184,7 @@
         <div class="section-tag" data-i18n="news.vec2026.sim_tag">Trải Nghiệm 3D Tương Tác</div>
         <h2 class="section-title" data-i18n="news.vec2026.sim_title">Mô Phỏng Gian Hàng Ảo 3D (Ô H1-15 · Sảnh 2)</h2>
         <p class="section-sub" data-i18n="news.vec2026.sim_sub">
-          Xoay 360°, phóng to chi tiết, chuyển góc nhìn camera và nhấp vào các điểm số (1–5) trên màn hình để khám phá không gian trưng bày thiết bị công nghệ Murrplastik.
+          Xoay 360°, phóng to chi tiết, chuyển góc nhìn camera và nhấp vào các điểm số (1–4) trên màn hình để khám phá không gian trưng bày thiết bị công nghệ Murrplastik.
         </p>
 
         <div class="booth3d-wrapper" id="booth3d-container">
@@ -482,14 +482,14 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="../../assets/3d/vec26-booth/libs/three.min.js"></script>
-  <script src="../../assets/3d/vec26-booth/libs/OrbitControls.js"></script>
-  <script src="../../assets/3d/vec26-booth/textures_data.js"></script>
+  <!-- Scripts (Deferred for optimal Core Web Vitals) -->
+  <script src="../../assets/3d/vec26-booth/libs/three.min.js" defer></script>
+  <script src="../../assets/3d/vec26-booth/libs/OrbitControls.js" defer></script>
+  <script src="../../assets/3d/vec26-booth/textures_data.js?v=1.1.0" defer></script>
   <script>window.VEC26_BASE_PATH = '../../assets/3d/vec26-booth/';</script>
-  <script src="../../assets/3d/vec26-booth/js/booth_viewer.js?v=1.0.0"></script>
+  <script src="../../assets/3d/vec26-booth/js/booth_viewer.js?v=1.1.0" defer></script>
   <script src="../../assets/js/i18n.js?v=1.5.0" defer></script>
-  <script src="../../assets/js/main.js?v=2.1.0"></script>
+  <script src="../../assets/js/main.js?v=2.1.0" defer></script>
 
   <script>
     // Event Form submit handler -> Google Apps Script Backend (Google Sheets + Sales Team)

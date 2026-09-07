@@ -47,17 +47,6 @@
       tag: 'AUR Robotics'
     },
     {
-      id: 'tv',
-      x: -1.16,
-      y: 1.65,
-      z: -0.17,
-      title_vi: 'Trung Tâm Trình Chiếu Kỹ Thuật (65")',
-      title_en: 'Technical Showcase Display (65")',
-      desc_vi: 'Màn hình 4K trình chiếu video ứng dụng thực tế tại nhà máy VinFast, Heineken, Samsung và catalogue 3D.',
-      desc_en: '4K display presenting field application case studies at VinFast, Heineken, Samsung and 3D product catalog.',
-      tag: 'Multimedia Hub'
-    },
-    {
       id: 'rack',
       x: -0.81,
       y: 1.35,
@@ -163,7 +152,7 @@
     return geo;
   }
 
-  // --- BOOTH WALLS & VALANCE BOARDS ---
+  // --- BOOTH WALLS & VALANCE BOARDS (V4: 900x1800mm Panels Centered in 1.0m Bays, Aligned Top) ---
   function buildBoothWalls() {
     const loader = new THREE.TextureLoader();
     const maxAniso = renderer.capabilities.getMaxAnisotropy();
@@ -175,39 +164,76 @@
       return tex;
     }
 
-    const backTex = loadWallTexture(getTextureSource('v3_backwall'));
-    const sideTex = loadWallTexture(getTextureSource('v3_sidewall'));
     const valFrontTex = loadWallTexture(getTextureSource('v3_valance_front'));
     const valSideTex = loadWallTexture(getTextureSource('v3_valance_side'));
 
-    // Back Wall (3m x 2.5m at Z = -1.5m)
-    const backGeo = new THREE.PlaneGeometry(BOOTH_W, BOOTH_H);
-    const backMat = new THREE.MeshStandardMaterial({
-      map: backTex,
-      roughness: 0.88,
+    // Base Shell Scheme Partition Walls (3.0m x 2.5m White Matte Backing)
+    const baseMat = new THREE.MeshStandardMaterial({
+      color: 0xf3f5f8,
+      roughness: 0.92,
       metalness: 0.05,
       side: THREE.DoubleSide
     });
-    backwallMesh = new THREE.Mesh(backGeo, backMat);
-    backwallMesh.position.set(0, BOOTH_H / 2, -BOOTH_D / 2 + 0.01);
-    backwallMesh.receiveShadow = true;
-    boothGroup.add(backwallMesh);
+    const baseBackMesh = new THREE.Mesh(new THREE.PlaneGeometry(BOOTH_W, BOOTH_H), baseMat);
+    baseBackMesh.position.set(0, BOOTH_H / 2, -BOOTH_D / 2 + 0.005);
+    baseBackMesh.receiveShadow = true;
+    boothGroup.add(baseBackMesh);
 
-    // Side Wall (Left 3m x 2.5m at X = -1.5m)
-    const sideGeo = new THREE.PlaneGeometry(BOOTH_D, BOOTH_H);
-    const sideMat = new THREE.MeshStandardMaterial({
-      map: sideTex,
-      roughness: 0.88,
-      metalness: 0.05,
-      side: THREE.DoubleSide
+    const baseSideMesh = new THREE.Mesh(new THREE.PlaneGeometry(BOOTH_D, BOOTH_H), baseMat);
+    baseSideMesh.position.set(-BOOTH_W / 2 + 0.005, BOOTH_H / 2, 0);
+    baseSideMesh.rotation.y = Math.PI / 2;
+    baseSideMesh.receiveShadow = true;
+    boothGroup.add(baseSideMesh);
+
+    // V4 Graphic Panels: 900mm x 1800mm (0.9m x 1.8m)
+    // Centered in each 1.0m bay (5cm margin left & right), Aligned Top to the Frame (Top = 2.50m, Center Y = 1.60m)
+    const PANEL_W = 0.9;
+    const PANEL_H = 1.8;
+    const PANEL_Y = BOOTH_H - PANEL_H / 2; // 1.60m
+    const panelGeo = new THREE.PlaneGeometry(PANEL_W, PANEL_H);
+
+    // Back Wall: 3 Bays centered at X = -1.0m, X = 0.0m, X = +1.0m
+    const bwPanels = [
+      { key: 'v4_bw_panel_1', x: -1.0 },
+      { key: 'v4_bw_panel_2', x: 0.0 },
+      { key: 'v4_bw_panel_3', x: 1.0 }
+    ];
+    bwPanels.forEach(({ key, x }) => {
+      const tex = loadWallTexture(getTextureSource(key));
+      const mat = new THREE.MeshStandardMaterial({
+        map: tex,
+        roughness: 0.88,
+        metalness: 0.05,
+        side: THREE.DoubleSide
+      });
+      const pMesh = new THREE.Mesh(panelGeo, mat);
+      pMesh.position.set(x, PANEL_Y, -BOOTH_D / 2 + 0.012);
+      pMesh.receiveShadow = true;
+      boothGroup.add(pMesh);
     });
-    sidewallMesh = new THREE.Mesh(sideGeo, sideMat);
-    sidewallMesh.position.set(-BOOTH_W / 2 + 0.01, BOOTH_H / 2, 0);
-    sidewallMesh.rotation.y = Math.PI / 2;
-    sidewallMesh.receiveShadow = true;
-    boothGroup.add(sidewallMesh);
 
-    // Valance Front (3m x 0.4m at Top Front Z = +1.5m)
+    // Side Wall: 3 Bays centered at Z = -1.0m (Corner), Z = 0.0m (Mid), Z = +1.0m (Front Aisle)
+    const swPanels = [
+      { key: 'v4_sw_panel_3', z: -1.0 },
+      { key: 'v4_sw_panel_2', z: 0.0 },
+      { key: 'v4_sw_panel_1', z: 1.0 }
+    ];
+    swPanels.forEach(({ key, z }) => {
+      const tex = loadWallTexture(getTextureSource(key));
+      const mat = new THREE.MeshStandardMaterial({
+        map: tex,
+        roughness: 0.88,
+        metalness: 0.05,
+        side: THREE.DoubleSide
+      });
+      const pMesh = new THREE.Mesh(panelGeo, mat);
+      pMesh.position.set(-BOOTH_W / 2 + 0.012, PANEL_Y, z);
+      pMesh.rotation.y = Math.PI / 2;
+      pMesh.receiveShadow = true;
+      boothGroup.add(pMesh);
+    });
+
+    // Valance Front (3m x 0.4m at Top Front Z = +1.5m) — KEPT UNCHANGED
     const valFrontGeo = new THREE.BoxGeometry(BOOTH_W - 0.05, VALANCE_H, 0.01);
     const valFrontMat = new THREE.MeshStandardMaterial({
       map: valFrontTex,
@@ -219,7 +245,7 @@
     valanceFrontMesh.castShadow = true;
     boothGroup.add(valanceFrontMesh);
 
-    // Valance Side (3m x 0.4m at Top Right X = +1.5m)
+    // Valance Side (3m x 0.4m at Top Right X = +1.5m) — KEPT UNCHANGED
     const valSideGeo = new THREE.BoxGeometry(0.01, VALANCE_H, BOOTH_D - 0.05);
     const valSideMat = new THREE.MeshStandardMaterial({
       map: valSideTex,
@@ -242,12 +268,15 @@
 
     const postGeo = createTSlotGeometry(BOOTH_H, 0.05);
     const postPositions = [
+      // 4 Corner Posts (3.0m x 3.0m footprint)
       [-BOOTH_W / 2, BOOTH_H / 2, -BOOTH_D / 2],
       [BOOTH_W / 2, BOOTH_H / 2, -BOOTH_D / 2],
       [-BOOTH_W / 2, BOOTH_H / 2, BOOTH_D / 2],
       [BOOTH_W / 2, BOOTH_H / 2, BOOTH_D / 2],
+      // Backwall intermediate vertical posts (1.0m bays)
       [-BOOTH_W / 2 + 1.0, BOOTH_H / 2, -BOOTH_D / 2],
       [-BOOTH_W / 2 + 2.0, BOOTH_H / 2, -BOOTH_D / 2],
+      // Sidewall intermediate vertical posts (1.0m bays)
       [-BOOTH_W / 2, BOOTH_H / 2, -BOOTH_D / 2 + 1.0],
       [-BOOTH_W / 2, BOOTH_H / 2, -BOOTH_D / 2 + 2.0]
     ];
@@ -264,6 +293,7 @@
     const beamGeoX = createTSlotGeometry(BOOTH_W, 0.05);
     const beamGeoZ = createTSlotGeometry(BOOTH_D, 0.05);
 
+    // Top Frame Beams
     const topFrontBeam = new THREE.Mesh(beamGeoX, aluMat);
     topFrontBeam.position.set(0, BOOTH_H, BOOTH_D / 2);
     topFrontBeam.rotation.y = Math.PI / 2;
@@ -980,7 +1010,7 @@
     buildFloor();
     buildBoothWalls();
     buildAluminumFrame();
-    buildTVStandAnd65TV();
+    // buildTVStandAnd65TV(); // Removed as requested: Bỏ model TV 3D
     buildDemoTable1Laser();
     buildDemoTable2RTec();
     buildModularPipeRack();
