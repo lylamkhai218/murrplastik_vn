@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Embedded Google Fonts for Barlow & Barlow Condensed with Vietnamese Subsets -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@600;700;800&amp;display=swap');
+
+      .font-heavy {
+        font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .font-sub {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+      }
+      .font-desc {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 500;
+      }
+      .font-body {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 400;
+      }
+    </style>
+
+    <!-- Premium Minimalist White Gradients -->
+    <linearGradient id="card-clean-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fbfcfd" />
+    </linearGradient>
+
+    <!-- Refined Brushed Slate Rim -->
+    <linearGradient id="rim-minimal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="50%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <!-- Murrplastik Brand Red Gradients -->
+    <linearGradient id="red-pure" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="100%" stop-color="#A80720" />
+    </linearGradient>
+    <linearGradient id="red-ruby-deep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#99001A" />
+      <stop offset="100%" stop-color="#7A0014" />
+    </linearGradient>
+
+    <!-- Center Button Gradient -->
+    <linearGradient id="btn-spin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D91435" />
+      <stop offset="100%" stop-color="#A50D25" />
+    </linearGradient>
+
+    <!-- Soft Premium Shadows -->
+    <filter id="shadow-wheel-premium" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.08" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.04" />
+    </filter>
+
+    <filter id="shadow-btn" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#C8102E" flood-opacity="0.3" />
+    </filter>
+
+    <filter id="shadow-pointer" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.2" />
+    </filter>
+
+    <!-- Reusable 60 deg Wedge (-30 to +30 deg) -->
+    <path id="wedge-slice" d="M 400 400 L 677.13 240 A 320 320 0 0 1 677.13 560 Z" />
+  </defs>
+
+  <!-- CONTAINER BACKGROUND -->
+  <g id="Layer_Background">
+    <rect width="800" height="800" fill="url(#card-clean-bg)" rx="24" stroke="#e2e8f0" stroke-width="1.5" />
+    
+    <!-- Minimalist Hairline Frame Guides -->
+    <g opacity="0.4" stroke="#e2e8f0" stroke-width="1">
+      <line x1="40" y1="40" x2="760" y2="40" />
+      <line x1="40" y1="760" x2="760" y2="760" />
+      <line x1="40" y1="40" x2="40" y2="760" />
+      <line x1="760" y1="40" x2="760" y2="760" />
+    </g>
+
+    <!-- Top Minimalist Pill Badge -->
+    <g transform="translate(400, 30)">
+      <rect x="-130" y="0" width="260" height="26" rx="13" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="-110" cy="13" r="3.5" fill="#C8102E" />
+      <text x="8" y="17" fill="#0f172a" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1.2">
+        MURRPLASTIK VIP EXPERIENCE
+      </text>
+    </g>
+  </g>
+
+  <!-- WHEEL MASTER ASSEMBLY -->
+  <g id="Layer_Wheel_Assembly" filter="url(#shadow-wheel-premium)">
+    
+    <!-- Outer Precision Rim -->
+    <circle cx="400" cy="400" r="352" fill="#ffffff" stroke="url(#rim-minimal)" stroke-width="3" />
+    <circle cx="400" cy="400" r="338" fill="none" stroke="#e2e8f0" stroke-width="1.5" />
+    <circle cx="400" cy="400" r="328" fill="#ffffff" stroke="#C8102E" stroke-width="2" />
+
+    <!-- ROTATING WHEEL SLICES (6 BALANCED SECTORS) -->
+    <g id="Layer_Wheel_Slices">
+
+      <!-- SLICE 1: Combo Đặc Biệt (0° - Red) -->
+      <g id="Sector_1" transform="rotate(0 400 400)">
+        <use href="#wedge-slice" fill="url(#red-pure)" stroke="#ffffff" stroke-width="2" />
+        <g transform="translate(565, 400)">
+          <!-- Gift bag icon -->
+          <g transform="translate(-14, -42)">
+            <path d="M 3 8 L 25 8 L 28 28 L 0 28 Z" fill="#ffffff" opacity="0.95" />
+            <path d="M 8 8 C 8 2 20 2 20 8" fill="none" stroke="#ffffff" stroke-width="2" />
+            <line x1="7" y1="14" x2="21" y2="14" stroke="#C8102E" stroke-width="1.5" />
+          </g>
+          <text x="0" y="-6" fill="#ffffff" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="0.5">COMBO ĐẶC BIỆT</text>
+          <text x="0" y="11" fill="#fecaca" class="font-desc" font-size="12" text-anchor="middle">Túi Tupper + Bút Bi</text>
+          <text x="0" y="27" fill="#fca5a5" class="font-sub" font-size="10" text-anchor="middle">[TIER A VIP]</text>
+        </g>
+      </g>
+
+      <!-- SLICE 2: Khắc Laser mp-LM 1M (60° - Crisp White) -->
+      <g id="Sector_2" transform="rotate(60 400 400)">
+        <use href="#wedge-slice" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+        <g transform="translate(565, 400)">
+          <!-- Laser icon -->
+          <g transform="translate(-14, -42)">
+            <rect x="2" y="2" width="24" height="16" rx="2" fill="#0f172a" />
+            <circle cx="14" cy="10" r="3" fill="#38bdf8" />
+            <path d="M 14 18 L 14 30 M 9 26 L 19 26" stroke="#C8102E" stroke-width="2" stroke-linecap="round" />
+          </g>
+          <text x="0" y="-6" fill="#0f172a" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="0.5">KHẮC LASER VIP</text>
+          <text x="0" y="11" fill="#475569" class="font-desc" font-size="12" text-anchor="middle">Thẻ Tên Khắc Lấy Ngay</text>
+          <text x="0" y="27" fill="#C8102E" class="font-sub" font-size="10" text-anchor="middle">[MÁY mp-LM 1M]</text>
+        </g>
+      </g>
+
+      <!-- SLICE 3: Combo Thượng Hạng (120° - Deep Ruby) -->
+      <g id="Sector_3" transform="rotate(120 400 400)">
+        <use href="#wedge-slice" fill="url(#red-ruby-deep)" stroke="#ffffff" stroke-width="2" />
+        <g transform="translate(565, 400)">
+          <!-- Star/Crown icon -->
+          <g transform="translate(-14, -42)">
+            <path d="M 2 22 L 5 8 L 14 15 L 23 8 L 26 22 Z" fill="#FDE68A" />
+            <circle cx="5" cy="7" r="2" fill="#ffffff" />
+            <circle cx="14" cy="13" r="2" fill="#ffffff" />
+            <circle cx="23" cy="7" r="2" fill="#ffffff" />
+          </g>
+          <text x="0" y="-6" fill="#FDE68A" class="font-heavy" font-size="15" text-anchor="middle" letter-spacing="0.5">COMBO THƯỢNG HẠNG</text>
+          <text x="0" y="11" fill="#ffffff" class="font-desc" font-size="12" text-anchor="middle">Túi Tupper + Khắc Laser</text>
+          <text x="0" y="27" fill="#fca5a5" class="font-sub" font-size="10" text-anchor="middle">[TIER A HERO]</text>
+        </g>
+      </g>
+
+      <!-- SLICE 4: Túi Tupper Murrplastik (180° - Soft Slate) -->
+      <g id="Sector_4" transform="rotate(180 400 400)">
+        <use href="#wedge-slice" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+        <g transform="translate(565, 400)">
+          <!-- Bag icon -->
+          <g transform="translate(-13, -42)">
+            <path d="M 3 7 L 23 7 L 26 27 L 0 27 Z" fill="#ffffff" stroke="#475569" stroke-width="1.5" />
+            <path d="M 8 7 C 8 2 18 2 18 7" fill="none" stroke="#C8102E" stroke-width="2" />
+          </g>
+          <text x="0" y="-6" fill="#0f172a" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="0.5">TÚI TUPPER ĐỨC</text>
+          <text x="0" y="11" fill="#475569" class="font-desc" font-size="12" text-anchor="middle">Murrplastik Germany</text>
+          <text x="0" y="27" fill="#64748b" class="font-sub" font-size="10" text-anchor="middle">[TIER B QUÀ TẶNG]</text>
+        </g>
+      </g>
+
+      <!-- SLICE 5: Bút Bi Kim Loại (240° - Red) -->
+      <g id="Sector_5" transform="rotate(240 400 400)">
+        <use href="#wedge-slice" fill="url(#red-pure)" stroke="#ffffff" stroke-width="2" />
+        <g transform="translate(565, 400)">
+          <!-- Pen icon -->
+          <g transform="translate(-14, -42)">
+            <path d="M 5 24 L 21 8 L 25 12 L 9 28 Z" fill="#ffffff" />
+            <path d="M 3 26 L 5 24 L 9 28 L 2 29 Z" fill="#FDE68A" />
+            <line x1="17" y1="12" x2="22" y2="17" stroke="#C8102E" stroke-width="1.5" />
+          </g>
+          <text x="0" y="-6" fill="#ffffff" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="0.5">BÚT BI KIM LOẠI</text>
+          <text x="0" y="11" fill="#fecaca" class="font-desc" font-size="12" text-anchor="middle">Chính Hãng Murrplastik</text>
+          <text x="0" y="27" fill="#fca5a5" class="font-sub" font-size="10" text-anchor="middle">[TIER B QUÀ TẶNG]</text>
+        </g>
+      </g>
+
+      <!-- SLICE 6: CAD 3D + Catalogue 2026 (300° - Crisp White) -->
+      <g id="Sector_6" transform="rotate(300 400 400)">
+        <use href="#wedge-slice" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+        <g transform="translate(565, 400)">
+          <!-- CAD 3D Cube -->
+          <g transform="translate(-14, -42)">
+            <path d="M 14 3 L 26 9 L 26 22 L 14 28 L 2 22 L 2 9 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5" />
+            <path d="M 14 3 L 14 28 M 2 9 L 14 15 L 26 9" stroke="#0f172a" stroke-width="1" />
+          </g>
+          <text x="0" y="-6" fill="#0f172a" class="font-heavy" font-size="15" text-anchor="middle" letter-spacing="0.5">BỘ CAD 3D FULL</text>
+          <text x="0" y="11" fill="#475569" class="font-desc" font-size="12" text-anchor="middle">+ Catalogue Kỹ Thuật 2026</text>
+          <text x="0" y="27" fill="#0284c7" class="font-sub" font-size="10" text-anchor="middle">[TIER C KỸ SƯ]</text>
+        </g>
+      </g>
+
+    </g>
+
+    <!-- CENTER HUB: HIGH-END TACTILE RED BUTTON -->
+    <g id="Layer_Center_Hub" filter="url(#shadow-btn)">
+      <!-- Outer Base Ring -->
+      <circle cx="400" cy="400" r="82" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+      <circle cx="400" cy="400" r="74" fill="none" stroke="#e2e8f0" stroke-width="1.5" />
+      
+      <!-- Center Interactive Red Button -->
+      <circle cx="400" cy="400" r="66" fill="url(#btn-spin-grad)" stroke="#ffffff" stroke-width="2" />
+
+      <!-- Spin Typography -->
+      <text x="400" y="395" fill="#ffffff" class="font-heavy" font-size="22" text-anchor="middle" letter-spacing="2">QUAY</text>
+      <text x="400" y="416" fill="#FDE68A" class="font-heavy" font-size="14" text-anchor="middle" letter-spacing="1.5">VIP PASS</text>
+      <path d="M 390 426 L 400 433 L 410 426" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+  </g>
+
+  <!-- PRECISION TOP POINTER -->
+  <g id="Layer_Top_Pointer" filter="url(#shadow-pointer)">
+    <path d="M 382 46 L 418 46 L 400 106 Z" fill="#0f172a" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M 388 48 L 412 48 L 400 92 Z" fill="#C8102E" />
+    <circle cx="400" cy="52" r="4" fill="#ffffff" />
+  </g>
+
+  <!-- BRAND FOOTER -->
+  <g id="Layer_Brand_Tag" transform="translate(400, 770)">
+    <text x="0" y="0" fill="#94a3b8" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1">
+      T&amp;T VINA × MURRPLASTIK SYSTEMTECHNIK • GIAN HÀNG Ô H1-15 (SẢNH 2)
+    </text>
+  </g>
+</svg>

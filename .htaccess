@@ -7,6 +7,9 @@
   RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
   RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
 
+  # 2. Chặn truy cập trực tiếp các file nhạy cảm và file ẩn (.env, .git, .log)
+  RewriteRule ^(\.env|\.git|\.htaccess|\.user_uploaded|Logs\.csv|All_Logs\.csv) - [F,L,NC]
+
   # 3. Chuyển hướng các URL sản phẩm cũ (mã hãng) sang URL tiếng Việt mới (301 Redirect)
   RewriteRule ^products/acs(\.html)?$ /products/tem-nhan-va-he-thong-dan-nhan [R=301,L,NC]
   RewriteRule ^products/suv(\.html)?$ /products/ong-luon-day-cap-va-phu-kien [R=301,L,NC]
@@ -35,12 +38,12 @@
   RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
-# 3. Nén GZIP (Giảm dung lượng file khi tải qua mạng)
+# 3. Nén GZIP & DEFLATE (Giảm 70-80% dung lượng HTML/CSS/JS/SVG khi truyền tải)
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json image/svg+xml font/woff font/woff2 application/font-woff2
 </IfModule>
 
-# 4. Cấu hình Browser Caching (Lưu bộ nhớ đệm trình duyệt)
+# 4. Cấu hình Browser Caching (Lưu bộ nhớ đệm trình duyệt 1 năm cho file tĩnh)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
@@ -48,22 +51,37 @@
   # HTML & Dynamic pages - NO CACHE to ensure immediate updates across CDN and browsers
   ExpiresByType text/html "access plus 0 seconds"
   ExpiresByType application/xhtml+xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
   
-  # CSS và JS
+  # CSS và JavaScript (1 năm)
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
   
-  # Hình ảnh & Media
+  # Web Fonts (1 năm)
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  
+  # Hình ảnh & Media Tĩnh (1 năm)
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
-# 5. Anti-Caching Headers for HTML & Cyber Security Headers (Strict Bypass for CDN / Hostinger Proxy)
+# 5. HTTP Headers: Tối ưu Cache-Control cho File Tĩnh & Bảo mật HTML
 <IfModule mod_headers.c>
+  # 5.1 Ép Browser Cache triệt để cho static assets (JS, CSS, WebP, PNG, SVG, WOFF2)
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|svg|woff|woff2|ttf)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # 5.2 Dynamic HTML/PHP: Không cache để luôn cập nhật nội dung mới nhất
   <FilesMatch "\.(html|htm|php)$">
     Header set Cache-Control "private, no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate"
     Header set Pragma "no-cache"
@@ -71,7 +89,7 @@
     Header set X-LiteSpeed-Cache-Control "no-cache"
   </FilesMatch>
   
-  # Security Hardening Headers
+  # 5.3 Security Hardening Headers (Tiêu chuẩn An ninh ECC AgentShield)
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"

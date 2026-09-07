@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad-launch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0507" />
+      <stop offset="40%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e0c12" />
+    </linearGradient>
+    
+    <linearGradient id="red-laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="50%" stop-color="#FF3355" />
+      <stop offset="100%" stop-color="#C8102E" />
+    </linearGradient>
+
+    <linearGradient id="gold-ticket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <filter id="glow-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-heavy { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 800; text-transform: uppercase; }
+    .font-sub { font-family: 'Barlow', 'Segoe UI', sans-serif; font-weight: 600; }
+    .font-body { font-family: 'Barlow', 'Segoe UI', sans-serif; font-weight: 400; }
+    .font-mono { font-family: 'Consolas', 'Courier New', monospace; font-weight: 700; }
+  </style>
+
+  <!-- LAYER: BACKGROUND -->
+  <g id="Layer_Background">
+    <rect width="1200" height="630" fill="url(#bg-grad-launch)" />
+    
+    <!-- Neon Circular Accents -->
+    <circle cx="950" cy="300" r="280" fill="#C8102E" opacity="0.15" />
+    <circle cx="100" cy="500" r="200" fill="#0284c7" opacity="0.08" />
+
+    <!-- Top Laser Bar -->
+    <rect x="0" y="0" width="1200" height="6" fill="url(#red-laser)" />
+  </g>
+
+  <!-- LAYER: BRAND HEADER -->
+  <g id="Layer_Header" transform="translate(60, 45)">
+    <text x="0" y="28" fill="#ffffff" class="font-heavy" font-size="28" letter-spacing="1.5">
+      T&amp;T <tspan fill="#C8102E">VINA</tspan>
+    </text>
+    <rect x="135" y="6" width="2" height="26" fill="#334155" />
+    <text x="150" y="28" fill="#cbd5e1" class="font-heavy" font-size="24" letter-spacing="2">
+      MURRPLASTIK <tspan font-size="14" fill="#94a3b8">GERMANY</tspan>
+    </text>
+
+    <!-- Status Live Badge -->
+    <g transform="translate(780, 0)">
+      <rect width="300" height="38" rx="19" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="1.5" />
+      <circle cx="22" cy="19" r="6" fill="#22c55e" />
+      <text x="38" y="24" fill="#4ade80" class="font-sub" font-size="13" letter-spacing="1">
+        ● CỔNG VIP EXPERIENCE ĐÃ MỞ
+      </text>
+    </g>
+  </g>
+
+  <!-- LAYER: MAIN CONTENT LEFT -->
+  <g id="Layer_Main_Content" transform="translate(60, 150)">
+    <!-- Tagline -->
+    <rect x="0" y="0" width="260" height="28" rx="6" fill="#22c55e" opacity="0.2" />
+    <rect x="0" y="0" width="260" height="28" rx="6" fill="none" stroke="#22c55e" stroke-width="1" />
+    <text x="14" y="19" fill="#4ade80" class="font-sub" font-size="12" letter-spacing="1.2">
+      🎉 CHÍNH THỨC HOẠT ĐỘNG
+    </text>
+
+    <!-- Big Headline -->
+    <text x="0" y="80" fill="#ffffff" class="font-heavy" font-size="52" letter-spacing="1">
+      QUAY &amp; NHẬN NGAY
+    </text>
+    <text x="0" y="140" fill="#F59E0B" class="font-heavy" font-size="52" letter-spacing="1">
+      THẺ QUÀ TẶNG VIP
+    </text>
+    <text x="0" y="190" fill="#ffffff" class="font-heavy" font-size="34" letter-spacing="0.5">
+      TẠI GIAN HÀNG H1-15 (SẢNH 2)
+    </text>
+
+    <!-- 3 Simple Steps -->
+    <g transform="translate(0, 225)">
+      <g transform="translate(0, 0)">
+        <circle cx="14" cy="14" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+        <text x="14" y="19" fill="#38bdf8" class="font-heavy" font-size="14" text-anchor="middle">1</text>
+        <text x="40" y="20" fill="#e2e8f0" class="font-sub" font-size="15">Điền thông tin &amp; Quay thưởng trên Website</text>
+      </g>
+
+      <g transform="translate(0, 42)">
+        <circle cx="14" cy="14" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+        <text x="14" y="19" fill="#38bdf8" class="font-heavy" font-size="14" text-anchor="middle">2</text>
+        <text x="40" y="20" fill="#e2e8f0" class="font-sub" font-size="15">Lưu Mã Thẻ VIP Pass cá nhân hóa (VEC26-XXXX)</text>
+      </g>
+
+      <g transform="translate(0, 84)">
+        <circle cx="14" cy="14" r="14" fill="#1e293b" stroke="#22c55e" stroke-width="1.5" />
+        <text x="14" y="19" fill="#22c55e" class="font-heavy" font-size="14" text-anchor="middle">3</text>
+        <text x="40" y="20" fill="#86efac" class="font-sub" font-size="15">Ghé Ô H1-15 (Sảnh 2) nhận quà &amp; Khắc laser tên lấy liền</text>
+      </g>
+    </g>
+
+    <!-- Location Pill -->
+    <g transform="translate(0, 360)">
+      <rect width="470" height="42" rx="8" fill="#111c30" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="26" fill="#94a3b8" class="font-body" font-size="14">
+        📍 Triển lãm Quốc tế VEC 2026 · Trung tâm Triển lãm NECC, Hà Nội
+      </text>
+    </g>
+  </g>
+
+  <!-- LAYER: PERSONALIZED VIP PASS MOCKUP RIGHT -->
+  <g id="Layer_VIP_Pass_Mockup" transform="translate(680, 130)" filter="url(#glow-shadow)">
+    <!-- Ticket Container -->
+    <rect width="460" height="440" rx="18" fill="#0f172a" stroke="#F59E0B" stroke-width="2" />
+    <rect width="460" height="440" rx="18" fill="none" stroke="#F59E0B" stroke-width="1" stroke-dasharray="8 6" opacity="0.4" />
+
+    <!-- Top Badge Bar -->
+    <path d="M 0 18 C 0 8 8 0 18 0 L 442 0 C 452 0 460 8 460 18 L 460 70 L 0 70 Z" fill="#1e293b" />
+    <text x="30" y="42" fill="#F59E0B" class="font-heavy" font-size="20" letter-spacing="1">
+      ★ MURRPLASTIK VIP GIFT PASS
+    </text>
+    <text x="430" y="42" fill="#64748b" class="font-sub" font-size="13" text-anchor="end">
+      VEC 2026 OFFICIAL
+    </text>
+
+    <!-- Ticket Body -->
+    <g transform="translate(30, 100)">
+      <!-- Prize Name -->
+      <text x="0" y="0" fill="#94a3b8" class="font-body" font-size="13" letter-spacing="1">PHẦN QUÀ ĐẶC QUYỀN:</text>
+      <rect x="0" y="10" width="400" height="50" rx="10" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="1.2" />
+      <text x="20" y="42" fill="#ffffff" class="font-heavy" font-size="22">
+        🎁 TÚI TUPPER + KHẮC LASER VIP
+      </text>
+
+      <!-- Customer Name & Company Placeholder -->
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" fill="#94a3b8" class="font-body" font-size="12">KHÁCH HÀNG / DOANH NGHIỆP:</text>
+        <text x="0" y="24" fill="#f8fafc" class="font-heavy" font-size="22" letter-spacing="0.5">
+          NGUYỄN VĂN A · ABC CORP
+        </text>
+      </g>
+
+      <!-- Voucher Code & Barcode -->
+      <g transform="translate(0, 150)">
+        <rect width="400" height="75" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="20" y="30" fill="#94a3b8" class="font-body" font-size="11" letter-spacing="1">MÃ NHẬN QUÀ TẠI BOOTH:</text>
+        <text x="20" y="60" fill="#F59E0B" class="font-mono" font-size="26" letter-spacing="3">
+          VEC26-8868
+        </text>
+        
+        <!-- Simulated Barcode Lines -->
+        <g transform="translate(260, 20)" fill="#64748b">
+          <rect x="0" y="0" width="3" height="38" />
+          <rect x="6" y="0" width="2" height="38" />
+          <rect x="11" y="0" width="4" height="38" />
+          <rect x="18" y="0" width="2" height="38" />
+          <rect x="23" y="0" width="5" height="38" />
+          <rect x="31" y="0" width="2" height="38" />
+          <rect x="36" y="0" width="4" height="38" />
+          <rect x="43" y="0" width="3" height="38" />
+          <rect x="49" y="0" width="6" height="38" />
+          <rect x="58" y="0" width="2" height="38" />
+          <rect x="63" y="0" width="4" height="38" />
+          <rect x="70" y="0" width="3" height="38" />
+          <rect x="76" y="0" width="5" height="38" />
+          <rect x="84" y="0" width="2" height="38" />
+          <rect x="89" y="0" width="4" height="38" />
+          <rect x="96" y="0" width="3" height="38" />
+          <rect x="102" y="0" width="6" height="38" />
+          <rect x="111" y="0" width="3" height="38" />
+        </g>
+      </g>
+
+      <!-- CTA Button in Card -->
+      <g transform="translate(0, 245)">
+        <rect width="400" height="48" rx="10" fill="url(#red-laser)" />
+        <text x="200" y="30" fill="#ffffff" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="1">
+          TRUY CẬP WEBSITE ĐỂ NHẬN THẺ VIP →
+        </text>
+      </g>
+    </g>
+  </g>
+
+</svg>

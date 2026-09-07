@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1015" />
+    </linearGradient>
+    
+    <linearGradient id="red-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="100%" stop-color="#E52E4D" />
+    </linearGradient>
+
+    <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+
+    <radialGradient id="radial-spot" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#C8102E" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#C8102E" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-heavy { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 800; text-transform: uppercase; }
+    .font-sub { font-family: 'Barlow', 'Segoe UI', sans-serif; font-weight: 600; }
+    .font-body { font-family: 'Barlow', 'Segoe UI', sans-serif; font-weight: 400; }
+  </style>
+
+  <!-- LAYER: BACKGROUND -->
+  <g id="Layer_Background">
+    <rect width="1200" height="630" fill="url(#bg-grad)" />
+    <rect width="1200" height="630" fill="url(#radial-spot)" />
+    
+    <!-- Tech Grid Lines -->
+    <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+      <line x1="0" y1="105" x2="1200" y2="105" />
+      <line x1="0" y1="210" x2="1200" y2="210" />
+      <line x1="0" y1="315" x2="1200" y2="315" />
+      <line x1="0" y1="420" x2="1200" y2="420" />
+      <line x1="0" y1="525" x2="1200" y2="525" />
+      <line x1="200" y1="0" x2="200" y2="630" />
+      <line x1="400" y1="0" x2="400" y2="630" />
+      <line x1="600" y1="0" x2="600" y2="630" />
+      <line x1="800" y1="0" x2="800" y2="630" />
+      <line x1="1000" y1="0" x2="1000" y2="630" />
+    </g>
+
+    <!-- Top Accent Bar -->
+    <rect x="0" y="0" width="1200" height="5" fill="url(#red-glow)" />
+  </g>
+
+  <!-- LAYER: BRAND HEADER -->
+  <g id="Layer_Header" transform="translate(60, 50)">
+    <!-- T&T Vina & Murrplastik Logos -->
+    <text x="0" y="28" fill="#ffffff" class="font-heavy" font-size="28" letter-spacing="1.5">
+      T&amp;T <tspan fill="#C8102E">VINA</tspan>
+    </text>
+    <rect x="135" y="6" width="2" height="26" fill="#334155" />
+    <text x="150" y="28" fill="#cbd5e1" class="font-heavy" font-size="24" letter-spacing="2">
+      MURRPLASTIK <tspan font-size="14" fill="#94a3b8">GERMANY</tspan>
+    </text>
+
+    <!-- Event Pill Badge -->
+    <g transform="translate(780, 0)">
+      <rect width="300" height="36" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="20" cy="18" r="5" fill="#ef4444" />
+      <text x="35" y="23" fill="#f8fafc" class="font-sub" font-size="13" letter-spacing="1">
+        TRIỂN LÃM QUỐC TẾ VEC 2026
+      </text>
+    </g>
+  </g>
+
+  <!-- LAYER: MAIN CONTENT LEFT -->
+  <g id="Layer_Main_Content" transform="translate(60, 160)">
+    <!-- Tagline Teaser -->
+    <rect x="0" y="0" width="210" height="28" rx="6" fill="#C8102E" opacity="0.2" />
+    <rect x="0" y="0" width="210" height="28" rx="6" fill="none" stroke="#C8102E" stroke-width="1" />
+    <text x="14" y="19" fill="#ff6b81" class="font-sub" font-size="12" letter-spacing="1.2">
+      ⚡ SỰ KIỆN ĐẶC BIỆT SẮP DIỄN RA
+    </text>
+
+    <!-- Big Headline -->
+    <text x="0" y="85" fill="#ffffff" class="font-heavy" font-size="52" letter-spacing="1">
+      ĐIỀU GÌ ĐANG CHỜ ĐÓN
+    </text>
+    <text x="0" y="145" fill="#ffffff" class="font-heavy" font-size="52" letter-spacing="1">
+      BẠN TẠI <tspan fill="#C8102E">GIAN HÀNG H1-15?</tspan>
+    </text>
+
+    <!-- Subtitle / Hook -->
+    <text x="0" y="200" fill="#cbd5e1" class="font-body" font-size="18">
+      Trải nghiệm 5 Hệ sinh thái Quản lý cáp CHLB Đức &amp; Nhận Đặc quyền VIP
+    </text>
+    <text x="0" y="228" fill="#94a3b8" class="font-body" font-size="16">
+      ✓ Quà tặng chính hãng  ·  ✓ Khắc laser mp-LM 1M lấy ngay  ·  ✓ Gặp Mr. Kevin Wong
+    </text>
+
+    <!-- Location Pill -->
+    <g transform="translate(0, 275)">
+      <rect width="440" height="50" rx="10" fill="#111c30" stroke="#1e293b" stroke-width="1.5" />
+      <text x="20" y="31" fill="#38bdf8" class="font-sub" font-size="15">
+        📍 Ô H1-15 · Sảnh 2 — Trung tâm NECC, Hà Nội
+      </text>
+    </g>
+  </g>
+
+  <!-- LAYER: COUNTDOWN CARD RIGHT -->
+  <g id="Layer_Countdown_Card" transform="translate(680, 140)" filter="url(#card-shadow)">
+    <!-- Glassmorphism Container -->
+    <rect width="460" height="420" rx="20" fill="#0f172a" fill-opacity="0.85" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Card Header -->
+    <g transform="translate(30, 40)">
+      <text x="0" y="0" fill="#f8fafc" class="font-heavy" font-size="22" letter-spacing="1">
+        CỔNG ĐĂNG KÝ VIP PASS
+      </text>
+      <text x="0" y="24" fill="#94a3b8" class="font-body" font-size="14">
+        Đang đếm ngược thời gian mở cổng chính thức
+      </text>
+    </g>
+
+    <!-- 4 Countdown Digit Boxes -->
+    <g transform="translate(30, 95)">
+      <!-- DAYS -->
+      <g transform="translate(0, 0)">
+        <rect width="90" height="100" rx="12" fill="#1e293b" stroke="#C8102E" stroke-width="1.5" />
+        <text x="45" y="62" fill="#ffffff" class="font-heavy" font-size="44" text-anchor="middle">03</text>
+        <text x="45" y="86" fill="#94a3b8" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1">NGÀY</text>
+      </g>
+      
+      <!-- HOURS -->
+      <g transform="translate(103, 0)">
+        <rect width="90" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="45" y="62" fill="#ffffff" class="font-heavy" font-size="44" text-anchor="middle">14</text>
+        <text x="45" y="86" fill="#94a3b8" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1">GIỜ</text>
+      </g>
+
+      <!-- MINUTES -->
+      <g transform="translate(206, 0)">
+        <rect width="90" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="45" y="62" fill="#ffffff" class="font-heavy" font-size="44" text-anchor="middle">28</text>
+        <text x="45" y="86" fill="#94a3b8" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1">PHÚT</text>
+      </g>
+
+      <!-- SECONDS -->
+      <g transform="translate(310, 0)">
+        <rect width="90" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="45" y="62" fill="#ef4444" class="font-heavy" font-size="44" text-anchor="middle">45</text>
+        <text x="45" y="86" fill="#ef4444" class="font-sub" font-size="11" text-anchor="middle" letter-spacing="1">GIÂY</text>
+      </g>
+    </g>
+
+    <!-- Teaser Perks List -->
+    <g transform="translate(30, 230)">
+      <rect width="400" height="65" rx="10" fill="#111c30" />
+      <circle cx="25" cy="32" r="10" fill="#22c55e" opacity="0.2" />
+      <text x="25" y="37" fill="#22c55e" font-size="14" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="48" y="28" fill="#e2e8f0" class="font-sub" font-size="13">100% Khách tham gia nhận Thẻ Quà Tặng VIP</text>
+      <text x="48" y="48" fill="#94a3b8" class="font-body" font-size="12">Túi Tupper · Bút bi Germany · Khắc laser theo tên</text>
+    </g>
+
+    <!-- CTA Link Button -->
+    <g transform="translate(30, 315)">
+      <rect width="400" height="52" rx="10" fill="url(#red-glow)" />
+      <text x="200" y="32" fill="#ffffff" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="1">
+        THEO DÕI ĐẾM NGƯỢC TẠI WEBSITE →
+      </text>
+    </g>
+    
+    <text x="230" y="392" fill="#64748b" class="font-body" font-size="12" text-anchor="middle">
+      murrplastikvn.com/tin-tuc/trien-lam-vec-2026/
+    </text>
+  </g>
+
+</svg>

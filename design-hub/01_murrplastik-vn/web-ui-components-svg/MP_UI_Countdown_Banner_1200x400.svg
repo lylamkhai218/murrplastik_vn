@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <!-- Embedded Google Fonts for Barlow & Barlow Condensed -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@600;700;800&amp;display=swap');
+
+      .font-heavy {
+        font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .font-sub {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+      }
+      .font-body {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 400;
+      }
+      .font-mono-num {
+        font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 52px;
+        fill: #0f172a;
+      }
+      .font-unit {
+        font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        fill: #64748b;
+        letter-spacing: 1.5px;
+      }
+    </style>
+
+    <!-- Background -->
+    <linearGradient id="cnt-clean-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fafbfc" />
+    </linearGradient>
+
+    <!-- Top Laser Red -->
+    <linearGradient id="top-laser-red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="100%" stop-color="#E52E4D" />
+    </linearGradient>
+
+    <!-- Minimal Card Shadow -->
+    <filter id="shadow-banner-clean" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND (MINIMAL LUXURY) -->
+  <g id="Layer_Background">
+    <rect width="1200" height="400" fill="url(#cnt-clean-bg)" rx="16" stroke="#e2e8f0" stroke-width="1.5" />
+    <rect x="0" y="0" width="1200" height="4" fill="url(#top-laser-red)" />
+  </g>
+
+  <!-- LEFT COLUMN: TITLE & BOOTH INFO -->
+  <g id="Left_Info" transform="translate(48, 45)">
+    <!-- Brand Badges -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="20" fill="#0f172a" class="font-heavy" font-size="22" letter-spacing="1">
+        T&amp;T <tspan fill="#C8102E">VINA</tspan>
+      </text>
+      <rect x="95" y="4" width="1.5" height="20" fill="#cbd5e1" />
+      <text x="108" y="20" fill="#475569" class="font-heavy" font-size="18" letter-spacing="1.5">
+        MURRPLASTIK <tspan font-size="12" fill="#64748b">GERMANY</tspan>
+      </text>
+    </g>
+
+    <!-- Event Badge -->
+    <g transform="translate(0, 36)">
+      <rect width="230" height="24" rx="4" fill="#C8102E" fill-opacity="0.08" stroke="#C8102E" stroke-width="1" />
+      <circle cx="12" cy="12" r="3.5" fill="#C8102E" />
+      <text x="24" y="16" fill="#C8102E" class="font-sub" font-size="11" letter-spacing="1">
+        TRIỂN LÃM QUỐC TẾ VEC 2026
+      </text>
+    </g>
+
+    <!-- Big Headline -->
+    <g transform="translate(0, 80)">
+      <text x="0" y="32" fill="#0f172a" class="font-heavy" font-size="34" letter-spacing="1">
+        ĐẾM NGƯỢC TRIỂN LÃM
+      </text>
+      <text x="0" y="70" fill="#C8102E" class="font-heavy" font-size="34" letter-spacing="1">
+        QUỐC TẾ VEC 2026
+      </text>
+    </g>
+
+    <!-- Booth Location Callout -->
+    <g transform="translate(0, 195)">
+      <rect width="360" height="48" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+      
+      <!-- Map Pin -->
+      <g transform="translate(14, 14)">
+        <path d="M 8 2 C 4 2 1 5 1 9 C 1 14 8 19 8 19 C 8 19 15 14 15 9 C 15 5 12 2 8 2 Z" fill="#C8102E" />
+        <circle cx="8" cy="8" r="2.5" fill="#ffffff" />
+      </g>
+
+      <text x="38" y="21" fill="#0f172a" class="font-sub" font-size="13">
+        GIAN HÀNG Ô H1-15 <tspan fill="#C8102E">• SẢNH 2</tspan>
+      </text>
+      <text x="38" y="37" fill="#64748b" class="font-body" font-size="11">
+        15 – 17/10/2026 • I.C.E Hà Nội (91 Trần Hưng Đạo)
+      </text>
+    </g>
+  </g>
+
+  <!-- CENTER COLUMN: 4 DIGITAL TIMER CARDS -->
+  <g id="Center_Countdown" transform="translate(450, 95)">
+    <text x="175" y="0" fill="#0f172a" class="font-heavy" font-size="15" text-anchor="middle" letter-spacing="1.5">
+      THỜI GIAN MỞ CỬA GIAN HÀNG
+    </text>
+
+    <g transform="translate(0, 20)">
+
+      <!-- CARD 1: DAYS -->
+      <g id="Card_Days" transform="translate(0, 0)" filter="url(#shadow-banner-clean)">
+        <rect width="78" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+        <line x1="0" y1="46" x2="78" y2="46" stroke="#f1f5f9" stroke-width="1" />
+        <text x="39" y="64" class="font-mono-num" text-anchor="middle">48</text>
+        <text x="39" y="114" class="font-unit" text-anchor="middle">NGÀY</text>
+      </g>
+
+      <!-- Colon 1 -->
+      <g transform="translate(84, 30)">
+        <circle cx="4" cy="0" r="3" fill="#C8102E" />
+        <circle cx="4" cy="18" r="3" fill="#C8102E" />
+      </g>
+
+      <!-- CARD 2: HOURS -->
+      <g id="Card_Hours" transform="translate(96, 0)" filter="url(#shadow-banner-clean)">
+        <rect width="78" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+        <line x1="0" y1="46" x2="78" y2="46" stroke="#f1f5f9" stroke-width="1" />
+        <text x="39" y="64" class="font-mono-num" text-anchor="middle">14</text>
+        <text x="39" y="114" class="font-unit" text-anchor="middle">GIỜ</text>
+      </g>
+
+      <!-- Colon 2 -->
+      <g transform="translate(180, 30)">
+        <circle cx="4" cy="0" r="3" fill="#C8102E" />
+        <circle cx="4" cy="18" r="3" fill="#C8102E" />
+      </g>
+
+      <!-- CARD 3: MINS -->
+      <g id="Card_Minutes" transform="translate(192, 0)" filter="url(#shadow-banner-clean)">
+        <rect width="78" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+        <line x1="0" y1="46" x2="78" y2="46" stroke="#f1f5f9" stroke-width="1" />
+        <text x="39" y="64" class="font-mono-num" text-anchor="middle">25</text>
+        <text x="39" y="114" class="font-unit" text-anchor="middle">PHÚT</text>
+      </g>
+
+      <!-- Colon 3 -->
+      <g transform="translate(276, 30)">
+        <circle cx="4" cy="0" r="3" fill="#C8102E" />
+        <circle cx="4" cy="18" r="3" fill="#C8102E" />
+      </g>
+
+      <!-- CARD 4: SECS -->
+      <g id="Card_Seconds" transform="translate(288, 0)" filter="url(#shadow-banner-clean)">
+        <rect width="78" height="92" rx="8" fill="#ffffff" stroke="#C8102E" stroke-width="1.5" />
+        <line x1="0" y1="46" x2="78" y2="46" stroke="#fca5a5" stroke-width="1" />
+        <text x="39" y="64" class="font-mono-num" text-anchor="middle" fill="#C8102E">36</text>
+        <text x="39" y="114" class="font-unit" text-anchor="middle" fill="#C8102E">GIÂY</text>
+      </g>
+
+    </g>
+
+    <!-- Subtext -->
+    <g transform="translate(184, 166)">
+      <circle cx="-110" cy="-4" r="3.5" fill="#16a34a" />
+      <text x="-96" y="0" fill="#475569" class="font-body" font-size="12">
+        Hệ thống đang mở tiếp nhận đăng ký nhận Thẻ Quà Tặng VIP trực tuyến.
+      </text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: MINIMAL CTA CARD -->
+  <g id="Right_CTA_Box" transform="translate(865, 45)">
+    <rect width="285" height="310" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.25" filter="url(#shadow-banner-clean)" />
+
+    <!-- Mini Header -->
+    <g transform="translate(20, 20)">
+      <path d="M 0 18 L 3 8 L 10 13 L 17 8 L 20 18 Z" fill="#C8102E" />
+      <text x="26" y="16" fill="#C8102E" class="font-heavy" font-size="13" letter-spacing="1">
+        MURRPLASTIK VIP PASS
+      </text>
+      <text x="0" y="42" fill="#0f172a" class="font-heavy" font-size="20">
+        QUAY &amp; NHẬN QUÀ VIP
+      </text>
+    </g>
+
+    <!-- Benefits -->
+    <g transform="translate(20, 95)">
+      <g transform="translate(0, 0)">
+        <circle cx="5" cy="5" r="5" fill="#C8102E" />
+        <path d="M 2.5 5 L 4.5 7 L 7.5 3" stroke="#ffffff" stroke-width="1.25" fill="none" />
+        <text x="16" y="9" fill="#334155" class="font-sub" font-size="11.5">Khắc Laser tên DN máy mp-LM 1M</text>
+      </g>
+
+      <g transform="translate(0, 26)">
+        <circle cx="5" cy="5" r="5" fill="#C8102E" />
+        <path d="M 2.5 5 L 4.5 7 L 7.5 3" stroke="#ffffff" stroke-width="1.25" fill="none" />
+        <text x="16" y="9" fill="#334155" class="font-sub" font-size="11.5">Combo Túi Tupper + Bút Bi Đức</text>
+      </g>
+
+      <g transform="translate(0, 52)">
+        <circle cx="5" cy="5" r="5" fill="#C8102E" />
+        <path d="M 2.5 5 L 4.5 7 L 7.5 3" stroke="#ffffff" stroke-width="1.25" fill="none" />
+        <text x="16" y="9" fill="#334155" class="font-sub" font-size="11.5">Đón tiếp VIP Lounge &amp; Cà phê Đức</text>
+      </g>
+    </g>
+
+    <!-- Action Button -->
+    <g id="Btn_Banner_Spin" transform="translate(20, 225)">
+      <rect width="245" height="48" rx="8" fill="#C8102E" />
+      <text x="108" y="30" fill="#ffffff" class="font-heavy" font-size="16" text-anchor="middle" letter-spacing="1">
+        QUAY THƯỞNG NGAY
+      </text>
+      <path d="M 190 24 L 200 30 L 190 36" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+  </g>
+</svg>

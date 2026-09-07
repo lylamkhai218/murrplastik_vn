@@ -33,5 +33,19 @@ ttvina_production.zip
 deploy_staging.py
 deploy_production.py
 copy_and_replace.py
+*.py
+
+# Server log dumps & CSVs containing visitor/audit data
+*.csv
+All_Logs.csv
+Logs.csv
+
+# Large media files (>30MB)
+*.mp4
+*.mov
+*.avi
+
+# Internal event dossiers
+tin-tuc/trien-lam-vec-2026/docs/
 
 

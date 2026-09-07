@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const res = await fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'cors', // Ensure CORS is requested
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
       });
 

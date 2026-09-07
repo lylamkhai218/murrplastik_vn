@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 840" width="640" height="840">
+  <defs>
+    <!-- Embedded Google Fonts for Barlow & Barlow Condensed -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@600;700;800&amp;display=swap');
+
+      .font-heavy {
+        font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .font-title {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 700;
+      }
+      .font-sub {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+      }
+      .font-body {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 400;
+      }
+      .font-label {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        fill: #64748b;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+      .font-val {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      .font-pill {
+        font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+        font-size: 11.5px;
+      }
+    </style>
+
+    <!-- Card Background -->
+    <linearGradient id="modal-bg-clean" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fafbfc" />
+    </linearGradient>
+
+    <!-- Top Laser Red Accent -->
+    <linearGradient id="laser-bar-clean" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="100%" stop-color="#E52E4D" />
+    </linearGradient>
+
+    <!-- Executive CTA Button Gradient -->
+    <linearGradient id="btn-primary-red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E" />
+      <stop offset="100%" stop-color="#D91435" />
+    </linearGradient>
+
+    <!-- Apple/Linear Floating Modal Shadow -->
+    <filter id="modal-shadow-luxury" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#0f172a" flood-opacity="0.08" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.04" />
+    </filter>
+
+    <filter id="input-focus-glow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#C8102E" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- MODAL CONTAINER (CLEAN B2B LUXURY) -->
+  <g id="Layer_Modal_Card" filter="url(#modal-shadow-luxury)" transform="translate(20, 20)">
+    <!-- Base Card -->
+    <rect width="600" height="800" rx="16" fill="url(#modal-bg-clean)" stroke="#e2e8f0" stroke-width="1.5" />
+
+    <!-- Top Laser Red Accent -->
+    <path d="M 0 16 Q 0 0 16 0 L 584 0 Q 600 0 600 16 L 600 4 L 0 4 Z" fill="url(#laser-bar-clean)" />
+
+    <!-- Close Button -->
+    <g id="Btn_Close" transform="translate(556, 18)">
+      <circle cx="12" cy="12" r="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+      <path d="M 8 8 L 16 16 M 16 8 L 8 16" stroke="#64748b" stroke-width="1.75" stroke-linecap="round" />
+    </g>
+
+    <!-- HEADER SECTION -->
+    <g id="Header_Section" transform="translate(32, 28)">
+      <g transform="translate(0, 0)">
+        <rect width="36" height="36" rx="8" fill="#C8102E" fill-opacity="0.08" stroke="#C8102E" stroke-width="1" />
+        <path d="M 10 24 L 12 14 L 18 19 L 24 14 L 26 24 Z" fill="#C8102E" />
+      </g>
+      
+      <g transform="translate(46, 0)">
+        <text x="0" y="16" fill="#0f172a" class="font-heavy" font-size="20" letter-spacing="0.5">MURRPLASTIK VIP PASS REGISTRATION</text>
+        <text x="0" y="32" fill="#64748b" class="font-body" font-size="12">Triển lãm Quốc tế VEC 2026 • Gian hàng Ô H1-15 (Sảnh 2)</text>
+      </g>
+
+      <line x1="0" y1="46" x2="536" y2="46" stroke="#f1f5f9" stroke-width="1.5" />
+    </g>
+
+    <!-- FORM INPUTS SECTION -->
+    <g id="Form_Fields" transform="translate(32, 90)">
+      
+      <!-- ROW 1: Họ tên & SĐT -->
+      <g id="Field_Name_Phone" transform="translate(0, 0)">
+        <!-- Input 1: Họ và tên -->
+        <g transform="translate(0, 0)">
+          <text x="0" y="0" class="font-label">HỌ VÀ TÊN <tspan fill="#C8102E">*</tspan></text>
+          <rect x="0" y="8" width="258" height="42" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+          <text x="14" y="34" class="font-val">Nguyễn Văn Hùng</text>
+        </g>
+
+        <!-- Input 2: Số điện thoại / Zalo -->
+        <g transform="translate(278, 0)">
+          <text x="0" y="0" class="font-label">SỐ ĐIỆN THOẠI / ZALO <tspan fill="#C8102E">*</tspan></text>
+          <rect x="0" y="8" width="258" height="42" rx="8" fill="#ffffff" stroke="#C8102E" stroke-width="1.5" filter="url(#input-focus-glow)" />
+          <text x="14" y="34" class="font-val">0912 345 678</text>
+        </g>
+      </g>
+
+      <!-- ROW 2: Email & Doanh Nghiệp -->
+      <g id="Field_Email_Company" transform="translate(0, 68)">
+        <!-- Input 3: Email làm việc -->
+        <g transform="translate(0, 0)">
+          <text x="0" y="0" class="font-label">EMAIL LÀM VIỆC <tspan fill="#C8102E">*</tspan></text>
+          <rect x="0" y="8" width="258" height="42" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+          <text x="14" y="34" class="font-val">hung.nguyen@autotech.vn</text>
+        </g>
+
+        <!-- Input 4: Tên công ty / Nhà máy -->
+        <g transform="translate(278, 0)">
+          <text x="0" y="0" class="font-label">DOANH NGHIỆP / NHÀ MÁY</text>
+          <rect x="0" y="8" width="258" height="42" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.25" />
+          <text x="14" y="34" class="font-val">Auto-Tech Corporation</text>
+        </g>
+      </g>
+
+      <!-- ROW 3: VAI TRÒ CỦA BẠN (Role Segmented Pills) -->
+      <g id="Field_Role" transform="translate(0, 142)">
+        <text x="0" y="0" class="font-label">VAI TRÒ / PHÒNG BAN: <tspan fill="#C8102E">(Chọn 1)</tspan></text>
+        
+        <g transform="translate(0, 10)">
+          <!-- Active Pill -->
+          <g transform="translate(0, 0)">
+            <rect width="130" height="32" rx="6" fill="#C8102E" />
+            <path d="M 12 16 L 16 20 L 22 12" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+            <text x="28" y="20" fill="#ffffff" class="font-pill">Kỹ thuật / R&amp;D</text>
+          </g>
+
+          <!-- Inactive Pills -->
+          <g transform="translate(138, 0)">
+            <rect width="116" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">Mua hàng / Mua sắm</text>
+          </g>
+
+          <g transform="translate(262, 0)">
+            <rect width="124" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">Quản lý / Điều hành</text>
+          </g>
+
+          <g transform="translate(394, 0)">
+            <rect width="142" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">SI &amp; Chế tạo máy</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ROW 4: GIẢI PHÁP QUAN TÂM (Interest Segmented Pills) -->
+      <g id="Field_Interest" transform="translate(0, 218)">
+        <text x="0" y="0" class="font-label">GIẢI PHÁP QUAN TÂM TẠI BOOTH H1-15: <tspan fill="#C8102E">(Có thể chọn nhiều)</tspan></text>
+        
+        <!-- Row 1 -->
+        <g transform="translate(0, 10)">
+          <!-- Active 1 -->
+          <g transform="translate(0, 0)">
+            <rect width="156" height="32" rx="6" fill="#C8102E" />
+            <path d="M 12 16 L 16 20 L 22 12" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+            <text x="28" y="20" fill="#ffffff" class="font-pill">Dress Pack Robot</text>
+          </g>
+
+          <!-- Active 2 -->
+          <g transform="translate(164, 0)">
+            <rect width="170" height="32" rx="6" fill="#C8102E" />
+            <path d="M 12 16 L 16 20 L 22 12" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+            <text x="28" y="20" fill="#ffffff" class="font-pill">Khắc Laser Thẻ Tên</text>
+          </g>
+
+          <!-- Inactive 3 -->
+          <g transform="translate(342, 0)">
+            <rect width="194" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">Hệ thống luồn cáp KDL/KDP</text>
+          </g>
+        </g>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 50)">
+          <!-- Inactive 4 -->
+          <g transform="translate(0, 0)">
+            <rect width="144" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">Máng xích dẫn cáp</text>
+          </g>
+
+          <!-- Inactive 5 -->
+          <g transform="translate(152, 0)">
+            <rect width="168" height="32" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+            <text x="16" y="20" fill="#475569" class="font-pill">Ống ruột gà &amp; Đầu nối</text>
+          </g>
+
+          <!-- Special Highlight -->
+          <g transform="translate(328, 0)">
+            <rect width="208" height="32" rx="6" fill="#0f172a" />
+            <text x="16" y="20" fill="#ffffff" class="font-pill">⚡ Tư vấn 1:1 Mr. Kevin Wong</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ROW 5: PDPD PRIVACY CONSENT -->
+      <g id="Field_Privacy" transform="translate(0, 328)">
+        <rect width="536" height="48" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+        
+        <!-- Checkbox Vector -->
+        <g transform="translate(14, 14)">
+          <rect width="20" height="20" rx="4" fill="#C8102E" />
+          <path d="M 4 10 L 8 14 L 16 6" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- Terms Text -->
+        <text x="44" y="21" fill="#334155" class="font-body" font-size="11.5">
+          Tôi đồng ý cung cấp thông tin để T&amp;T Vina gửi vé mời tham dự &amp; tư vấn giải pháp tại VEC 2026.
+        </text>
+        <text x="44" y="36" fill="#64748b" class="font-body" font-size="10.5">
+          (Dữ liệu được bảo mật tuyệt đối theo Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân).
+        </text>
+      </g>
+
+      <!-- ROW 6: HERO ACTION BUTTON (CTA) -->
+      <g id="Btn_Submit_CTA" transform="translate(0, 396)">
+        <rect width="536" height="52" rx="8" fill="url(#btn-primary-red)" />
+        
+        <text x="245" y="32" fill="#ffffff" class="font-heavy" font-size="18" text-anchor="middle" letter-spacing="1.5">
+          XÁC THỰC &amp; TIẾP TỤC QUAY THƯỞNG
+        </text>
+        <path d="M 405 26 L 415 32 L 405 38" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <!-- Anti-fraud Server Notice -->
+      <g transform="translate(268, 470)">
+        <path d="M -126 -5 L -126 -8 C -126 -11 -122 -11 -122 -8 L -122 -5" fill="none" stroke="#16a34a" stroke-width="1.5" />
+        <rect x="-128" y="-5" width="8" height="7" rx="1" fill="#16a34a" />
+        <text x="0" y="2" fill="#16a34a" class="font-body" font-size="11.5" text-anchor="middle" font-weight="600">
+          Xác thực Server-side: Mỗi SĐT / Doanh nghiệp nhận 01 Thẻ VIP Pass duy nhất.
+        </text>
+      </g>
+
+    </g>
+
+  </g>
+</svg>
